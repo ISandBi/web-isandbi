@@ -36,36 +36,40 @@ npm run preview
 Después abre **http://localhost:4321** en el navegador. El servidor de previsualización se detiene
 con `Ctrl+C`.
 
-## Fotografías de portada
+## Imágenes
 
-Agrega tus imágenes dentro de `public/images/` con estos nombres. La página muestra un espacio
-de reserva hasta que el archivo correspondiente esté disponible:
+Las capturas de proyectos compartidas para el portafolio y las ilustraciones de escalamiento e IA
+están en `public/images/solutions/`. Las fotografías de portada se guardan en `public/images/`:
 
+- `public/images/instalaciones.jpeg`
 - `public/images/equipo-consultoria.jpg`
-- `public/images/desarrollo-web.jpg`
-- `public/images/apps-moviles.jpg`
-- `public/images/reunion-presencial.jpg`
+- `public/images/oficina.jpeg`
+- `public/images/solutions/davila-tours-web.png`
+- `public/images/solutions/kinder-nahla-mobile.png`
+- `public/images/solutions/gavaldoon-go-mobile.png`
 
-Si prefieres otros nombres, cambia las rutas del arreglo `photos` en `src/pages/index.astro`.
-Los archivos de `public/` se sirven desde la raíz del sitio; por ejemplo, `public/images/equipo-consultoria.jpg`
-se muestra con la ruta `/images/equipo-consultoria.jpg`.
+Los archivos de `public/` se sirven desde la raíz del sitio; por ejemplo,
+`public/images/equipo-consultoria.jpg` se muestra con la ruta `/images/equipo-consultoria.jpg`.
 
 ## Formulario de contacto
 
-El formulario envía nombre, correo, servicio y mensaje a `mauricio.garro@ilb.edu.mx` mediante
-[FormSubmit](https://formsubmit.co/). Al publicar el sitio, envía el primer mensaje de prueba y
-confirma la activación desde el correo que FormSubmit mande a esa bandeja. Después de activarlo,
-los envíos posteriores llegarán a ese correo. FormSubmit procesa los datos del formulario como
-servicio externo; no se necesita configurar un servidor propio.
+El formulario usa [Formspree](https://formspree.io/) para recibir consultas sin publicar la dirección
+receptora en el HTML. Copia `.env.example` como `.env` y configura el endpoint de tu formulario:
 
-Para cambiar el destinatario, actualiza `contactEmail` en `src/pages/index.astro`.
+```env
+PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/tu-id
+```
+
+El endpoint se obtiene al crear el formulario en Formspree. Debe estar configurado al compilar
+(`npm run build`); sin él, el botón de envío permanece desactivado. El campo de correo permite
+escribir el usuario y elegir `@gmail.com` o `@hotmail.com`.
 
 ## Lógica sencilla incluida
 
-- **Tema claro/oscuro:** el navegador carga el tema guardado en `localStorage` o, si aún no se
-  eligió uno, usa la preferencia del sistema. El botón del encabezado alterna el tema y guarda
-  la selección para la siguiente visita.
-- **Espacios para fotografías:** cuando una imagen ya existe en `public/images/`, se muestra en su
-  espacio. Si todavía no existe, la página conserva una tarjeta de reserva con la ruta esperada.
-- **Envío del formulario:** los campos obligatorios y el correo se validan en el navegador; el
-  formulario se envía al servicio de correo al presionar el botón.
+- **Tema claro:** el sitio usa una sola paleta clara.
+- **Proyectos de éxito:** las ubicaciones se dejan como `[Ciudad, estado]` en los datos `projects`
+  de `src/pages/index.astro` para completar cuando se confirmen.
+- **Animaciones al desplazarse:** las secciones aparecen al entrar en pantalla y respetan la
+  preferencia de movimiento reducido del navegador.
+- **Envío del formulario:** los campos obligatorios se validan en el navegador y las consultas se
+  envían al endpoint configurado de Formspree.

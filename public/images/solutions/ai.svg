@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 340" fill="none">
+	<defs>
+		<linearGradient id="core" x1="156" y1="97" x2="266" y2="237" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#8AEAFF" />
+			<stop offset=".52" stop-color="#8D8BFF" />
+			<stop offset="1" stop-color="#5EE1C2" />
+		</linearGradient>
+		<radialGradient id="orb" cx="0" cy="0" r="1" gradientTransform="matrix(0 110 -110 0 211 166)" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#7566EA" stop-opacity=".42" />
+			<stop offset="1" stop-color="#7566EA" stop-opacity="0" />
+		</radialGradient>
+		<filter id="light" x="58" y="17" width="304" height="310" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+			<feGaussianBlur stdDeviation="17" />
+		</filter>
+	</defs>
+	<circle cx="211" cy="170" r="116" fill="url(#orb)" />
+	<ellipse cx="210" cy="272" fill="#7665E9" opacity=".32" rx="105" ry="18" filter="url(#light)" />
+	<path d="m210 76 81 47v94l-81 47-81-47v-94l81-47Z" fill="#142E68" stroke="#605CC4" stroke-width="2" />
+	<path d="M210 108c-16 0-27 12-27 27-16-2-29 11-27 27-12 5-18 17-15 29 3 14 15 23 29 23h78c16 0 28-12 28-28 0-12-7-22-18-26 4-17-10-33-28-31-2-12-10-21-20-21Z" fill="url(#core)" />
+	<path d="M194 175h32m-16-16v33m-31-14h14m33 0h14" stroke="#16346B" stroke-linecap="round" stroke-width="7" />
+	<circle cx="210" cy="174" r="7" fill="#E9FFFF" />
+	<path d="m89 107 7 15 16 6-16 6-7 16-6-16-16-6 16-6 6-15Z" fill="#8DEBFF" />
+	<path d="m320 177 5 11 12 4-12 5-5 12-4-12-12-5 12-4 4-11Z" fill="#F5D778" />
+	<circle cx="119" cy="237" r="9" fill="#5AD6C2" />
+	<circle cx="304" cy="90" r="10" fill="#8876EF" />
+</svg>

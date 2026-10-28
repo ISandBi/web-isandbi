@@ -3,11 +3,11 @@ interface Props {
 	title?: string;
 }
 
-const { title = 'ISANDBI Solutions | Consultoría digital' } = Astro.props;
+const { title = 'IS&BI Solutions | Innovation Software' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" data-theme="dark">
+<html lang="es" data-theme="light">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,11 +19,6 @@ const { title = 'ISANDBI Solutions | Consultoría digital' } = Astro.props;
 			content="Consultoría digital personalizada: aplicaciones web y móviles, escalamiento e inteligencia artificial para hacer avanzar tu negocio."
 		/>
 		<title>{title}</title>
-		<script is:inline>
-			const savedTheme = localStorage.getItem('isandbi-theme');
-			document.documentElement.dataset.theme =
-				savedTheme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-		</script>
 	</head>
 	<body>
 		<slot />
@@ -31,47 +26,30 @@ const { title = 'ISANDBI Solutions | Consultoría digital' } = Astro.props;
 </html>
 
 <style is:global>
-	:root,
-	html[data-theme='dark'] {
-		color-scheme: dark;
-		--bg: #092b69;
-		--surface: #0c3478;
-		--surface-subtle: #08265c;
-		--header-bg: rgb(7 34 80 / 92%);
-		--text: #e7f2ff;
-		--heading: #fff;
-		--muted: #b2c8e5;
-		--line: rgb(188 218 255 / 14%);
-		--line-strong: rgb(188 218 255 / 32%);
-		--accent: #2863dc;
-		--accent-strong: #3475f5;
-		--accent-light: #82ceff;
-		--icon-bg: rgb(59 137 231 / 11%);
-		--input-bg: #082b67;
-		--focus-ring: rgb(130 206 255 / 18%);
-		--photo-a: #124896;
-		--photo-b: #10274d;
-	}
-
-	html[data-theme='light'] {
+	:root {
 		color-scheme: light;
-		--bg: #f4f7fc;
+		--bg: #f7f8f5;
 		--surface: #fff;
-		--surface-subtle: #edf3fc;
-		--header-bg: rgb(248 250 255 / 94%);
-		--text: #27374f;
-		--heading: #102348;
-		--muted: #607087;
-		--line: rgb(28 59 103 / 13%);
-		--line-strong: rgb(28 59 103 / 30%);
-		--accent: #245cdb;
-		--accent-strong: #1747b3;
-		--accent-light: #176fc4;
-		--icon-bg: #edf5ff;
-		--input-bg: #f8faff;
-		--focus-ring: rgb(36 92 219 / 14%);
-		--photo-a: #dceaff;
-		--photo-b: #b9d1f4;
+		--surface-subtle: #eef2ef;
+		--header-bg: rgb(247 248 245 / 92%);
+		--text: #203138;
+		--heading: #102a36;
+		--muted: #50636a;
+		--line: rgb(16 42 54 / 14%);
+		--line-strong: rgb(16 42 54 / 28%);
+		--accent: #147d78;
+		--accent-strong: #0c625e;
+		--accent-light: #0b726e;
+		--icon-bg: #e7f3ef;
+		--input-bg: #fff;
+		--focus-ring: rgb(20 125 120 / 15%);
+		--photo-a: #d9e8e1;
+		--photo-b: #cad9e4;
+		--gradient-violet: #b7a9d8;
+		--gradient-cyan: #62c2b1;
+		--gradient-glow-blue: rgb(84 164 172 / 13%);
+		--gradient-glow-violet: rgb(172 151 204 / 14%);
+		--gradient-card-end: #eff5f0;
 	}
 
 	* {

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 340" fill="none">
+	<defs>
+		<linearGradient id="phone" x1="150" y1="44" x2="284" y2="293" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#75E1FF" />
+			<stop offset="1" stop-color="#8760E9" />
+		</linearGradient>
+		<linearGradient id="screen" x1="160" y1="79" x2="262" y2="263" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#173E86" />
+			<stop offset="1" stop-color="#101A42" />
+		</linearGradient>
+		<filter id="glow" x="91" y="18" width="238" height="313" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+			<feGaussianBlur stdDeviation="15" />
+		</filter>
+	</defs>
+	<ellipse cx="210" cy="286" fill="#8460F0" opacity=".32" rx="86" ry="18" filter="url(#glow)" />
+	<rect x="139" y="34" width="142" height="274" rx="30" fill="#111936" stroke="url(#phone)" stroke-width="5" />
+	<rect x="151" y="58" width="118" height="222" rx="20" fill="url(#screen)" />
+	<rect x="187" y="45" width="46" height="5" rx="2.5" fill="#90DFFF" />
+	<circle cx="210" cy="293" r="5" fill="#A4E8FF" />
+	<circle cx="210" cy="115" r="29" fill="#2869C9" />
+	<path d="M194 119c7-13 25-13 32 0m-27 8c5-7 17-7 22 0" stroke="#C1F7FF" stroke-linecap="round" stroke-width="5" />
+	<rect x="171" y="159" width="78" height="10" rx="5" fill="#72D6EE" />
+	<rect x="180" y="178" width="60" height="7" rx="3.5" fill="#91AEE4" opacity=".8" />
+	<rect x="168" y="203" width="84" height="43" rx="12" fill="#2458A7" />
+	<circle cx="190" cy="224" r="9" fill="#65E0D2" />
+	<path d="M207 219h31m-31 10h22" stroke="#D3EAFF" stroke-linecap="round" stroke-width="5" />
+	<path d="m320 113 6 13 14 5-14 5-6 14-5-14-14-5 14-5 5-13Z" fill="#8DEAFF" />
+	<circle cx="102" cy="191" r="15" fill="#7654D9" opacity=".8" />
+	<circle cx="315" cy="225" r="9" fill="#38CFD1" />
+	<path d="m98 88 4 8 9 3-9 4-4 9-4-9-8-4 8-3 4-8Z" fill="#F4D783" />
+</svg>
