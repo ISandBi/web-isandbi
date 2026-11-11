@@ -67,9 +67,11 @@ escribir el usuario y elegir `@gmail.com` o `@hotmail.com`.
 ## Lógica sencilla incluida
 
 - **Tema claro:** el sitio usa una sola paleta clara.
-- **Proyectos de éxito:** las ubicaciones se dejan como `[Ciudad, estado]` en los datos `projects`
-  de `src/pages/index.astro` para completar cuando se confirmen.
+- **Portafolio:** los proyectos destacados enlazan a sus repositorios públicos.
+- **Explorador de soluciones:** reúne los nueve repositorios públicos de IS&BI e incluye búsqueda
+  por nombre, descripción o tecnología y filtros por especialidad.
 - **Animaciones al desplazarse:** las secciones aparecen al entrar en pantalla y respetan la
-  preferencia de movimiento reducido del navegador.
+  preferencia de movimiento reducido del navegador. Los degradados, tarjetas y navegación también
+  cuentan con transiciones adaptadas a pantallas móviles.
 - **Envío del formulario:** los campos obligatorios se validan en el navegador y las consultas se
   envían al endpoint configurado de Formspree.

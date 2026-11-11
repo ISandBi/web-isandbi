@@ -12,28 +12,112 @@ const projects = [
 		type: 'PLATAFORMA WEB',
 		name: 'Dávila Tours',
 		client: 'Dávila Tours',
-		location: '[Ciudad, estado]',
 		image: '/images/solutions/davila-tours-web.png',
 		alt: 'Plataforma web de Dávila Tours en una pantalla de escritorio',
 		className: 'project-web',
+		repository: 'https://github.com/ISandBi/davila-tours',
 	},
 	{
 		type: 'APLICACIÓN MÓVIL',
 		name: 'Kinder Nahla',
 		client: 'Kinder Nahla S.A.',
-		location: '[Ciudad, estado]',
 		image: '/images/solutions/kinder-nahla-mobile.png',
 		alt: 'Pantalla móvil de la aplicación de Kinder Nahla',
 		className: 'project-kinder',
+		repository: 'https://github.com/ISandBi/Aplicaci-n-Educativa-para-Kinder',
 	},
 	{
 		type: 'APLICACIÓN MÓVIL',
 		name: 'Gavaldoon Go!',
 		client: 'Gavaldoon Go!',
-		location: '[Ciudad, estado]',
 		image: '/images/solutions/gavaldoon-go-mobile.png',
 		alt: 'Aplicación móvil Gavaldoon Go! con mapa y estaciones de servicio',
 		className: 'project-gavaldoon',
+		repository: 'https://github.com/ISandBi/gavaldon-app',
+	},
+];
+
+const solutions = [
+	{
+		name: 'Dávila Tours',
+		monogram: 'DT',
+		category: 'web',
+		categoryLabel: 'Plataforma web',
+		technology: 'Python · Flask',
+		description: 'Reservas de viajes, seguimiento de apartados y gestión de flota en una sola plataforma.',
+		repository: 'https://github.com/ISandBi/davila-tours',
+	},
+	{
+		name: 'OrderSync Ecommerce',
+		monogram: 'OS',
+		category: 'web',
+		categoryLabel: 'Comercio digital',
+		technology: 'E-commerce',
+		description: 'Proyecto de comercio electrónico organizado con una arquitectura multicapa.',
+		repository: 'https://github.com/ISandBi/ordersync-ecommerce',
+	},
+	{
+		name: 'DeskFlex México',
+		monogram: 'DF',
+		category: 'ops',
+		categoryLabel: 'Operaciones',
+		technology: 'Python · Flask',
+		description: 'Reservas de espacios de coworking, control de acceso, QR y check-in.',
+		repository: 'https://github.com/ISandBi/deskflex-web',
+	},
+	{
+		name: 'Gavaldon GO!',
+		monogram: 'GG',
+		category: 'apps',
+		categoryLabel: 'Aplicación móvil',
+		technology: 'Android · Kotlin',
+		description: 'App móvil con estaciones, precios, compras de combustible e historial.',
+		repository: 'https://github.com/ISandBi/gavaldon-app',
+	},
+	{
+		name: 'NovaTech Landing',
+		monogram: 'NT',
+		category: 'web',
+		categoryLabel: 'Sitio web',
+		technology: 'Landing page',
+		description: 'Sitio de presentación de marca y propuesta digital.',
+		repository: 'https://github.com/ISandBi/novatech-landing',
+	},
+	{
+		name: 'StockTrack Inventory',
+		monogram: 'ST',
+		category: 'ops',
+		categoryLabel: 'Operaciones',
+		technology: 'Gestión de inventario',
+		description: 'Proyecto orientado al control de inventario con arquitectura monolítica.',
+		repository: 'https://github.com/ISandBi/stocktrack-inventory',
+	},
+	{
+		name: 'GrooveSpace',
+		monogram: 'GS',
+		category: 'web',
+		categoryLabel: 'Plataforma digital',
+		technology: 'JavaScript',
+		description: 'Proyecto web desarrollado con JavaScript; explora sus módulos directamente en GitHub.',
+		repository: 'https://github.com/ISandBi/groovespace',
+	},
+	{
+		name: 'IS&BI Solutions',
+		monogram: 'IS',
+		category: 'web',
+		categoryLabel: 'Sitio corporativo',
+		technology: 'Astro',
+		description: 'Nuestro espacio para presentar servicios, proyectos y soluciones digitales.',
+		repository: 'https://github.com/ISandBi/web-isandbi',
+	},
+	{
+		name: 'Aplicación Educativa para Kinder',
+		monogram: 'KN',
+		category: 'apps',
+		categoryLabel: 'Educación',
+		technology: 'Aplicación educativa',
+		description: 'Proyecto de aplicación educativa dirigido a nivel preescolar.',
+		repository: 'https://github.com/ISandBi/Aplicaci-n-Educativa-para-Kinder',
 	},
 ];
 ---
@@ -47,7 +131,8 @@ const projects = [
 			</a>
 			<nav class="main-nav" aria-label="Navegación principal">
 				<a href="#soluciones">Soluciones</a>
-				<a href="#proyectos">Proyectos</a>
+				<a href="#proyectos">Portafolio</a>
+				<a href="#explorar">Explorar</a>
 				<a href="#nosotros">Nosotros</a>
 				<a href="#contacto">Contacto</a>
 			</nav>
@@ -229,8 +314,8 @@ const projects = [
 						<h2>Proyectos con nombre<br /><span>y propósito.</span></h2>
 					</div>
 					<p>
-						Cada producto nace de una necesidad distinta. Aquí puedes completar la historia,
-						el cliente y el lugar de cada proyecto.
+						Una selección de productos creados para necesidades reales. Explora el código y
+						conoce el propósito detrás de cada proyecto.
 					</p>
 				</div>
 
@@ -246,12 +331,80 @@ const projects = [
 								<h3>{project.name}</h3>
 								<div class="project-meta">
 									<p><span>CLIENTE</span>{project.client}</p>
-									<p><span>LUGAR</span>{project.location}</p>
+									<p><span>ESPECIALIDAD</span>{project.type}</p>
 								</div>
+								<a class="project-repository" href={project.repository} target="_blank" rel="noopener noreferrer">
+									Ver proyecto en GitHub <span aria-hidden="true">↗</span>
+								</a>
 							</div>
 						</article>
 					))}
 				</div>
+			</div>
+		</section>
+
+		<section class="solution-explorer section-spacing" id="explorar" aria-labelledby="explorer-title">
+			<div class="section-wrap">
+				<div class="section-heading explorer-heading">
+					<div>
+						<p class="eyebrow"><span class="eyebrow-line"></span> EXPLORADOR DE SOLUCIONES</p>
+						<h2 id="explorer-title">Todo lo que estamos<br /><span>construyendo.</span></h2>
+					</div>
+					<p>
+						Explora los repositorios públicos de IS&BI. Filtra por especialidad o busca una
+						solución para conocer su código y evolución.
+					</p>
+				</div>
+
+				<div class="explorer-controls">
+					<label class="explorer-search">
+						<span class="visually-hidden">Buscar proyectos</span>
+						<svg viewBox="0 0 24 24" aria-hidden="true">
+							<circle cx="10.8" cy="10.8" r="6.8"></circle>
+							<path d="m16 16 4.5 4.5"></path>
+						</svg>
+						<input type="search" placeholder="Buscar por proyecto o tecnología" data-solution-search />
+					</label>
+					<div class="explorer-filters" role="group" aria-label="Filtrar proyectos por especialidad">
+						<button type="button" class="filter-chip is-active" data-category-filter="all" aria-pressed="true">Todos</button>
+						<button type="button" class="filter-chip" data-category-filter="web" aria-pressed="false">Web</button>
+						<button type="button" class="filter-chip" data-category-filter="apps" aria-pressed="false">Aplicaciones</button>
+						<button type="button" class="filter-chip" data-category-filter="ops" aria-pressed="false">Operaciones</button>
+					</div>
+				</div>
+
+				<p class="explorer-count" aria-live="polite">
+					<span data-solution-count>{solutions.length}</span>
+					{' '}<span data-solution-label>proyectos</span>{' '}
+					<span data-solution-descriptor>públicos</span>
+				</p>
+
+				<div class="solution-grid" data-solution-grid>
+					{solutions.map((solution, index) => (
+						<article
+							class="solution-card"
+							data-solution-card
+							data-category={solution.category}
+							data-search={`${solution.name} ${solution.description} ${solution.categoryLabel} ${solution.technology}`}
+							data-reveal
+						>
+							<div class="solution-card-top">
+								<span class="solution-monogram" aria-hidden="true">{solution.monogram}</span>
+								<span class="solution-card-index">{String(index + 1).padStart(2, '0')}</span>
+							</div>
+							<p class="solution-card-category">{solution.categoryLabel}</p>
+							<h3>{solution.name}</h3>
+							<p class="solution-card-description">{solution.description}</p>
+							<div class="solution-card-footer">
+								<span class="solution-technology">{solution.technology}</span>
+								<a href={solution.repository} target="_blank" rel="noopener noreferrer">
+									Explorar <span aria-hidden="true">↗</span>
+								</a>
+							</div>
+						</article>
+					))}
+				</div>
+				<p class="explorer-empty" data-solution-empty hidden>No encontramos proyectos con esa búsqueda.</p>
 			</div>
 		</section>
 
@@ -398,6 +551,45 @@ const projects = [
 	const emailLocal = contactForm?.querySelector<HTMLInputElement>('[name="email-local"]');
 	const emailDomain = contactForm?.querySelector<HTMLSelectElement>('[name="email-domain"]');
 	const completeEmail = contactForm?.querySelector<HTMLInputElement>('[data-complete-email]');
+	const searchInput = document.querySelector<HTMLInputElement>('[data-solution-search]');
+	const solutionCards = Array.from(document.querySelectorAll<HTMLElement>('[data-solution-card]'));
+	const categoryFilters = document.querySelectorAll<HTMLButtonElement>('[data-category-filter]');
+	const solutionCount = document.querySelector<HTMLElement>('[data-solution-count]');
+	const solutionLabel = document.querySelector<HTMLElement>('[data-solution-label]');
+	const solutionDescriptor = document.querySelector<HTMLElement>('[data-solution-descriptor]');
+	const emptyState = document.querySelector<HTMLElement>('[data-solution-empty]');
+	let activeCategory = 'all';
+
+	const filterSolutions = () => {
+		const query = searchInput?.value.trim().toLocaleLowerCase() ?? '';
+		let visibleCount = 0;
+
+		solutionCards.forEach((card) => {
+			const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
+			const matchesQuery = card.dataset.search?.toLocaleLowerCase().includes(query) ?? false;
+			const isVisible = matchesCategory && matchesQuery;
+			card.hidden = !isVisible;
+			visibleCount += Number(isVisible);
+		});
+
+		if (solutionCount) solutionCount.textContent = String(visibleCount);
+		if (solutionLabel) solutionLabel.textContent = visibleCount === 1 ? 'proyecto' : 'proyectos';
+		if (solutionDescriptor) solutionDescriptor.textContent = visibleCount === 1 ? 'público' : 'públicos';
+		if (emptyState) emptyState.hidden = visibleCount > 0;
+	};
+
+	searchInput?.addEventListener('input', filterSolutions);
+	categoryFilters.forEach((button) => {
+		button.addEventListener('click', () => {
+			activeCategory = button.dataset.categoryFilter ?? 'all';
+			categoryFilters.forEach((filter) => {
+				const isActive = filter === button;
+				filter.classList.toggle('is-active', isActive);
+				filter.setAttribute('aria-pressed', String(isActive));
+			});
+			filterSolutions();
+		});
+	});
 
 	contactForm?.addEventListener('submit', (event) => {
 		if (
