@@ -1,0 +1,255 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071c1f"/>
+      <stop offset="1" stop-color="#0d1c22"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1b2d2f"/>
+      <stop offset="1" stop-color="#132a2d"/>
+    </linearGradient>
+    <linearGradient id="alert" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#e96d6e"/>
+      <stop offset="1" stop-color="#dc5d5f"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#2d6d5a"/>
+      <stop offset="1" stop-color="#25493d"/>
+    </linearGradient>
+    <linearGradient id="yellow" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#d3a43f"/>
+      <stop offset="1" stop-color="#b47a19"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#e86c59"/>
+      <stop offset="1" stop-color="#c95554"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <rect x="0" y="0" width="1600" height="74" fill="#071b1f" stroke="#224e53"/>
+  <text x="38" y="48" fill="#f6e7cb" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">SafeCloud Hotel Systems</text>
+  <text x="38" y="70" fill="#99aeb5" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">Hotel Dori Me, Reforma Centro</text>
+
+  <g transform="translate(1048,18)">
+    <text x="0" y="25" fill="#dfece5" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">gerencia (Gerencia)</text>
+    <circle cx="160" cy="18" r="4" fill="#8ab5af"/>
+    <text x="172" y="25" fill="#dfece5" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">En vivo</text>
+    <text x="260" y="25" fill="#dfece5" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">Simular apertura forzada</text>
+    <rect x="455" y="0" width="130" height="34" rx="10" fill="#0d2a30" stroke="#5a787d"/>
+    <text x="520" y="23" text-anchor="middle" fill="#edf5f7" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600">Cerrar sesión</text>
+  </g>
+
+  <rect x="64" y="110" width="1472" height="76" rx="12" fill="url(#alert)"/>
+  <text x="120" y="156" fill="#fff7f5" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="600">Apertura forzada en la habitación 301 (piso 3).</text>
+  <rect x="1336" y="122" width="155" height="52" rx="12" fill="#f0f3f6"/>
+  <text x="1413" y="155" text-anchor="middle" fill="#103347" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="700">Ver caja</text>
+
+  <g>
+    <rect x="64" y="216" width="316" height="122" rx="12" fill="#132a2d" stroke="#2a3f42"/>
+    <text x="124" y="282" fill="#d8f3e8" font-family="'Segoe UI', sans-serif" font-size="54" font-weight="700">8</text>
+    <text x="124" y="320" fill="#bfd4d6" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="500">Disponibles</text>
+    <rect x="64" y="216" width="316" height="8" rx="4" fill="#6fb9a3" opacity="0.7"/>
+
+    <rect x="400" y="216" width="316" height="122" rx="12" fill="#132a2d" stroke="#2a3f42"/>
+    <text x="460" y="282" fill="#d8f3e8" font-family="'Segoe UI', sans-serif" font-size="54" font-weight="700">22</text>
+    <text x="460" y="320" fill="#bfd4d6" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="500">Ocupadas</text>
+
+    <rect x="736" y="216" width="316" height="122" rx="12" fill="#132a2d" stroke="#2a3f42"/>
+    <text x="796" y="282" fill="#f8edf1" font-family="'Segoe UI', sans-serif" font-size="54" font-weight="700">1</text>
+    <text x="796" y="320" fill="#bfd4d6" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="500">Apertura forzada</text>
+    <rect x="736" y="216" width="316" height="8" rx="4" fill="#e86d6d" opacity="0.8"/>
+
+    <rect x="1072" y="216" width="316" height="122" rx="12" fill="#132a2d" stroke="#2a3f42"/>
+    <text x="1132" y="282" fill="#f8edf1" font-family="'Segoe UI', sans-serif" font-size="54" font-weight="700">9</text>
+    <text x="1132" y="320" fill="#bfd4d6" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="500">Batería baja</text>
+    <rect x="1072" y="216" width="316" height="8" rx="4" fill="#f0c85d" opacity="0.85"/>
+  </g>
+
+  <g>
+    <rect x="64" y="392" width="912" height="502" rx="18" fill="#0f2127" stroke="#2a4044"/>
+    <text x="86" y="444" fill="#ebf1f5" font-family="'Segoe UI', sans-serif" font-size="34" font-weight="700">Cajas fuertes por piso</text>
+
+    <g transform="translate(86,470)">
+      <text x="0" y="24" fill="#dfeceb" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600">Piso 5</text>
+      <rect x="0" y="40" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="66" y="75" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">501</text>
+      <text x="66" y="98" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">14%</text>
+
+      <rect x="146" y="40" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="212" y="75" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">502</text>
+      <text x="212" y="98" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">14%</text>
+
+      <rect x="292" y="40" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="358" y="75" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">503</text>
+      <text x="358" y="98" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">14%</text>
+
+      <rect x="438" y="40" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="504" y="75" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">504</text>
+      <text x="504" y="98" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">14%</text>
+
+      <rect x="584" y="40" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="650" y="75" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">505</text>
+      <text x="650" y="98" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">14%</text>
+
+      <rect x="730" y="40" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="796" y="75" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">506</text>
+      <text x="796" y="98" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">14%</text>
+
+      <rect x="0" y="126" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="66" y="161" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">401</text>
+      <text x="66" y="184" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="146" y="126" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="212" y="161" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">402</text>
+      <text x="212" y="184" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="292" y="126" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="358" y="161" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">403</text>
+      <text x="358" y="184" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="438" y="126" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="504" y="161" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">404</text>
+      <text x="504" y="184" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="584" y="126" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="650" y="161" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">405</text>
+      <text x="650" y="184" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="730" y="126" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="796" y="161" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">406</text>
+      <text x="796" y="184" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="0" y="212" width="132" height="52" rx="8" fill="#de6f61"/>
+      <text x="66" y="247" text-anchor="middle" fill="#fff5f4" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">301</text>
+      <text x="66" y="270" text-anchor="middle" fill="#fff5f4" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">72%</text>
+
+      <rect x="146" y="212" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="212" y="247" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">302</text>
+      <text x="212" y="270" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="292" y="212" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="358" y="247" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">303</text>
+      <text x="358" y="270" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="438" y="212" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="504" y="247" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">304</text>
+      <text x="504" y="270" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="584" y="212" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="650" y="247" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">305</text>
+      <text x="650" y="270" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="730" y="212" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="796" y="247" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">306</text>
+      <text x="796" y="270" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <text x="0" y="332" fill="#dfeceb" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600">Piso 2</text>
+      <rect x="0" y="356" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="66" y="391" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">201</text>
+      <text x="66" y="414" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="146" y="356" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="212" y="391" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">202</text>
+      <text x="212" y="414" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">14%</text>
+
+      <rect x="292" y="356" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="358" y="391" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">203</text>
+      <text x="358" y="414" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="438" y="356" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="504" y="391" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">204</text>
+      <text x="504" y="414" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="584" y="356" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="650" y="391" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">205</text>
+      <text x="650" y="414" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="730" y="356" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="796" y="391" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">206</text>
+      <text x="796" y="414" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <text x="0" y="456" fill="#dfeceb" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600">Piso 1</text>
+      <rect x="0" y="480" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="66" y="515" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">101</text>
+      <text x="66" y="538" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="146" y="480" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="212" y="515" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">102</text>
+      <text x="212" y="538" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="292" y="480" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="358" y="515" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">103</text>
+      <text x="358" y="538" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="438" y="480" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="504" y="515" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">104</text>
+      <text x="504" y="538" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="584" y="480" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="650" y="515" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">105</text>
+      <text x="650" y="538" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+
+      <rect x="730" y="480" width="132" height="52" rx="8" fill="#1d4339"/>
+      <text x="796" y="515" text-anchor="middle" fill="#d8e8df" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">106</text>
+      <text x="796" y="538" text-anchor="middle" fill="#b9d2c8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">100%</text>
+    </g>
+
+    <g transform="translate(0,0)">
+      <circle cx="102" cy="595" r="7" fill="#75d0b0"/>
+      <text x="116" y="602" fill="#d2e0df" font-family="'Segoe UI', sans-serif" font-size="17" font-weight="500">Disponible</text>
+      <circle cx="270" cy="595" r="7" fill="#d8e5df"/>
+      <text x="284" y="602" fill="#d2e0df" font-family="'Segoe UI', sans-serif" font-size="17" font-weight="500">Ocupada</text>
+      <rect x="430" y="588" width="16" height="16" rx="4" fill="#de6f61"/>
+      <text x="452" y="602" fill="#d2e0df" font-family="'Segoe UI', sans-serif" font-size="17" font-weight="500">Apertura forzada</text>
+      <rect x="646" y="588" width="16" height="16" rx="4" fill="#f0c85d"/>
+      <text x="668" y="602" fill="#d2e0df" font-family="'Segoe UI', sans-serif" font-size="17" font-weight="500">Batería bajo</text>
+    </g>
+
+    <text x="86" y="650" fill="#9daeb2" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="500">Toca una caja para ver su detalle y su historial.</text>
+  </g>
+
+  <g>
+    <rect x="1008" y="392" width="528" height="502" rx="18" fill="#0f2127" stroke="#2a4044"/>
+    <text x="1042" y="444" fill="#ebf1f5" font-family="'Segoe UI', sans-serif" font-size="34" font-weight="700">Alertas activas (10)</text>
+
+    <g transform="translate(1042,474)">
+      <rect x="0" y="0" width="460" height="72" rx="10" fill="#1a2d32" stroke="#364d52"/>
+      <text x="18" y="32" fill="#f7d0cf" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="700">F</text>
+      <text x="34" y="32" fill="#ebf1f5" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600">Forzada</text>
+      <text x="18" y="56" fill="#d6e3e7" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">Hab. 301</text>
+      <text x="156" y="32" fill="#bfd4d6" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">Posible manipulación. Enviar a seguridad.</text>
+      <rect x="392" y="20" width="52" height="30" rx="8" fill="#f0f4f6"/>
+      <text x="418" y="41" text-anchor="middle" fill="#0d2a30" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700">Atender</text>
+
+      <rect x="0" y="86" width="460" height="72" rx="10" fill="#1a2d32" stroke="#364d52"/>
+      <text x="18" y="118" fill="#f7d0cf" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="700">Batería 14%</text>
+      <text x="18" y="142" fill="#d6e3e7" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">Hab. 202</text>
+      <text x="156" y="118" fill="#bfd4d6" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">Cambiar baterías en la próxima limpieza.</text>
+      <rect x="332" y="106" width="116" height="30" rx="8" fill="#f0f4f6"/>
+      <text x="390" y="127" text-anchor="middle" fill="#0d2a30" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700">Marcar cambiada</text>
+
+      <rect x="0" y="172" width="460" height="72" rx="10" fill="#1a2d32" stroke="#364d52"/>
+      <text x="18" y="204" fill="#f7d0cf" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="700">Batería 14%</text>
+      <text x="18" y="228" fill="#d6e3e7" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">Hab. 408</text>
+      <text x="156" y="204" fill="#bfd4d6" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">Cambiar baterías en la próxima limpieza.</text>
+      <rect x="332" y="192" width="116" height="30" rx="8" fill="#f0f4f6"/>
+      <text x="390" y="213" text-anchor="middle" fill="#0d2a30" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700">Marcar cambiada</text>
+
+      <rect x="0" y="258" width="460" height="72" rx="10" fill="#1a2d32" stroke="#364d52"/>
+      <text x="18" y="290" fill="#f7d0cf" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="700">Batería 14%</text>
+      <text x="18" y="314" fill="#d6e3e7" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">Hab. 501</text>
+      <text x="156" y="290" fill="#bfd4d6" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">Cambiar baterías en la próxima limpieza.</text>
+      <rect x="332" y="278" width="116" height="30" rx="8" fill="#f0f4f6"/>
+      <text x="390" y="299" text-anchor="middle" fill="#0d2a30" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700">Marcar cambiada</text>
+
+      <rect x="0" y="344" width="460" height="72" rx="10" fill="#1a2d32" stroke="#364d52"/>
+      <text x="18" y="376" fill="#f7d0cf" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="700">Batería 14%</text>
+      <text x="18" y="400" fill="#d6e3e7" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">Hab. 502</text>
+      <text x="156" y="376" fill="#bfd4d6" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="500">Cambiar baterías en la próxima limpieza.</text>
+      <rect x="332" y="364" width="116" height="30" rx="8" fill="#f0f4f6"/>
+      <text x="390" y="385" text-anchor="middle" fill="#0d2a30" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700">Marcar cambiada</text>
+    </g>
+  </g>
+</svg>

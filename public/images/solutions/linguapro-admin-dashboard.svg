@@ -1,0 +1,122 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#EDF1F3"/>
+  <rect width="340" height="1000" fill="#1F2E40"/>
+  <rect x="36" y="38" width="52" height="52" rx="14" fill="#1E4F76"/>
+  <text x="62" y="75" text-anchor="middle" fill="#F5F8FB" font-family="'Segoe UI', sans-serif" font-size="30" font-weight="700">L</text>
+  <text x="120" y="62" fill="#F3F5F7" font-family="'Segoe UI', sans-serif" font-size="30" font-weight="700">LinguaPro</text>
+  <text x="120" y="94" fill="#A9B9C7" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="400">Panel Administrativo</text>
+
+  <g opacity="0.95">
+    <rect x="26" y="170" width="288" height="52" rx="12" fill="#1A324A"/>
+    <path d="M60 196H79.5V181.5H90.5V196H110V197.5H60V196Z" fill="#F2F6F9"/>
+    <rect x="67" y="179" width="11" height="11" rx="2" stroke="#F2F6F9" stroke-width="2.3"/>
+    <rect x="82" y="180" width="11" height="11" rx="2" stroke="#F2F6F9" stroke-width="2.3"/>
+    <path d="M60 196H110" stroke="#F2F6F9" stroke-width="2" stroke-linecap="round"/>
+    <text x="130" y="202" fill="#F4F7FB" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">Cursos</text>
+  </g>
+
+  <g opacity="0.7">
+    <text x="130" y="280" fill="#D7E0E8" font-family="'Segoe UI', sans-serif" font-size="19" font-weight="500">Contenedores</text>
+    <text x="130" y="340" fill="#D7E0E8" font-family="'Segoe UI', sans-serif" font-size="19" font-weight="500">Maestros</text>
+    <text x="130" y="400" fill="#D7E0E8" font-family="'Segoe UI', sans-serif" font-size="19" font-weight="500">Alumnos</text>
+    <text x="130" y="460" fill="#D7E0E8" font-family="'Segoe UI', sans-serif" font-size="19" font-weight="500">Usuarios</text>
+    <text x="130" y="520" fill="#D7E0E8" font-family="'Segoe UI', sans-serif" font-size="19" font-weight="500">Clases en Vivo</text>
+  </g>
+
+  <g opacity="0.9">
+    <rect x="36" y="850" width="268" height="98" rx="12" fill="#2B3C4E"/>
+    <circle cx="78" cy="892" r="25" fill="#3C6FA5"/>
+    <text x="78" y="900" text-anchor="middle" fill="#EAF4FF" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">AL</text>
+    <text x="120" y="885" fill="#F0F5F9" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="700">Admin LinguaPro</text>
+    <text x="120" y="914" fill="#B9C9D7" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="400">Administrador</text>
+  </g>
+
+  <rect x="36" y="960" width="268" height="44" rx="10" fill="#F5F7F9" fill-opacity="0.02" stroke="#D2DBE3" stroke-opacity="0.7"/>
+  <text x="170" y="989" text-anchor="middle" fill="#E9F0F6" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600">Cerrar sesión</text>
+
+  <rect x="340" y="0" width="1260" height="1000" fill="#EEF3F5"/>
+  <text x="440" y="131" fill="#1E2C34" font-family="'Segoe UI', sans-serif" font-size="55" font-weight="700">Gestión de Cursos</text>
+  <rect x="1250" y="72" width="210" height="52" rx="14" fill="#1C2C3D"/>
+  <text x="1355" y="106" text-anchor="middle" fill="#F4F8FB" font-family="'Segoe UI', sans-serif" font-size="23" font-weight="700">+ Nuevo curso</text>
+  <text x="440" y="191" fill="#6A7886" font-family="'Segoe UI', sans-serif" font-size="25" font-weight="400">Crea, edita y publica los cursos de idiomas de LinguaPro.</text>
+
+  <rect x="438" y="240" width="1114" height="500" rx="18" fill="#F7F9FA" stroke="#D2DCE1" stroke-width="2"/>
+  <g>
+    <rect x="438" y="240" width="1114" height="72" fill="#F5F7F8" stroke="#D2DCE1" stroke-width="2"/>
+    <text x="490" y="286" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="19" font-weight="700">Curso</text>
+    <text x="725" y="286" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="19" font-weight="700">Idioma</text>
+    <text x="908" y="286" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="19" font-weight="700">Nivel</text>
+    <text x="1040" y="286" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="19" font-weight="700">Profesor</text>
+    <text x="1280" y="286" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="19" font-weight="700">Estado</text>
+  </g>
+
+  <g>
+    <rect x="438" y="312" width="1114" height="82" fill="#F5F7F8" stroke="#D2DCE1" stroke-width="2"/>
+    <text x="490" y="361" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">ingles medio</text>
+    <text x="725" y="361" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">ingles</text>
+    <text x="908" y="361" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">C1</text>
+    <text x="1040" y="361" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">adrian Monterrubio</text>
+    <rect x="1278" y="334" width="108" height="34" rx="10" fill="#CDEED9"/>
+    <text x="1332" y="356" text-anchor="middle" fill="#1D6F3D" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">Publicado</text>
+    <rect x="1408" y="334" width="86" height="34" rx="10" fill="#F3F5F7" stroke="#C8D3DB" stroke-width="2"/>
+    <text x="1451" y="356" text-anchor="middle" fill="#384854" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600">Editar</text>
+    <rect x="1510" y="334" width="92" height="34" rx="10" fill="#F3F5F7" stroke="#C8D3DB" stroke-width="2"/>
+    <text x="1556" y="356" text-anchor="middle" fill="#384854" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600">Eliminar</text>
+  </g>
+
+  <g>
+    <rect x="438" y="394" width="1114" height="82" fill="#F5F7F8" stroke="#D2DCE1" stroke-width="2"/>
+    <text x="490" y="443" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">Inglés Avanzado C1</text>
+    <text x="725" y="443" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">Inglés</text>
+    <text x="908" y="443" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">C1</text>
+    <text x="1040" y="443" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">adrian Monterrubio</text>
+    <rect x="1278" y="416" width="108" height="34" rx="10" fill="#CDEED9"/>
+    <text x="1332" y="438" text-anchor="middle" fill="#1D6F3D" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">Publicado</text>
+    <rect x="1408" y="416" width="86" height="34" rx="10" fill="#F3F5F7" stroke="#C8D3DB" stroke-width="2"/>
+    <text x="1451" y="438" text-anchor="middle" fill="#384854" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600">Editar</text>
+    <rect x="1510" y="416" width="92" height="34" rx="10" fill="#F3F5F7" stroke="#C8D3DB" stroke-width="2"/>
+    <text x="1556" y="438" text-anchor="middle" fill="#384854" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600">Eliminar</text>
+  </g>
+
+  <g>
+    <rect x="438" y="476" width="1114" height="82" fill="#F5F7F8" stroke="#D2DCE1" stroke-width="2"/>
+    <text x="490" y="525" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">Francés Básico A2</text>
+    <text x="725" y="525" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">Francés</text>
+    <text x="908" y="525" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">A2</text>
+    <text x="1040" y="525" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">Prof. Laura R.</text>
+    <rect x="1278" y="498" width="108" height="34" rx="10" fill="#CDEED9"/>
+    <text x="1332" y="520" text-anchor="middle" fill="#1D6F3D" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">Publicado</text>
+    <rect x="1408" y="498" width="86" height="34" rx="10" fill="#F3F5F7" stroke="#C8D3DB" stroke-width="2"/>
+    <text x="1451" y="520" text-anchor="middle" fill="#384854" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600">Editar</text>
+    <rect x="1510" y="498" width="92" height="34" rx="10" fill="#F3F5F7" stroke="#C8D3DB" stroke-width="2"/>
+    <text x="1556" y="520" text-anchor="middle" fill="#384854" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600">Eliminar</text>
+  </g>
+
+  <g>
+    <rect x="438" y="558" width="1114" height="82" fill="#F5F7F8" stroke="#D2DCE1" stroke-width="2"/>
+    <text x="490" y="607" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">Francés Intermedio B2</text>
+    <text x="725" y="607" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">Francés</text>
+    <text x="908" y="607" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">B2</text>
+    <text x="1040" y="607" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">Prof. Laura R.</text>
+    <rect x="1278" y="580" width="108" height="34" rx="10" fill="#CDEED9"/>
+    <text x="1332" y="602" text-anchor="middle" fill="#1D6F3D" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">Publicado</text>
+    <rect x="1408" y="580" width="86" height="34" rx="10" fill="#F3F5F7" stroke="#C8D3DB" stroke-width="2"/>
+    <text x="1451" y="602" text-anchor="middle" fill="#384854" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600">Editar</text>
+    <rect x="1510" y="580" width="92" height="34" rx="10" fill="#F3F5F7" stroke="#C8D3DB" stroke-width="2"/>
+    <text x="1556" y="602" text-anchor="middle" fill="#384854" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600">Eliminar</text>
+  </g>
+
+  <g>
+    <rect x="438" y="640" width="1114" height="82" fill="#F5F7F8" stroke="#D2DCE1" stroke-width="2"/>
+    <text x="490" y="689" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">Alemán Básico A1</text>
+    <text x="725" y="689" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">Alemán</text>
+    <text x="908" y="689" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">A1</text>
+    <text x="1040" y="689" fill="#2A3945" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600">Prof. Laura R.</text>
+    <rect x="1278" y="662" width="108" height="34" rx="10" fill="#CDEED9"/>
+    <text x="1332" y="684" text-anchor="middle" fill="#1D6F3D" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">Publicado</text>
+    <rect x="1408" y="662" width="86" height="34" rx="10" fill="#F3F5F7" stroke="#C8D3DB" stroke-width="2"/>
+    <text x="1451" y="684" text-anchor="middle" fill="#384854" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600">Editar</text>
+    <rect x="1510" y="662" width="92" height="34" rx="10" fill="#F3F5F7" stroke="#C8D3DB" stroke-width="2"/>
+    <text x="1556" y="684" text-anchor="middle" fill="#384854" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600">Eliminar</text>
+  </g>
+</svg>

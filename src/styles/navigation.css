@@ -442,6 +442,83 @@ html[data-theme='dark'] .feature-orbit-two {
 	border-color: rgb(255 111 139 / 15%);
 }
 
+.feature-sparkles {
+	position: absolute;
+	z-index: 1;
+	inset: -8% -4% -5%;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.feature-sparkles::before,
+.feature-sparkles::after {
+	position: absolute;
+	inset: -24% 0;
+	content: '';
+	background-repeat: no-repeat;
+	filter: drop-shadow(0 0 5px rgb(157 94 255 / 70%));
+	opacity: 0;
+}
+
+.feature-sparkles::before {
+	background-image:
+		radial-gradient(circle, #fff 0 1px, rgb(190 143 255 / 90%) 1.5px, transparent 3px),
+		radial-gradient(circle, #fff 0 1px, rgb(172 112 255 / 88%) 1.5px, transparent 3px),
+		radial-gradient(circle, rgb(232 208 255 / 95%) 0 1px, transparent 2.5px),
+		radial-gradient(circle, #fff 0 1px, rgb(181 126 255 / 88%) 1.5px, transparent 3px),
+		radial-gradient(circle, rgb(220 190 255 / 95%) 0 1px, transparent 2.5px),
+		radial-gradient(circle, #fff 0 1px, rgb(181 126 255 / 88%) 1.5px, transparent 3px),
+		radial-gradient(circle, rgb(232 208 255 / 95%) 0 1px, transparent 2.5px),
+		radial-gradient(circle, #fff 0 1px, rgb(190 143 255 / 90%) 1.5px, transparent 3px),
+		radial-gradient(circle, rgb(232 208 255 / 95%) 0 1px, transparent 2.5px),
+		radial-gradient(circle, #fff 0 1px, rgb(181 126 255 / 88%) 1.5px, transparent 3px),
+		radial-gradient(circle, rgb(220 190 255 / 95%) 0 1px, transparent 2.5px),
+		radial-gradient(circle, #fff 0 1px, rgb(190 143 255 / 90%) 1.5px, transparent 3px),
+		radial-gradient(circle, rgb(232 208 255 / 95%) 0 1px, transparent 2.5px),
+		radial-gradient(circle, #fff 0 1px, rgb(181 126 255 / 88%) 1.5px, transparent 3px),
+		radial-gradient(circle, rgb(220 190 255 / 95%) 0 1px, transparent 2.5px);
+	background-position: 8% 8%, 28% 42%, 46% 18%, 63% 65%, 81% 30%, 94% 72%, 18% 82%, 73% 10%, 37% 9%, 56% 82%, 88% 8%, 12% 58%, 69% 46%, 34% 64%, 95% 37%, 3% 35%;
+	background-size: 8px 8px, 7px 7px, 5px 5px, 9px 9px, 5px 5px, 7px 7px, 5px 5px, 8px 8px, 5px 5px, 7px 7px, 8px 8px, 5px 5px, 6px 6px, 8px 8px, 5px 5px, 7px 7px;
+	animation: feature-glitter-fall 9s ease-in-out infinite;
+}
+
+.feature-sparkles::after {
+	background-image:
+		linear-gradient(90deg, transparent 42%, rgb(255 255 255 / 95%) 50%, transparent 58%),
+		linear-gradient(0deg, transparent 42%, rgb(255 255 255 / 95%) 50%, transparent 58%),
+		radial-gradient(circle, #fff 0 1px, rgb(190 143 255 / 90%) 1.5px, transparent 3px),
+		linear-gradient(90deg, transparent 42%, rgb(245 226 255 / 95%) 50%, transparent 58%),
+		linear-gradient(0deg, transparent 42%, rgb(245 226 255 / 95%) 50%, transparent 58%),
+		linear-gradient(90deg, transparent 42%, rgb(255 255 255 / 95%) 50%, transparent 58%),
+		linear-gradient(0deg, transparent 42%, rgb(255 255 255 / 95%) 50%, transparent 58%),
+		linear-gradient(90deg, transparent 42%, rgb(245 226 255 / 95%) 50%, transparent 58%),
+		linear-gradient(0deg, transparent 42%, rgb(245 226 255 / 95%) 50%, transparent 58%),
+		radial-gradient(circle, rgb(232 208 255 / 95%) 0 1px, transparent 2.5px),
+		radial-gradient(circle, #fff 0 1px, rgb(190 143 255 / 90%) 1.5px, transparent 3px),
+		radial-gradient(circle, rgb(232 208 255 / 95%) 0 1px, transparent 2.5px),
+		linear-gradient(180deg, transparent, rgb(220 190 255 / 80%), transparent),
+		linear-gradient(180deg, transparent, rgb(220 190 255 / 75%), transparent);
+	background-position: 19% 23%, 19% 23%, 52% 54%, 77% 12%, 77% 12%, 38% 36%, 38% 36%, 91% 79%, 91% 79%, 89% 46%, 24% 76%, 61% 9%, 46% 69%, 72% 61%;
+	background-size: 12px 12px, 12px 12px, 7px 7px, 10px 10px, 10px 10px, 10px 10px, 10px 10px, 8px 8px, 8px 8px, 5px 5px, 7px 7px, 5px 5px, 2px 18px, 2px 14px;
+	animation: feature-glitter-fall 12s ease-in-out -5s infinite;
+	filter: drop-shadow(0 0 8px rgb(184 134 255 / 90%));
+}
+
+@keyframes feature-glitter-fall {
+	0%,
+	100% {
+		opacity: 0;
+		transform: translate3d(-8px, -7%, 0) rotate(-3deg);
+	}
+	18%,
+	78% {
+		opacity: 0.9;
+	}
+	50% {
+		transform: translate3d(10px, 9%, 0) rotate(4deg);
+	}
+}
+
 .feature-copy {
 	position: relative;
 	z-index: 2;
