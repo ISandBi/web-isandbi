@@ -75,8 +75,7 @@ textarea {
 }
 
 .eyebrow span,
-.hero-meta i,
-.hero-project figcaption i {
+.hero-meta i {
 	width: 7px;
 	height: 7px;
 	flex: 0 0 auto;

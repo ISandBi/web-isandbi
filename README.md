@@ -43,7 +43,15 @@ Los estilos están separados por responsabilidad en `src/styles/`: `tokens.css` 
 explorador, y `responsive.css` y `motion.css` atienden adaptación y animaciones. La página principal
 importa estos módulos por separado para mantener cada hoja enfocada.
 
-Las capturas de proyectos del portafolio están en `public/images/solutions/`:
+El portafolio representa los proyectos web y operativos en equipos portátiles y las aplicaciones
+móviles Android en teléfonos, sin tarjetas. Las laptops incluyen una barra de navegador con la
+dirección de marca del proyecto. GrooveSpace ocupa el escaparate principal. El explorador permite
+alternar las laptops entre HP y Mac, y los teléfonos entre Android y iPhone. En móvil, el menú
+flotante se puede arrastrar; sus opciones acompañan el movimiento con una onda y se compactan
+mientras se mueve, sin mostrar la barra de desplazamiento.
+
+El logotipo institucional está en `public/images/isbi-consultoria-logo.png`. Las capturas de
+proyectos del portafolio están en `public/images/solutions/`:
 
 - `public/images/instalaciones.jpeg`
 - `public/images/equipo-consultoria.jpg`
@@ -77,7 +85,8 @@ escribir el usuario y elegir `@gmail.com` o `@hotmail.com`.
 
 ## Lógica sencilla incluida
 
-- **Interfaz:** diseño responsive con temas claro y oscuro; la preferencia se guarda en el navegador.
+- **Interfaz:** diseño responsive con temas claro y oscuro; en móvil, el menú flotante ofrece
+  opciones independientes, se puede arrastrar y conserva su posición en el navegador.
 - **Explorador de soluciones:** busca por proyecto, descripción o tecnología, y filtra por categoría.
 - **Portafolio visual:** incluye capturas de Dávila Tours, OrderSync, DeskFlex, GrooveSpace,
   NovaTech, Kinder Nahla y Gavaldoon Go!

@@ -25,6 +25,7 @@ interface Solution {
 	technology: string;
 	description: string;
 	repository?: string;
+	domain?: string;
 	featured?: boolean;
 	image?: string;
 	imageAlt?: string;
@@ -38,6 +39,7 @@ const solutions: Solution[] = [
 		categoryLabel: 'Turismo · Plataforma web',
 		technology: 'Python · Flask',
 		description: 'Reservaciones y apartados de viajes, con control de flota y asignación de choferes.',
+		domain: 'davilatours.com',
 		image: '/images/solutions/davila-tours-reservas.png',
 		imageAlt: 'Calendario de reservaciones de Dávila Tours',
 		repository: 'https://github.com/ISandBi/davila-tours',
@@ -48,6 +50,7 @@ const solutions: Solution[] = [
 		categoryLabel: 'Comercio · Gestión de pedidos',
 		technology: 'Angular 20',
 		description: 'Centraliza los pedidos online y sincroniza canales de venta como Shopify y Amazon.',
+		domain: 'ordersync.com',
 		image: '/images/solutions/ordersync-ecommerce.png',
 		imageAlt: 'Pantalla de inicio de OrderSync y centro de distribución',
 		repository: 'https://github.com/ISandBi/ordersync-ecommerce',
@@ -58,6 +61,7 @@ const solutions: Solution[] = [
 		categoryLabel: 'Coworking · Reservas y acceso',
 		technology: 'Flask',
 		description: 'Reserva escritorios y salas por hora o día, y gestiona el acceso con códigos QR.',
+		domain: 'deskflex.com.mx',
 		gallery: [
 			{ image: '/images/solutions/deskflex-reservas.png', alt: 'Mapa interactivo para reservar espacios de coworking' },
 			{ image: '/images/solutions/deskflex-qr-acceso.png', alt: 'Código QR y detalle de acceso de DeskFlex' },
@@ -90,6 +94,7 @@ const solutions: Solution[] = [
 		categoryLabel: 'Música · Reservas de estudios',
 		technology: 'React',
 		description: 'Encuentra estudios y reserva salas de ensayo en tiempo real, sin cruces de horarios.',
+		domain: 'groovespace.com',
 		featured: true,
 		gallery: [
 			{ image: '/images/solutions/groovespace-inicio.png', alt: 'Portada de GrooveSpace' },
@@ -103,6 +108,7 @@ const solutions: Solution[] = [
 		categoryLabel: 'Tecnología · Sitio web',
 		technology: 'Landing page',
 		description: 'Presencia web para una startup tecnológica, diseñada para presentar sus servicios y atraer clientes.',
+		domain: 'novatech.com',
 		image: '/images/solutions/novatech-landing.png',
 		imageAlt: 'Sitio web de NovaTech: soluciones de infraestructura y tecnología',
 		repository: 'https://github.com/ISandBi/novatech-landing',
@@ -113,6 +119,7 @@ const solutions: Solution[] = [
 		categoryLabel: 'Inventario · Operaciones',
 		technology: 'Gestión de inventario',
 		description: 'Control de productos en stock, reportes y alertas de escasez para una tienda de electrónicos.',
+		domain: 'stocktrack.com',
 		repository: 'https://github.com/ISandBi/stocktrack-inventory',
 	},
 	{
@@ -121,6 +128,7 @@ const solutions: Solution[] = [
 		categoryLabel: 'Sitio corporativo',
 		technology: 'Astro',
 		description: 'Nuestro espacio para presentar servicios, soluciones y proyectos digitales.',
+		domain: 'isandbi.com',
 		repository: 'https://github.com/ISandBi/web-isandbi',
 	},
 	{
@@ -129,6 +137,7 @@ const solutions: Solution[] = [
 		categoryLabel: 'Educación · Cursos en línea',
 		technology: 'Propuesta · Laravel · Vue.js',
 		description: 'Cursos de idiomas en línea, clases en vivo y seguimiento del progreso de estudiantes.',
+		domain: 'linguapro.com',
 	},
 	{
 		name: 'SafeCloud Hotel Systems',
@@ -136,6 +145,7 @@ const solutions: Solution[] = [
 		categoryLabel: 'Hotelería · Monitoreo IoT',
 		technology: 'Propuesta · IoT',
 		description: 'Monitoreo de cajas fuertes con alertas y registro de actividad para hoteles.',
+		domain: 'safecloudhotels.com',
 	},
 ];
 ---
@@ -144,40 +154,53 @@ const solutions: Solution[] = [
 	<header class="site-header">
 		<div class="header-inner">
 			<a class="brand" href="#inicio" aria-label="IS&BI Solutions, inicio">
-				<span class="brand-mark" aria-hidden="true">IS</span>
-				<span>IS&BI <span class="brand-sub">SOLUTIONS</span></span>
+				<img class="brand-logo" src="/images/isbi-consultoria-logo.png" alt="IS & BI S.A. — Inspiration Software" />
 			</a>
-			<nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-				<a href="#inicio">
-					<svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z" /></svg>
-					<span>Inicio</span>
-				</a>
-				<a href="#soluciones">
-					<svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="8" height="7" rx="1" /><rect x="13" y="4" width="8" height="7" rx="1" /><rect x="3" y="13" width="8" height="7" rx="1" /><rect x="13" y="13" width="8" height="7" rx="1" /></svg>
-					<span>Soluciones</span>
-				</a>
-				<a href="#explorar">
-					<svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M3 9h18m-12 0v11" /></svg>
-					<span>Proyectos</span>
-				</a>
-				<a href="#nosotros">
-					<svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" /><path d="M3 20v-1a6 6 0 0 1 12 0v1Zm12-12a3 3 0 0 1 0 6m2 2a5 5 0 0 1 4 5" /></svg>
-					<span>Nosotros</span>
-				</a>
-				<a href="#contacto">
-					<svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>
-					<span>Contacto</span>
-				</a>
-				<button class="theme-toggle" type="button" aria-label="Cambiar a modo oscuro" aria-pressed="false" data-theme-toggle>
-					<svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-						<circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
-					</svg>
-					<svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-						<path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.6 8.6 0 1 0 20.2 15.1Z" />
-					</svg>
-					<span class="mobile-theme-label">Tema</span>
+			<div class="mobile-menu-shell" data-mobile-menu>
+				<button
+					class="mobile-menu-toggle"
+					type="button"
+					aria-label="Abrir navegación"
+					aria-expanded="false"
+					aria-controls="main-nav"
+					data-menu-toggle
+				>
+					<svg class="menu-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+					<svg class="menu-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+					<span class="sr-only" data-menu-label>Abrir navegación</span>
 				</button>
-			</nav>
+				<nav class="main-nav" id="main-nav" aria-label="Navegación principal" data-main-nav>
+					<a href="#inicio">
+						<svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z" /></svg>
+						<span>Inicio</span>
+					</a>
+					<a href="#soluciones">
+						<svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="8" height="7" rx="1" /><rect x="13" y="4" width="8" height="7" rx="1" /><rect x="3" y="13" width="8" height="7" rx="1" /><rect x="13" y="13" width="8" height="7" rx="1" /></svg>
+						<span>Soluciones</span>
+					</a>
+					<a href="#explorar">
+						<svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M3 9h18m-12 0v11" /></svg>
+						<span>Proyectos</span>
+					</a>
+					<a href="#nosotros">
+						<svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" /><path d="M3 20v-1a6 6 0 0 1 12 0v1Zm12-12a3 3 0 0 1 0 6m2 2a5 5 0 0 1 4 5" /></svg>
+						<span>Nosotros</span>
+					</a>
+					<a href="#contacto">
+						<svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>
+						<span>Contacto</span>
+					</a>
+					<button class="theme-toggle" type="button" role="switch" aria-label="Modo oscuro" aria-checked="false" data-theme-toggle>
+						<span class="theme-switch-label">Tema</span>
+						<span class="theme-switch-track" aria-hidden="true">
+							<span class="theme-switch-thumb">
+								<svg class="theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
+								<svg class="theme-icon-moon" viewBox="0 0 24 24"><path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.6 8.6 0 1 0 20.2 15.1Z" /></svg>
+							</span>
+						</span>
+					</button>
+				</nav>
+			</div>
 			<div class="header-actions">
 				<a class="button button-small" href="#contacto">Hablemos <span aria-hidden="true">↗</span></a>
 			</div>
@@ -204,18 +227,33 @@ const solutions: Solution[] = [
 					</div>
 				</div>
 				<div class="hero-visual" data-reveal>
-					<figure class="hero-project">
-						<img
-							src="/images/solutions/groovespace-inicio.png"
-							alt="Pantalla principal de GrooveSpace, plataforma para descubrir y reservar estudios de ensayo"
-							fetchpriority="high"
-						/>
-						<figcaption>
-							<span><i></i> PROYECTO ESTRELLA · CONSULTORÍA</span>
-							<strong>GrooveSpace</strong>
-							<a href="#project-groovespace" aria-label="Ver GrooveSpace, proyecto estrella, en el portafolio">↗</a>
-						</figcaption>
-					</figure>
+					<div class="feature-orbit feature-orbit-one" aria-hidden="true"></div>
+					<div class="feature-orbit feature-orbit-two" aria-hidden="true"></div>
+					<div class="feature-copy">
+						<p class="feature-kicker"><span></span> PROYECTO ESTRELLA · CONSULTORÍA</p>
+						<h2>Groove<span>Space</span></h2>
+						<p>Encuentra estudios y reserva tu espacio para crear, sin cruces de horarios.</p>
+						<div class="feature-tags"><span>React</span><span>Reservas en línea</span></div>
+						<a class="feature-link" href="#project-groovespace">Conoce el proyecto <span aria-hidden="true">↘</span></a>
+					</div>
+					<div class="feature-product">
+						<div class="feature-device">
+							<div class="feature-screen">
+								<div class="feature-browser">
+									<span></span><span></span><span></span>
+									<i>groovespace.com</i>
+									<b>GS</b>
+								</div>
+								<img
+									src="/images/solutions/groovespace-inicio.png"
+									alt="Pantalla principal de GrooveSpace para descubrir y reservar estudios de ensayo"
+									fetchpriority="high"
+								/>
+							</div>
+							<div class="feature-base"><span></span></div>
+						</div>
+						<div class="feature-note"><span>01</span><strong>De la búsqueda<br />a la reservación.</strong></div>
+					</div>
 				</div>
 			</div>
 			<div class="hero-bottom section-wrap"><span>TECNOLOGÍA QUE SE ADAPTA A TI</span><a href="#soluciones" aria-label="Desplazarse a soluciones">↓</a></div>
@@ -273,8 +311,20 @@ const solutions: Solution[] = [
 						<button class="filter-chip" type="button" data-category-filter="ops" aria-pressed="false">Operaciones</button>
 					</div>
 				</div>
+				<div class="device-filters" data-reveal>
+					<div class="device-filter-group" role="group" aria-label="Modelo de laptop">
+						<span>Laptop</span>
+						<button class="device-filter is-active" type="button" data-device-filter="laptop" data-device-model="hp" aria-pressed="true">HP</button>
+						<button class="device-filter" type="button" data-device-filter="laptop" data-device-model="mac" aria-pressed="false">Mac</button>
+					</div>
+					<div class="device-filter-group" role="group" aria-label="Modelo de teléfono">
+						<span>Teléfono</span>
+						<button class="device-filter is-active" type="button" data-device-filter="phone" data-device-model="android" aria-pressed="true">Android</button>
+						<button class="device-filter" type="button" data-device-filter="phone" data-device-model="iphone" aria-pressed="false">iPhone</button>
+					</div>
+				</div>
 				<p class="result-count" aria-live="polite"><span data-solution-count>{solutions.length}</span> soluciones</p>
-				<div class="solution-grid" data-solution-grid>
+				<div class="solution-grid" data-solution-grid data-laptop-model="hp" data-phone-model="android">
 					{solutions.map((solution, index) => (
 						<article
 							class="solution-card"
@@ -284,29 +334,46 @@ const solutions: Solution[] = [
 							data-search={`${solution.name} ${solution.description} ${solution.categoryLabel} ${solution.technology}`}
 							data-reveal
 						>
-							{solution.image ? (
-								<div class="card-image">
-									<img src={solution.image} alt={solution.imageAlt} loading="lazy" />
+							<div class:list={['device-stage', solution.category === 'apps' ? 'phone-stage' : 'laptop-stage']}>
+								<div class:list={['device', solution.category === 'apps' ? 'device-phone' : 'device-laptop']}>
+									<div class="device-display">
+										{solution.category !== 'apps' && (
+											<div class="device-browser" aria-label={`Navegador abierto en ${solution.name}`}>
+												<span class="browser-controls" aria-hidden="true"><i></i><i></i><i></i></span>
+												<svg class="browser-lock" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="7" width="9" height="7" rx="1.5" /><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" /></svg>
+												<span class="browser-address">
+													{solution.domain ?? `isandbi.com/${solution.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+												</span>
+												<svg class="browser-action" viewBox="0 0 16 16" aria-hidden="true"><path d="M13 6A5 5 0 0 0 4 3.5L2.5 5M2.5 2.5V5H5M3 10a5 5 0 0 0 9 2.5l1.5-1.5M13.5 13.5V11H11" /></svg>
+											</div>
+										)}
+										{solution.image ? (
+											<img src={solution.image} alt={solution.imageAlt} loading="lazy" />
+										) : solution.gallery ? (
+											<div class="device-gallery">
+												{solution.gallery.map((screenshot) => <img src={screenshot.image} alt={screenshot.alt} loading="lazy" />)}
+											</div>
+										) : (
+											<div class="device-placeholder" aria-hidden="true">
+												<span>{solution.name.split(' ').map((word) => word[0]).slice(0, 2).join('')}</span>
+												<i>IS&BI / SOLUTIONS</i>
+											</div>
+										)}
+									</div>
+									{solution.category === 'web' || solution.category === 'ops'
+										? <div class="device-base" aria-hidden="true"><span /></div>
+										: <span class="device-sensor" aria-hidden="true" />}
 								</div>
-							) : solution.gallery ? (
-								<div class="card-image card-gallery">
-									{solution.gallery.map((screenshot) => <img src={screenshot.image} alt={screenshot.alt} loading="lazy" />)}
-								</div>
-							) : (
-								<div class="card-image card-placeholder" aria-hidden="true">
-									<span>{solution.name.split(' ').map((word) => word[0]).slice(0, 2).join('')}</span>
-									<i>IS&BI / SOLUTIONS</i>
-								</div>
-							)}
-							<div class="card-content">
-								<div class="card-overline">
+							</div>
+							<div class="project-info">
+								<div class="project-overline">
 									<span>{solution.categoryLabel}</span>
 									{solution.featured && <span class="featured-badge">Proyecto estrella</span>}
 									<span>{String(index + 1).padStart(2, '0')}</span>
 								</div>
 								<h3>{solution.name}</h3>
 								<p>{solution.description}</p>
-								<div class="card-footer">
+								<div class="project-footer">
 									<span class="tech-tag">{solution.technology}</span>
 									{solution.repository ? (
 										<a href={solution.repository} target="_blank" rel="noopener noreferrer" aria-label={`Explorar ${solution.name} en GitHub`}>
@@ -396,7 +463,7 @@ const solutions: Solution[] = [
 	<footer class="site-footer">
 		<div class="section-wrap footer-inner">
 			<a class="brand footer-brand" href="#inicio" aria-label="IS&BI Solutions, volver al inicio">
-				<span class="brand-mark" aria-hidden="true">IS</span><span>IS&BI <span class="brand-sub">SOLUTIONS</span></span>
+				<img class="brand-logo" src="/images/isbi-consultoria-logo.png" alt="IS & BI S.A. — Inspiration Software" />
 			</a>
 			<p>Tecnología hecha contigo.</p>
 			<a href="https://github.com/ISandBi" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
@@ -406,12 +473,14 @@ const solutions: Solution[] = [
 </Layout>
 
 <script>
-	const themeButton = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+	const themeButtons = document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]');
 	const themeStorageKey = 'isandbi-theme';
 	const applyTheme = (theme: 'light' | 'dark') => {
 		document.documentElement.dataset.theme = theme;
-		themeButton?.setAttribute('aria-pressed', String(theme === 'dark'));
-		themeButton?.setAttribute('aria-label', theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+		themeButtons.forEach((button) => {
+			button.setAttribute('aria-checked', String(theme === 'dark'));
+			button.setAttribute('aria-label', theme === 'dark' ? 'Modo oscuro activado' : 'Modo oscuro desactivado');
+		});
 	};
 
 	const storedTheme = localStorage.getItem(themeStorageKey);
@@ -420,10 +489,200 @@ const solutions: Solution[] = [
 		: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 	applyTheme(initialTheme);
 
-	themeButton?.addEventListener('click', () => {
+	themeButtons.forEach((button) => button.addEventListener('click', () => {
 		const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
 		applyTheme(nextTheme);
 		localStorage.setItem(themeStorageKey, nextTheme);
+	}));
+
+	const mobileMenu = document.querySelector<HTMLElement>('[data-mobile-menu]');
+	const menuToggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+	const mainNav = document.querySelector<HTMLElement>('[data-main-nav]');
+	const menuLabel = document.querySelector<HTMLElement>('[data-menu-label]');
+	const menuPositionKey = 'isandbi-menu-position';
+	const mobileViewport = window.matchMedia('(max-width: 760px)');
+	const menuItems = mainNav ? Array.from(mainNav.querySelectorAll<HTMLElement>(':scope > *')) : [];
+	menuItems.forEach((item, index) => item.style.setProperty('--trail-index', String(index + 1)));
+	let pointerStart: { id: number; x: number; y: number; left: number; top: number } | undefined;
+	let dragOffset: { x: number; y: number } | undefined;
+	let dragged = false;
+	let suppressNextClick = false;
+
+	const clampMenuPosition = (left: number, top: number) => {
+		const viewportWidth = document.documentElement.clientWidth || window.innerWidth;
+		return {
+			left: Math.max(8, Math.min(left, viewportWidth - (mobileMenu?.offsetWidth ?? 44) - 8)),
+			top: Math.max(8, Math.min(top, window.innerHeight - (mobileMenu?.offsetHeight ?? 44) - 8)),
+		};
+	};
+
+	const setMenuPosition = (left: number, top: number) => {
+		if (!mobileMenu) return;
+		const position = clampMenuPosition(left, top);
+		mobileMenu.classList.add('is-positioned');
+		mobileMenu.style.left = `${position.left}px`;
+		mobileMenu.style.top = `${position.top}px`;
+		mobileMenu.style.right = 'auto';
+		mobileMenu.style.bottom = 'auto';
+	};
+
+	const updateMenuDirection = () => {
+		if (!mobileMenu || !menuToggle || !mainNav) return;
+		const dock = mobileMenu.getBoundingClientRect();
+		const viewportWidth = document.documentElement.clientWidth || window.innerWidth;
+		const leftSpace = Math.max(0, dock.left - 18);
+		const rightSpace = Math.max(0, viewportWidth - dock.right - 18);
+		const openRight = rightSpace >= leftSpace;
+		const panelWidth = Math.min(216, Math.max(112, openRight ? rightSpace : leftSpace));
+		mainNav.style.width = `${panelWidth}px`;
+		const panelHeight = Math.min(mainNav.getBoundingClientRect().height, window.innerHeight - 16);
+		const desiredLeft = openRight ? dock.right + 10 : dock.left - panelWidth - 10;
+		const panelLeft = Math.max(8, Math.min(desiredLeft, viewportWidth - panelWidth - 8));
+		const belowPosition = dock.bottom + 12;
+		const abovePosition = dock.top - panelHeight - 12;
+		const openDown = belowPosition + panelHeight <= window.innerHeight - 8 || abovePosition < 8;
+		const desiredTop = openDown ? belowPosition : abovePosition;
+		const panelTop = Math.max(8, Math.min(desiredTop, window.innerHeight - panelHeight - 8));
+		mainNav.style.left = `${panelLeft - dock.left}px`;
+		mainNav.style.right = 'auto';
+		mainNav.style.top = `${panelTop - dock.top}px`;
+		mainNav.style.bottom = 'auto';
+		mobileMenu.classList.toggle('opens-down', openDown);
+		mobileMenu.classList.toggle('opens-right', openRight);
+	};
+
+	const closeMobileMenu = () => {
+		mobileMenu?.classList.remove('is-open', 'opens-down', 'opens-right');
+		menuToggle?.setAttribute('aria-expanded', 'false');
+		menuToggle?.setAttribute('aria-label', 'Abrir navegación');
+		if (menuLabel) menuLabel.textContent = 'Abrir navegación';
+	};
+
+	try {
+		const savedPosition = localStorage.getItem(menuPositionKey);
+		if (savedPosition) {
+			const position: unknown = JSON.parse(savedPosition);
+			if (
+				typeof position === 'object'
+				&& position !== null
+				&& 'left' in position
+				&& 'top' in position
+				&& typeof position.left === 'number'
+				&& typeof position.top === 'number'
+				&& Number.isFinite(position.left)
+				&& Number.isFinite(position.top)
+			) {
+				setMenuPosition(position.left, position.top);
+			}
+		}
+	} catch {
+		localStorage.removeItem(menuPositionKey);
+	}
+
+	menuToggle?.addEventListener('click', (event) => {
+		if (suppressNextClick) {
+			event.preventDefault();
+			suppressNextClick = false;
+			return;
+		}
+
+		const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+		if (isExpanded) {
+			closeMobileMenu();
+			return;
+		}
+
+		mobileMenu?.classList.add('is-open');
+		menuToggle.setAttribute('aria-expanded', 'true');
+		menuToggle.setAttribute('aria-label', 'Cerrar navegación');
+		if (menuLabel) menuLabel.textContent = 'Cerrar navegación';
+		updateMenuDirection();
+	});
+
+	menuToggle?.addEventListener('pointerdown', (event) => {
+		if (!mobileViewport.matches || !event.isPrimary || event.button !== 0) return;
+		const rect = mobileMenu?.getBoundingClientRect();
+		if (!rect) return;
+		pointerStart = { id: event.pointerId, x: event.clientX, y: event.clientY, left: rect.left, top: rect.top };
+		dragOffset = undefined;
+		dragged = false;
+		menuToggle.setPointerCapture(event.pointerId);
+	});
+
+	menuToggle?.addEventListener('pointermove', (event) => {
+		if (!pointerStart || pointerStart.id !== event.pointerId || !mobileMenu) return;
+		const deltaX = event.clientX - pointerStart.x;
+		const deltaY = event.clientY - pointerStart.y;
+		if (!dragged && Math.hypot(deltaX, deltaY) < 6) return;
+
+		dragged = true;
+		suppressNextClick = true;
+		dragOffset = { x: deltaX, y: deltaY };
+		const position = clampMenuPosition(pointerStart.left + deltaX, pointerStart.top + deltaY);
+		mobileMenu.classList.add('is-positioned', 'is-dragging');
+		mobileMenu.style.left = `${position.left}px`;
+		mobileMenu.style.top = `${position.top}px`;
+		mobileMenu.style.right = 'auto';
+		mobileMenu.style.bottom = 'auto';
+		const travelX = position.left - pointerStart.left;
+		const travelY = position.top - pointerStart.top;
+		const travelDistance = Math.hypot(travelX, travelY);
+		const normalX = travelDistance ? -travelY / travelDistance : 0;
+		const normalY = travelDistance ? travelX / travelDistance : 0;
+		const waveAmplitude = Math.min(19, travelDistance * 0.18);
+		menuItems.forEach((item, index) => {
+			const progress = (index + 1) / (menuItems.length + 1);
+			const trail = progress - 0.5;
+			const wave = Math.sin(progress * Math.PI * 2 + travelDistance * 0.025) * waveAmplitude;
+			const scale = 0.72 + progress * 0.08;
+			const offsetX = travelX * trail + normalX * wave;
+			const offsetY = travelY * trail + normalY * wave;
+			item.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0) scale(${scale})`;
+		});
+		if (mobileMenu.classList.contains('is-open')) updateMenuDirection();
+		event.preventDefault();
+	});
+
+	const endMenuDrag = (event: PointerEvent) => {
+		if (!pointerStart || pointerStart.id !== event.pointerId || !mobileMenu) return;
+		if (dragged && dragOffset) {
+			const position = clampMenuPosition(pointerStart.left + dragOffset.x, pointerStart.top + dragOffset.y);
+			mobileMenu.classList.remove('is-dragging');
+			mobileMenu.style.left = `${position.left}px`;
+			mobileMenu.style.top = `${position.top}px`;
+			mobileMenu.style.transform = '';
+			menuItems.forEach((item) => { item.style.transform = ''; });
+			localStorage.setItem(menuPositionKey, JSON.stringify(position));
+			updateMenuDirection();
+			window.setTimeout(() => { suppressNextClick = false; }, 0);
+		}
+		pointerStart = undefined;
+		dragOffset = undefined;
+	};
+
+	menuToggle?.addEventListener('pointerup', endMenuDrag);
+	menuToggle?.addEventListener('pointercancel', endMenuDrag);
+	menuToggle?.addEventListener('lostpointercapture', endMenuDrag);
+
+	mainNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileMenu));
+	document.addEventListener('pointerdown', (event) => {
+		if (mobileMenu?.classList.contains('is-open') && !mobileMenu.contains(event.target as Node)) {
+			closeMobileMenu();
+		}
+	});
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape' && mobileMenu?.classList.contains('is-open')) {
+			closeMobileMenu();
+			menuToggle?.focus();
+		}
+	});
+	window.addEventListener('resize', () => {
+		if (!mobileMenu || !mobileViewport.matches) return;
+		if (mobileMenu.classList.contains('is-positioned')) {
+			const rect = mobileMenu.getBoundingClientRect();
+			setMenuPosition(rect.left, rect.top);
+		}
+		updateMenuDirection();
 	});
 
 	const searchInput = document.querySelector<HTMLInputElement>('[data-solution-search]');
@@ -457,6 +716,25 @@ const solutions: Solution[] = [
 				filter.setAttribute('aria-pressed', String(isActive));
 			});
 			filterSolutions();
+		});
+	});
+
+	const solutionGrid = document.querySelector<HTMLElement>('[data-solution-grid]');
+	const deviceFilters = document.querySelectorAll<HTMLButtonElement>('[data-device-filter]');
+	deviceFilters.forEach((button) => {
+		button.addEventListener('click', () => {
+			const deviceType = button.dataset.deviceFilter;
+			const deviceModel = button.dataset.deviceModel;
+			if (!solutionGrid || !deviceType || !deviceModel) return;
+
+			solutionGrid.dataset[deviceType === 'laptop' ? 'laptopModel' : 'phoneModel'] = deviceModel;
+			Array.from(deviceFilters)
+				.filter((filter) => filter.dataset.deviceFilter === deviceType)
+				.forEach((filter) => {
+					const isActive = filter === button;
+					filter.classList.toggle('is-active', isActive);
+					filter.setAttribute('aria-pressed', String(isActive));
+				});
 		});
 	});
 
