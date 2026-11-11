@@ -1,0 +1,114 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	min-width: 0;
+	scroll-behavior: smooth;
+	scroll-padding-top: 82px;
+	background: var(--page-bg);
+}
+
+body {
+	min-width: 0;
+	margin: 0;
+	background: var(--page-bg);
+	color: var(--page-body);
+	font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+	background: var(--page-accent);
+	color: #fff;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+a {
+	color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+:focus-visible {
+	outline: 3px solid var(--page-accent);
+	outline-offset: 3px;
+}
+
+.section-wrap {
+	width: min(var(--page-container), calc(100% - 96px));
+	margin-inline: auto;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	clip-path: inset(50%);
+}
+
+.eyebrow {
+	display: flex;
+	align-items: center;
+	gap: 11px;
+	margin: 0 0 22px;
+	color: var(--page-accent);
+	font-size: 11px;
+	font-weight: 750;
+	letter-spacing: 0.15em;
+	line-height: 1.5;
+}
+
+.eyebrow span,
+.hero-meta i,
+.hero-project figcaption i {
+	width: 7px;
+	height: 7px;
+	flex: 0 0 auto;
+	border-radius: 50%;
+	background: currentColor;
+}
+
+.button {
+	display: inline-flex;
+	min-height: 54px;
+	align-items: center;
+	justify-content: center;
+	gap: 17px;
+	padding: 0 22px;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	background: #233340;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 650;
+	text-decoration: none;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+	transform: translateY(-2px);
+	background: #334957;
+}
+
+.button-small {
+	min-height: 40px;
+	padding-inline: 16px;
+	border-radius: 2px;
+	font-size: 13px;
+}

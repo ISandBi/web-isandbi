@@ -1,8 +1,7 @@
 # ISANDBI Solutions
 
-Landing page de consultoría digital hecha con Astro. La página presenta servicios de desarrollo
-web y móvil, escalamiento, uso de inteligencia artificial, colaboración personalizada y un
-formulario de contacto.
+Landing page corporativa de IS&BI hecha con Astro. Presenta servicios, proyectos digitales con
+capturas amplias, filtros, selector de tema y un formulario de contacto.
 
 ## Desarrollo local
 
@@ -36,10 +35,15 @@ npm run preview
 Después abre **http://localhost:4321** en el navegador. El servidor de previsualización se detiene
 con `Ctrl+C`.
 
-## Imágenes
+## Estilos e imágenes
 
-Las capturas de proyectos compartidas para el portafolio y las ilustraciones de escalamiento e IA
-están en `public/images/solutions/`. Las fotografías de portada se guardan en `public/images/`:
+Los estilos están separados por responsabilidad en `src/styles/`: `tokens.css` define los temas,
+`base.css` contiene los estilos globales, `navigation.css` define navegación y portada,
+`sections.css` agrupa servicios, contacto y secciones informativas, `projects.css` contiene el
+explorador, y `responsive.css` y `motion.css` atienden adaptación y animaciones. La página principal
+importa estos módulos por separado para mantener cada hoja enfocada.
+
+Las capturas de proyectos del portafolio están en `public/images/solutions/`:
 
 - `public/images/instalaciones.jpeg`
 - `public/images/equipo-consultoria.jpg`
@@ -51,6 +55,7 @@ están en `public/images/solutions/`. Las fotografías de portada se guardan en 
 - `public/images/solutions/deskflex-qr-acceso.png`
 - `public/images/solutions/groovespace-inicio.png`
 - `public/images/solutions/groovespace-estudio.png`
+- `public/images/solutions/novatech-landing.png`
 - `public/images/solutions/kinder-nahla-mobile.png`
 - `public/images/solutions/gavaldoon-go-mobile.png`
 
@@ -72,20 +77,12 @@ escribir el usuario y elegir `@gmail.com` o `@hotmail.com`.
 
 ## Lógica sencilla incluida
 
-- **Tema claro:** el sitio usa una sola paleta clara.
-- **Portafolio:** los proyectos destacados enlazan a sus repositorios públicos.
-- **Explorador de soluciones:** presenta los nueve repositorios públicos de IS&BI y dos propuestas
-  de proyecto descritas en el portafolio interno. Incluye búsqueda por nombre, descripción o
-  tecnología y filtros por especialidad; las propuestas sin repositorio enlazan al contacto.
-- **Descripciones del portafolio:** los alcances de Dávila Tours, OrderSync, Kinder Nahla,
-  Gavaldoon Go!, StockTrack, NovaTech, GrooveSpace, LinguaPro, DeskFlex y SafeCloud se basan en
-  los documentos de agosto, septiembre y octubre de 2026.
-- **OrderSync:** imagen de portada propia y tecnología Angular 20.
-- **GrooveSpace:** capturas de portada y catálogo; aplicación desarrollada con React.
-- **Kinder Nahla y Gavaldoon Go!:** incluyen sus imágenes en el explorador y muestran Android Studio
-  como entorno de desarrollo.
-- **Animaciones al desplazarse:** las secciones aparecen al entrar en pantalla y respetan la
-  preferencia de movimiento reducido del navegador. Los degradados, tarjetas y navegación también
-  cuentan con transiciones adaptadas a pantallas móviles.
-- **Envío del formulario:** los campos obligatorios se validan en el navegador y las consultas se
-  envían al endpoint configurado de Formspree.
+- **Interfaz:** diseño responsive con temas claro y oscuro; la preferencia se guarda en el navegador.
+- **Explorador de soluciones:** busca por proyecto, descripción o tecnología, y filtra por categoría.
+- **Portafolio visual:** incluye capturas de Dávila Tours, OrderSync, DeskFlex, GrooveSpace,
+  NovaTech, Kinder Nahla y Gavaldoon Go!
+- **Tecnologías destacadas:** Angular 20 para OrderSync, Flask para DeskFlex, React para GrooveSpace
+  y Android Studio para las apps de Kinder y Gavaldoon Go!
+- **Animaciones:** transiciones y revelado al desplazarse, respetando la preferencia de movimiento
+  reducido del sistema.
+- **Formulario:** valida los campos requeridos y envía consultas al endpoint de Formspree configurado.

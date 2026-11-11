@@ -9,6 +9,21 @@ const { title = 'IS&BI Solutions | Innovation Software' } = Astro.props;
 <!doctype html>
 <html lang="es" data-theme="light">
 	<head>
+		<script is:inline>
+			try {
+				const savedTheme = localStorage.getItem('isandbi-theme');
+				document.documentElement.dataset.theme =
+					savedTheme === 'light' || savedTheme === 'dark'
+						? savedTheme
+						: window.matchMedia('(prefers-color-scheme: dark)').matches
+							? 'dark'
+							: 'light';
+			} catch {
+				document.documentElement.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches
+					? 'dark'
+					: 'light';
+			}
+		</script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,69 +31,12 @@ const { title = 'IS&BI Solutions | Innovation Software' } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<meta
 			name="description"
-			content="Consultoría digital personalizada: aplicaciones web y móviles, escalamiento e inteligencia artificial para hacer avanzar tu negocio."
+			content="Diseñamos software y experiencias digitales para resolver retos reales y ayudar a tu negocio a crecer."
 		/>
+		<meta name="theme-color" content="#0b1722" />
 		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
-
-<style is:global>
-	:root {
-		color-scheme: light;
-		--bg: #f7f8f5;
-		--surface: #fff;
-		--surface-subtle: #eef2ef;
-		--header-bg: rgb(247 248 245 / 92%);
-		--text: #203138;
-		--heading: #102a36;
-		--muted: #50636a;
-		--line: rgb(16 42 54 / 14%);
-		--line-strong: rgb(16 42 54 / 28%);
-		--accent: #147d78;
-		--accent-strong: #0c625e;
-		--accent-light: #0b726e;
-		--icon-bg: #e7f3ef;
-		--input-bg: #fff;
-		--focus-ring: rgb(20 125 120 / 15%);
-		--photo-a: #d9e8e1;
-		--photo-b: #cad9e4;
-		--gradient-violet: #b7a9d8;
-		--gradient-cyan: #62c2b1;
-		--gradient-glow-blue: rgb(84 164 172 / 13%);
-		--gradient-glow-violet: rgb(172 151 204 / 14%);
-		--gradient-card-end: #eff5f0;
-	}
-
-	* {
-		box-sizing: border-box;
-	}
-
-	html,
-	body {
-		width: 100%;
-		min-height: 100%;
-		margin: 0;
-		scroll-behavior: smooth;
-	}
-
-	html {
-		scroll-padding-top: 90px;
-		background: var(--bg);
-	}
-
-	body {
-		background: var(--bg);
-		color: var(--text);
-		font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		text-rendering: optimizeLegibility;
-	}
-
-	::selection {
-		background: var(--accent);
-		color: #fff;
-	}
-</style>
