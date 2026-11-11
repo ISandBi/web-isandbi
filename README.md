@@ -55,6 +55,10 @@ por proyecto. GrooveSpace ocupa el escaparate principal. En móvil, el menú flo
 arrastrar; sus opciones acompañan el movimiento con una onda y se compactan mientras se mueve, sin
 mostrar la barra de desplazamiento.
 
+El catálogo de servicios enlaza las áreas de desarrollo web, aplicaciones móviles, operación e
+inventario, y reservas con proyectos relacionados del portafolio. Las fichas de proyecto muestran
+los íconos y nombres de las tecnologías, además de su estado de lanzamiento cuando está confirmado.
+
 El logotipo institucional está en `public/images/isbi-consultoria-logo.png`. Las capturas de
 proyectos del portafolio están en `public/images/solutions/`:
 
@@ -69,6 +73,7 @@ proyectos del portafolio están en `public/images/solutions/`:
 - `public/images/solutions/groovespace-inicio.png`
 - `public/images/solutions/groovespace-estudio.png`
 - `public/images/solutions/novatech-landing.png`
+- `public/images/solutions/stocktrack-login.png`
 - `public/images/solutions/kinder-nahla-mobile.png`
 - `public/images/solutions/gavaldoon-go-mobile.png`
 
@@ -94,9 +99,9 @@ escribir el usuario y elegir `@gmail.com` o `@hotmail.com`.
   opciones independientes, se puede arrastrar y conserva su posición en el navegador.
 - **Explorador de soluciones:** busca por proyecto, descripción o tecnología, y filtra por categoría.
 - **Portafolio visual:** incluye capturas de Dávila Tours, OrderSync, DeskFlex, GrooveSpace,
-  NovaTech, Kinder Nahla y Gavaldoon Go!
-- **Tecnologías destacadas:** Angular 20 para OrderSync, Flask para DeskFlex, React para GrooveSpace
-  y Android Studio para las apps de Kinder y Gavaldoon Go!
+  NovaTech, StockTrack, Kinder Nahla y Gavaldoon Go!
+- **Tecnologías y estado:** cada proyecto muestra su stack visualmente y, cuando se conoce, si ya
+  fue liberado, está próximo a lanzarse, sigue en preparación o es una propuesta.
 - **Animaciones:** transiciones y revelado al desplazarse, respetando la preferencia de movimiento
   reducido del sistema.
 - **Formulario:** valida los campos requeridos y envía consultas al endpoint de Formspree configurado.

@@ -350,14 +350,25 @@
 	}
 
 	.service-card,
-	.service-card + .service-card {
+	.service-card + .service-card,
+	.service-card:nth-child(odd) {
 		min-height: auto;
 		padding: 23px 0 27px;
 		border-left: 0;
 	}
 
+	.service-card:nth-child(n + 2) {
+		border-top: 1px solid var(--page-line);
+	}
+
 	.service-card h3 {
-		margin: 24px 0 9px;
+		margin: 18px 0 9px;
+	}
+
+	.service-card-heading .technology-icon {
+		width: 42px;
+		height: 42px;
+		padding: 7px;
 	}
 
 	.work-section {
@@ -526,15 +537,35 @@
 	}
 
 	.project-overline {
+		align-items: flex-start;
 		font-size: 8px;
+	}
+
+	.project-overline-meta {
+		gap: 5px;
+	}
+
+	.project-status {
+		font-size: 7px;
 	}
 
 	.project-footer {
 		align-items: flex-start;
 	}
 
-	.tech-tag {
-		max-width: 62%;
+	.project-tech-stack {
+		gap: 8px 11px;
+	}
+
+	.project-tech {
+		gap: 6px;
+		font-size: 11px;
+	}
+
+	.project-tech .technology-icon {
+		width: 30px;
+		height: 30px;
+		padding: 4px;
 	}
 }
 

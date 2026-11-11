@@ -511,6 +511,14 @@ html[data-theme='dark'] .device-filter.is-active {
 	text-transform: uppercase;
 }
 
+.project-overline-meta {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 6px;
+}
+
 .featured-badge {
 	padding: 5px 8px;
 	border: 1px solid var(--page-accent);
@@ -518,6 +526,77 @@ html[data-theme='dark'] .device-filter.is-active {
 	font-size: 8px;
 	letter-spacing: 0.06em;
 	white-space: nowrap;
+}
+
+.project-status {
+	padding: 5px 8px;
+	border: 1px solid currentColor;
+	border-radius: 999px;
+	font-size: 8px;
+	letter-spacing: 0.03em;
+	line-height: 1.2;
+	white-space: nowrap;
+}
+
+.project-status-released {
+	border-color: rgb(37 135 99 / 25%);
+	background: rgb(37 135 99 / 9%);
+	color: #267c5c;
+}
+
+.project-status-coming-soon {
+	border-color: rgb(191 116 42 / 28%);
+	background: rgb(237 166 75 / 12%);
+	color: #9a5d20;
+}
+
+.project-status-not-released,
+.project-status-to-confirm {
+	border-color: rgb(110 95 129 / 25%);
+	background: rgb(110 95 129 / 9%);
+	color: #6f5c80;
+}
+
+.project-status-proposal {
+	border-color: rgb(102 77 176 / 28%);
+	background: rgb(134 101 205 / 11%);
+	color: #694ab0;
+}
+
+html[data-theme='dark'] .project-status-released {
+	border-color: rgb(103 214 169 / 32%);
+	background: rgb(47 143 101 / 17%);
+	color: #8be2bc;
+}
+
+html[data-theme='dark'] .project-status-coming-soon {
+	border-color: rgb(246 187 107 / 30%);
+	background: rgb(180 112 50 / 16%);
+	color: #f2c485;
+}
+
+html[data-theme='dark'] .project-status-not-released,
+html[data-theme='dark'] .project-status-to-confirm {
+	border-color: rgb(190 167 211 / 28%);
+	background: rgb(128 99 150 / 17%);
+	color: #d3bddf;
+}
+
+html[data-theme='dark'] .project-status-proposal {
+	border-color: rgb(193 153 245 / 32%);
+	background: rgb(127 82 186 / 18%);
+	color: #d8baf9;
+}
+
+.project-status-note {
+	width: fit-content;
+	margin-top: -13px !important;
+	padding: 5px 8px;
+	border-left: 2px solid var(--page-accent);
+	background: color-mix(in srgb, var(--page-accent) 8%, transparent);
+	color: var(--page-muted) !important;
+	font-size: 10px !important;
+	line-height: 1.4 !important;
 }
 
 .project-info h3 {
@@ -662,6 +741,72 @@ html[data-theme='dark'] .device-filter.is-active {
 .technology-icon-iot {
 	color: #bf5b9c;
 	stroke: currentColor;
+}
+
+.technology-icon-html {
+	color: #e44d26;
+	fill: #e44d26;
+	stroke: #fff;
+	stroke-width: 1.4;
+}
+
+.technology-icon-css {
+	color: #1572b6;
+	fill: #1572b6;
+	stroke: #fff;
+	stroke-width: 1.4;
+}
+
+.technology-icon-javascript {
+	color: #d6a800;
+	fill: #f7df1e;
+	stroke: #262626;
+	stroke-width: 1.2;
+}
+
+.technology-icon-javascript path {
+	fill: none;
+	stroke: #262626;
+	stroke-width: 2.4;
+}
+
+.technology-icon-node {
+	color: #43853d;
+	fill: #43853d;
+	stroke: #fff;
+	stroke-width: 1.6;
+}
+
+.technology-icon-node circle {
+	fill: #fff;
+	stroke: none;
+}
+
+.technology-icon-sqlite {
+	color: #1687c9;
+	stroke: currentColor;
+}
+
+.technology-icon-postgresql {
+	color: #336791;
+	stroke: currentColor;
+}
+
+.technology-icon-mysql {
+	color: #00758f;
+	stroke: currentColor;
+}
+
+.technology-icon-render {
+	color: #583f9e;
+	stroke: currentColor;
+}
+
+.technology-icon-django {
+	color: #092e20;
+	fill: #092e20;
+	stroke: #44b78b;
+	stroke-width: 0.6;
 }
 
 html[data-theme='dark'] .project-tech {

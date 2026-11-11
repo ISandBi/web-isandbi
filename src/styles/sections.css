@@ -75,15 +75,17 @@ html[data-theme='dark'] .contact-copy h2 span {
 
 .service-grid {
 	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-template-columns: repeat(2, minmax(0, 1fr));
 	border-top: 1px solid var(--page-line);
 	border-bottom: 1px solid var(--page-line);
 }
 
 .service-card {
 	position: relative;
-	min-height: 235px;
-	padding: 26px 30px 29px 0;
+	display: flex;
+	min-height: 310px;
+	flex-direction: column;
+	padding: 28px 34px 30px;
 }
 
 html:not([data-theme='dark']) .service-card::before {
@@ -97,8 +99,31 @@ html:not([data-theme='dark']) .service-card::before {
 }
 
 .service-card + .service-card {
-	padding-left: 30px;
 	border-left: 1px solid var(--page-line);
+}
+
+.service-card:nth-child(odd) {
+	padding-left: 0;
+	border-left: 0;
+}
+
+.service-card:nth-child(n + 3) {
+	border-top: 1px solid var(--page-line);
+}
+
+.service-card-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.service-card-heading .technology-icon {
+	width: 48px;
+	height: 48px;
+	padding: 9px;
+	border-radius: 14px;
+	background: linear-gradient(145deg, #fff, var(--page-accent-soft));
+	box-shadow: 0 7px 18px var(--accent-glow), inset 0 1px 1px #fff;
 }
 
 .service-number {
@@ -109,9 +134,9 @@ html:not([data-theme='dark']) .service-card::before {
 }
 
 .service-card h3 {
-	margin: 43px 0 12px;
+	margin: 23px 0 10px;
 	color: var(--page-ink);
-	font-size: 21px;
+	font-size: clamp(20px, 2vw, 24px);
 	font-weight: 620;
 	letter-spacing: -0.04em;
 }
@@ -124,11 +149,50 @@ html:not([data-theme='dark']) .service-card::before {
 	line-height: 1.75;
 }
 
-.service-card > a {
+.service-examples {
+	margin-top: 20px;
+}
+
+.service-examples > span {
+	display: block;
+	margin-bottom: 9px;
+	color: var(--page-muted);
+	font-size: 9px;
+	font-weight: 750;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.service-examples > div {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 7px;
+}
+
+.service-examples a {
+	padding: 6px 9px;
+	border: 1px solid var(--page-line);
+	border-radius: 999px;
+	background: var(--page-surface);
+	color: var(--page-body);
+	font-size: 10px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.service-examples a:hover {
+	transform: translateY(-1px);
+	border-color: var(--page-accent);
+	color: var(--page-accent);
+}
+
+.service-card > .service-cta {
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
-	margin-top: 20px;
+	margin-top: auto;
+	padding-top: 20px;
 	color: var(--page-accent);
 	font-size: 12px;
 	font-weight: 650;

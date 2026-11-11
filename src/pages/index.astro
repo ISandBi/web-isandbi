@@ -14,13 +14,20 @@ if (formspreeEndpoint && !/^https:\/\/formspree\.io\/f\/[A-Za-z0-9]+$/.test(form
 	throw new Error('PUBLIC_FORMSPREE_ENDPOINT debe ser una URL válida de formulario de Formspree.');
 }
 
+type TechnologyIconName =
+	| 'python' | 'flask' | 'angular' | 'android' | 'react' | 'web' | 'inventory' | 'astro' | 'laravel' | 'vue' | 'iot'
+	| 'html' | 'css' | 'javascript' | 'node' | 'sqlite' | 'postgresql' | 'mysql' | 'render' | 'django';
+type ReleaseStatus = 'released' | 'coming-soon' | 'not-released' | 'to-confirm' | 'proposal';
+
 interface Solution {
 	name: string;
 	category: string;
 	categoryLabel: string;
 	technology: string;
-	technologies: { name: string; icon: 'python' | 'flask' | 'angular' | 'android' | 'react' | 'web' | 'inventory' | 'astro' | 'laravel' | 'vue' | 'iot' }[];
+	technologies: { name: string; icon: TechnologyIconName }[];
 	description: string;
+	status?: ReleaseStatus;
+	statusNote?: string;
 	repository?: string;
 	domain?: string;
 	featured?: boolean;
@@ -33,9 +40,10 @@ const solutions: Solution[] = [
 		name: 'Dávila Tours',
 		category: 'web',
 		categoryLabel: 'Turismo · Plataforma web',
-		technology: 'Python · Flask',
-		technologies: [{ name: 'Python', icon: 'python' }, { name: 'Flask', icon: 'flask' }],
+		technology: 'Python · Flask · SQLite',
+		technologies: [{ name: 'Python', icon: 'python' }, { name: 'Flask', icon: 'flask' }, { name: 'SQLite', icon: 'sqlite' }],
 		description: 'Reservaciones y apartados de viajes, con control de flota y asignación de choferes.',
+		status: 'released',
 		domain: 'davilatours.com',
 		image: '/images/solutions/davila-tours-reservas.png',
 		imageAlt: 'Calendario de reservaciones de Dávila Tours',
@@ -45,9 +53,10 @@ const solutions: Solution[] = [
 		name: 'OrderSync',
 		category: 'web',
 		categoryLabel: 'Comercio · Gestión de pedidos',
-		technology: 'Angular 20',
-		technologies: [{ name: 'Angular 20', icon: 'angular' }],
+		technology: 'Angular 20 · PostgreSQL · Render',
+		technologies: [{ name: 'Angular 20', icon: 'angular' }, { name: 'PostgreSQL', icon: 'postgresql' }, { name: 'Render', icon: 'render' }],
 		description: 'Centraliza los pedidos online y sincroniza canales de venta como Shopify y Amazon.',
+		status: 'coming-soon',
 		domain: 'ordersync.com',
 		image: '/images/solutions/ordersync-ecommerce.png',
 		imageAlt: 'Pantalla de inicio de OrderSync y centro de distribución',
@@ -57,9 +66,10 @@ const solutions: Solution[] = [
 		name: 'DeskFlex México',
 		category: 'ops',
 		categoryLabel: 'Coworking · Reservas y acceso',
-		technology: 'Flask',
-		technologies: [{ name: 'Flask', icon: 'flask' }],
+		technology: 'Python · Flask',
+		technologies: [{ name: 'Python', icon: 'python' }, { name: 'Flask', icon: 'flask' }],
 		description: 'Reserva escritorios y salas por hora o día, y gestiona el acceso con códigos QR.',
+		status: 'coming-soon',
 		domain: 'deskflex.com.mx',
 		image: '/images/solutions/deskflex-reservas.png',
 		imageAlt: 'Mapa interactivo para reservar espacios de coworking',
@@ -72,6 +82,7 @@ const solutions: Solution[] = [
 		technology: 'Android Studio',
 		technologies: [{ name: 'Android Studio', icon: 'android' }],
 		description: 'Consulta estaciones y precios, compra combustible y recibe promociones desde el móvil.',
+		status: 'released',
 		image: '/images/solutions/gavaldoon-go-mobile.png',
 		imageAlt: 'Aplicación móvil Gavaldoon Go! con mapa y estaciones',
 		repository: 'https://github.com/ISandBi/gavaldon-app',
@@ -83,6 +94,7 @@ const solutions: Solution[] = [
 		technology: 'Android Studio',
 		technologies: [{ name: 'Android Studio', icon: 'android' }],
 		description: 'Actividades interactivas, seguimiento del aprendizaje y comunicación con las familias.',
+		status: 'released',
 		image: '/images/solutions/kinder-nahla-mobile.png',
 		imageAlt: 'Aplicación educativa móvil de Kinder Nahla',
 		repository: 'https://github.com/ISandBi/Aplicaci-n-Educativa-para-Kinder',
@@ -91,9 +103,11 @@ const solutions: Solution[] = [
 		name: 'GrooveSpace',
 		category: 'web',
 		categoryLabel: 'Música · Reservas de estudios',
-		technology: 'React',
-		technologies: [{ name: 'React', icon: 'react' }],
+		technology: 'React · SQLite · Node.js',
+		technologies: [{ name: 'React', icon: 'react' }, { name: 'SQLite', icon: 'sqlite' }, { name: 'Node.js', icon: 'node' }],
 		description: 'Encuentra estudios y reserva salas de ensayo en tiempo real, sin cruces de horarios.',
+		status: 'coming-soon',
+		statusNote: 'Escalamiento móvil planeado',
 		domain: 'groovespace.com',
 		featured: true,
 		image: '/images/solutions/groovespace-inicio.png',
@@ -104,9 +118,10 @@ const solutions: Solution[] = [
 		name: 'NovaTech',
 		category: 'web',
 		categoryLabel: 'Tecnología · Sitio web',
-		technology: 'Landing page',
-		technologies: [{ name: 'Landing page', icon: 'web' }],
+		technology: 'HTML · CSS · JavaScript · Node.js',
+		technologies: [{ name: 'HTML', icon: 'html' }, { name: 'CSS', icon: 'css' }, { name: 'JavaScript', icon: 'javascript' }, { name: 'Node.js', icon: 'node' }],
 		description: 'Presencia web para una startup tecnológica, diseñada para presentar sus servicios y atraer clientes.',
+		status: 'not-released',
 		domain: 'novatech.com',
 		image: '/images/solutions/novatech-landing.png',
 		imageAlt: 'Sitio web de NovaTech: soluciones de infraestructura y tecnología',
@@ -116,9 +131,10 @@ const solutions: Solution[] = [
 		name: 'StockTrack',
 		category: 'ops',
 		categoryLabel: 'Inventario · Operaciones',
-		technology: 'Gestión de inventario',
-		technologies: [{ name: 'Gestión de inventario', icon: 'inventory' }],
+		technology: 'React · Django · PostgreSQL',
+		technologies: [{ name: 'React', icon: 'react' }, { name: 'Django', icon: 'django' }, { name: 'PostgreSQL', icon: 'postgresql' }],
 		description: 'Control de productos en stock, reportes y alertas de escasez para una tienda de electrónicos.',
+		status: 'to-confirm',
 		domain: 'stocktrack.com',
 		image: '/images/solutions/stocktrack-login.png',
 		imageAlt: 'Pantalla de inicio de sesión de StockTrack, sistema de control de inventarios',
@@ -141,6 +157,7 @@ const solutions: Solution[] = [
 		technology: 'Propuesta · Laravel · Vue.js',
 		technologies: [{ name: 'Laravel', icon: 'laravel' }, { name: 'Vue.js', icon: 'vue' }],
 		description: 'Cursos de idiomas en línea, clases en vivo y seguimiento del progreso de estudiantes.',
+		status: 'proposal',
 		domain: 'linguapro.com',
 	},
 	{
@@ -150,9 +167,51 @@ const solutions: Solution[] = [
 		technology: 'Propuesta · IoT',
 		technologies: [{ name: 'IoT', icon: 'iot' }],
 		description: 'Monitoreo de cajas fuertes con alertas y registro de actividad para hoteles.',
+		status: 'proposal',
 		domain: 'safecloudhotels.com',
 	},
 ];
+
+const releaseStatusLabels: Record<ReleaseStatus, string> = {
+	released: 'Liberado',
+	'coming-soon': 'Próximo lanzamiento',
+	'not-released': 'Aún no liberado',
+	'to-confirm': 'Estado por confirmar',
+	proposal: 'Propuesta',
+};
+
+const serviceCatalog = [
+	{
+		number: '01',
+		title: 'Plataformas web a medida',
+		description: 'Portales y sistemas web construidos alrededor de tus procesos, clientes y canales de venta.',
+		icon: 'web' as const,
+		examples: [{ label: 'OrderSync', href: '#project-ordersync' }, { label: 'NovaTech', href: '#project-novatech' }, { label: 'GrooveSpace', href: '#project-groovespace' }],
+	},
+	{
+		number: '02',
+		title: 'Aplicaciones móviles',
+		description: 'Experiencias móviles para acercar servicios, contenido y herramientas a tus usuarios.',
+		icon: 'android' as const,
+		examples: [{ label: 'Gavaldoon Go!', href: '#project-gavaldoon-go' }, { label: 'Kinder Nahla', href: '#project-kinder-nahla' }],
+	},
+	{
+		number: '03',
+		title: 'Operación e inventario',
+		description: 'Herramientas para organizar existencias, dar seguimiento a pedidos y mejorar tareas operativas.',
+		icon: 'inventory' as const,
+		examples: [{ label: 'StockTrack', href: '#project-stocktrack' }, { label: 'OrderSync', href: '#project-ordersync' }],
+	},
+	{
+		number: '04',
+		title: 'Reservas y gestión de espacios',
+		description: 'Flujos de reservación, disponibilidad y acceso para viajes, coworking y espacios creativos.',
+		icon: 'web' as const,
+		examples: [{ label: 'Dávila Tours', href: '#project-davila-tours' }, { label: 'DeskFlex', href: '#project-deskflex-mexico' }, { label: 'GrooveSpace', href: '#project-groovespace' }],
+	},
+];
+
+const projectId = (name: string) => `project-${name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
 
 const locations = [
 	{ id: 'pachuca', name: 'Pachuca', detail: 'Hidalgo, México', lat: 20.1011, lng: -98.7591 },
@@ -278,29 +337,28 @@ const locations = [
 			<div class="section-intro" data-reveal>
 				<div>
 					<p class="eyebrow">LO QUE HACEMOS</p>
-					<h2>Tecnología con un<br /><span>propósito claro.</span></h2>
+					<h2>Servicios que nacen<br /><span>de la experiencia.</span></h2>
 				</div>
-				<p>El enfoque adecuado para cada reto, desde una nueva aplicación hasta una operación más inteligente.</p>
+				<p>Capacidades construidas y aplicadas en proyectos reales: desde productos digitales hasta herramientas para operar mejor.</p>
 			</div>
 			<div class="service-grid">
-				<article class="service-card" data-reveal>
-					<span class="service-number">01</span>
-					<h3>Productos digitales</h3>
-					<p>Aplicaciones web y móviles fáciles de usar, pensadas para tus clientes y tu equipo.</p>
-					<a href="#explorar">Ver proyectos <span aria-hidden="true">↗</span></a>
-				</article>
-				<article class="service-card" data-reveal>
-					<span class="service-number">02</span>
-					<h3>Operaciones más ágiles</h3>
-					<p>Automatiza tareas, conecta procesos y convierte información en mejores decisiones.</p>
-					<a href="#contacto">Hablemos de tu reto <span aria-hidden="true">↗</span></a>
-				</article>
-				<article class="service-card" data-reveal>
-					<span class="service-number">03</span>
-					<h3>Escalamiento digital</h3>
-					<p>Moderniza tus herramientas y prepara la tecnología para acompañar lo que sigue.</p>
-					<a href="#contacto">Crezcamos juntos <span aria-hidden="true">↗</span></a>
-				</article>
+				{serviceCatalog.map((service) => (
+					<article class="service-card" data-reveal>
+						<div class="service-card-heading">
+							<TechnologyIcon name={service.title} icon={service.icon} />
+							<span class="service-number">{service.number}</span>
+						</div>
+						<h3>{service.title}</h3>
+						<p>{service.description}</p>
+						<div class="service-examples">
+							<span>En proyectos</span>
+							<div>
+								{service.examples.map((example) => <a href={example.href}>{example.label}</a>)}
+							</div>
+						</div>
+						<a class="service-cta" href="#contacto">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
+					</article>
+				))}
 			</div>
 		</section>
 
@@ -331,7 +389,7 @@ const locations = [
 					{solutions.map((solution, index) => (
 						<article
 							class="solution-card"
-							id={solution.featured ? 'project-groovespace' : undefined}
+							id={projectId(solution.name)}
 							data-solution-card
 							data-category={solution.category}
 							data-search={`${solution.name} ${solution.description} ${solution.categoryLabel} ${solution.technology}`}
@@ -383,11 +441,19 @@ const locations = [
 							<div class="project-info">
 								<div class="project-overline">
 									<span>{solution.categoryLabel}</span>
-									{solution.featured && <span class="featured-badge">Proyecto estrella</span>}
-									<span>{String(index + 1).padStart(2, '0')}</span>
+									<div class="project-overline-meta">
+										{solution.featured && <span class="featured-badge">Proyecto estrella</span>}
+										{solution.status && (
+											<span class:list={['project-status', `project-status-${solution.status}`]}>
+												{releaseStatusLabels[solution.status]}
+											</span>
+										)}
+										<span>{String(index + 1).padStart(2, '0')}</span>
+									</div>
 								</div>
 								<h3>{solution.name}</h3>
 								<p>{solution.description}</p>
+								{solution.statusNote && <p class="project-status-note">{solution.statusNote}</p>}
 								<div class="project-footer">
 									<div class="project-tech-stack" aria-label={`Tecnologías: ${solution.technology}`}>
 										{solution.technologies.map((technology) => (
