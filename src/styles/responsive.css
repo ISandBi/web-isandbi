@@ -440,10 +440,44 @@
 		font-size: 22px;
 	}
 
-	.about-layout,
+	.history-layout,
 	.contact-layout {
 		grid-template-columns: 1fr;
 		gap: 30px;
+	}
+
+	.about-section {
+		padding-block: 78px;
+	}
+
+	.history-heading h2 {
+		font-size: clamp(39px, 9vw, 54px);
+	}
+
+	.history-heading > p:not(.eyebrow) {
+		margin-top: 18px;
+		font-size: 14px;
+	}
+
+	.history-founder {
+		margin-top: 26px;
+		grid-template-columns: 88px minmax(0, 1fr);
+		gap: 14px;
+		padding: 13px;
+	}
+
+	.history-milestone {
+		grid-template-columns: 66px minmax(0, 1fr);
+		gap: 14px;
+		padding-block: 20px;
+	}
+
+	.history-milestone h3 {
+		font-size: 18px;
+	}
+
+	.history-signature {
+		margin-left: 80px;
 	}
 
 	.contact-section {

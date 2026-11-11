@@ -59,6 +59,10 @@ El catálogo de servicios enlaza las áreas de desarrollo web, aplicaciones móv
 inventario, y reservas con proyectos relacionados del portafolio. Las fichas de proyecto muestran
 los íconos y nombres de las tecnologías, además de su estado de lanzamiento cuando está confirmado.
 
+La sección «Nosotros» resume la historia institucional: la fundación en 2011, el origen de la
+referencia «It’s Zombie» asociada al nombre IS&BI y la continuidad actual de la misión de crear
+software que inspire.
+
 El logotipo institucional está en `public/images/isbi-consultoria-logo.png`. Las capturas de
 proyectos del portafolio están en `public/images/solutions/`:
 
