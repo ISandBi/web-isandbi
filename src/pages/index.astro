@@ -184,28 +184,32 @@ const serviceCatalog = [
 	{
 		number: '01',
 		title: 'Plataformas web a medida',
-		description: 'Portales y sistemas web construidos alrededor de tus procesos, clientes y canales de venta.',
+		description: 'Sitios, aplicaciones y sistemas web responsivos, desde la interfaz hasta las APIs y la conexión con tus datos.',
+		technologies: ['React', 'Angular', 'Vue.js', 'Astro', 'Flask', 'Django', 'Laravel', 'Node.js', 'HTML · CSS · JavaScript'],
 		icon: 'web' as const,
 		examples: [{ label: 'OrderSync', href: '#project-ordersync' }, { label: 'NovaTech', href: '#project-novatech' }, { label: 'GrooveSpace', href: '#project-groovespace' }],
 	},
 	{
 		number: '02',
 		title: 'Aplicaciones móviles',
-		description: 'Experiencias móviles para acercar servicios, contenido y herramientas a tus usuarios.',
+		description: 'Aplicaciones Android para ofrecer servicios, contenido y herramientas móviles con experiencias nativas.',
+		technologies: ['Kotlin', 'Android nativo', 'Android Studio'],
 		icon: 'android' as const,
 		examples: [{ label: 'Gavaldoon Go!', href: '#project-gavaldoon-go' }, { label: 'Kinder Nahla', href: '#project-kinder-nahla' }],
 	},
 	{
 		number: '03',
 		title: 'Operación e inventario',
-		description: 'Herramientas para organizar existencias, dar seguimiento a pedidos y mejorar tareas operativas.',
+		description: 'Sistemas para controlar inventarios, centralizar pedidos, consultar reportes y automatizar tareas del día a día.',
+		technologies: ['React', 'Angular', 'Django', 'PostgreSQL', 'SQLite'],
 		icon: 'inventory' as const,
 		examples: [{ label: 'StockTrack', href: '#project-stocktrack' }, { label: 'OrderSync', href: '#project-ordersync' }],
 	},
 	{
 		number: '04',
 		title: 'Reservas y gestión de espacios',
-		description: 'Flujos de reservación, disponibilidad y acceso para viajes, coworking y espacios creativos.',
+		description: 'Plataformas para administrar disponibilidad, reservar servicios y coordinar accesos en tiempo real.',
+		technologies: ['Python', 'Flask', 'React', 'Node.js', 'SQLite'],
 		icon: 'web' as const,
 		examples: [{ label: 'Dávila Tours', href: '#project-davila-tours' }, { label: 'DeskFlex', href: '#project-deskflex-mexico' }, { label: 'GrooveSpace', href: '#project-groovespace' }],
 	},
@@ -339,7 +343,7 @@ const locations = [
 					<p class="eyebrow">LO QUE HACEMOS</p>
 					<h2>Servicios que nacen<br /><span>de la experiencia.</span></h2>
 				</div>
-				<p>Capacidades construidas y aplicadas en proyectos reales: desde productos digitales hasta herramientas para operar mejor.</p>
+				<p>Desarrollamos productos digitales y herramientas operativas con tecnologías actuales. Elegimos el lenguaje y framework según las necesidades de cada proyecto.</p>
 			</div>
 			<div class="service-grid">
 				{serviceCatalog.map((service) => (
@@ -350,6 +354,12 @@ const locations = [
 						</div>
 						<h3>{service.title}</h3>
 						<p>{service.description}</p>
+						<div class="service-technologies">
+							<span>Tecnologías</span>
+							<ul>
+								{service.technologies.map((technology) => <li>{technology}</li>)}
+							</ul>
+						</div>
 						<div class="service-examples">
 							<span>En proyectos</span>
 							<div>

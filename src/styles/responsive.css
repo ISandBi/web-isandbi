@@ -353,7 +353,7 @@
 	.service-card + .service-card,
 	.service-card:nth-child(odd) {
 		min-height: auto;
-		padding: 23px 0 27px;
+		padding: 23px 14px 27px;
 		border-left: 0;
 	}
 
