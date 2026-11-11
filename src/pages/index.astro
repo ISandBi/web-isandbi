@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TechnologyIcon from '../components/TechnologyIcon.astro';
 import '../styles/tokens.css';
 import '../styles/base.css';
 import '../styles/navigation.css';
@@ -13,23 +14,18 @@ if (formspreeEndpoint && !/^https:\/\/formspree\.io\/f\/[A-Za-z0-9]+$/.test(form
 	throw new Error('PUBLIC_FORMSPREE_ENDPOINT debe ser una URL válida de formulario de Formspree.');
 }
 
-interface Screenshot {
-	image: string;
-	alt: string;
-}
-
 interface Solution {
 	name: string;
 	category: string;
 	categoryLabel: string;
 	technology: string;
+	technologies: { name: string; icon: 'python' | 'flask' | 'angular' | 'android' | 'react' | 'web' | 'inventory' | 'astro' | 'laravel' | 'vue' | 'iot' }[];
 	description: string;
 	repository?: string;
 	domain?: string;
 	featured?: boolean;
 	image?: string;
 	imageAlt?: string;
-	gallery?: Screenshot[];
 }
 
 const solutions: Solution[] = [
@@ -38,6 +34,7 @@ const solutions: Solution[] = [
 		category: 'web',
 		categoryLabel: 'Turismo · Plataforma web',
 		technology: 'Python · Flask',
+		technologies: [{ name: 'Python', icon: 'python' }, { name: 'Flask', icon: 'flask' }],
 		description: 'Reservaciones y apartados de viajes, con control de flota y asignación de choferes.',
 		domain: 'davilatours.com',
 		image: '/images/solutions/davila-tours-reservas.png',
@@ -49,6 +46,7 @@ const solutions: Solution[] = [
 		category: 'web',
 		categoryLabel: 'Comercio · Gestión de pedidos',
 		technology: 'Angular 20',
+		technologies: [{ name: 'Angular 20', icon: 'angular' }],
 		description: 'Centraliza los pedidos online y sincroniza canales de venta como Shopify y Amazon.',
 		domain: 'ordersync.com',
 		image: '/images/solutions/ordersync-ecommerce.png',
@@ -60,12 +58,11 @@ const solutions: Solution[] = [
 		category: 'ops',
 		categoryLabel: 'Coworking · Reservas y acceso',
 		technology: 'Flask',
+		technologies: [{ name: 'Flask', icon: 'flask' }],
 		description: 'Reserva escritorios y salas por hora o día, y gestiona el acceso con códigos QR.',
 		domain: 'deskflex.com.mx',
-		gallery: [
-			{ image: '/images/solutions/deskflex-reservas.png', alt: 'Mapa interactivo para reservar espacios de coworking' },
-			{ image: '/images/solutions/deskflex-qr-acceso.png', alt: 'Código QR y detalle de acceso de DeskFlex' },
-		],
+		image: '/images/solutions/deskflex-reservas.png',
+		imageAlt: 'Mapa interactivo para reservar espacios de coworking',
 		repository: 'https://github.com/ISandBi/deskflex-web',
 	},
 	{
@@ -73,6 +70,7 @@ const solutions: Solution[] = [
 		category: 'apps',
 		categoryLabel: 'Combustible · Aplicación móvil',
 		technology: 'Android Studio',
+		technologies: [{ name: 'Android Studio', icon: 'android' }],
 		description: 'Consulta estaciones y precios, compra combustible y recibe promociones desde el móvil.',
 		image: '/images/solutions/gavaldoon-go-mobile.png',
 		imageAlt: 'Aplicación móvil Gavaldoon Go! con mapa y estaciones',
@@ -83,6 +81,7 @@ const solutions: Solution[] = [
 		category: 'apps',
 		categoryLabel: 'Educación · Aplicación móvil',
 		technology: 'Android Studio',
+		technologies: [{ name: 'Android Studio', icon: 'android' }],
 		description: 'Actividades interactivas, seguimiento del aprendizaje y comunicación con las familias.',
 		image: '/images/solutions/kinder-nahla-mobile.png',
 		imageAlt: 'Aplicación educativa móvil de Kinder Nahla',
@@ -93,13 +92,12 @@ const solutions: Solution[] = [
 		category: 'web',
 		categoryLabel: 'Música · Reservas de estudios',
 		technology: 'React',
+		technologies: [{ name: 'React', icon: 'react' }],
 		description: 'Encuentra estudios y reserva salas de ensayo en tiempo real, sin cruces de horarios.',
 		domain: 'groovespace.com',
 		featured: true,
-		gallery: [
-			{ image: '/images/solutions/groovespace-inicio.png', alt: 'Portada de GrooveSpace' },
-			{ image: '/images/solutions/groovespace-estudio.png', alt: 'Explorador de estudios de GrooveSpace' },
-		],
+		image: '/images/solutions/groovespace-inicio.png',
+		imageAlt: 'Portada de GrooveSpace',
 		repository: 'https://github.com/ISandBi/groovespace',
 	},
 	{
@@ -107,6 +105,7 @@ const solutions: Solution[] = [
 		category: 'web',
 		categoryLabel: 'Tecnología · Sitio web',
 		technology: 'Landing page',
+		technologies: [{ name: 'Landing page', icon: 'web' }],
 		description: 'Presencia web para una startup tecnológica, diseñada para presentar sus servicios y atraer clientes.',
 		domain: 'novatech.com',
 		image: '/images/solutions/novatech-landing.png',
@@ -118,8 +117,11 @@ const solutions: Solution[] = [
 		category: 'ops',
 		categoryLabel: 'Inventario · Operaciones',
 		technology: 'Gestión de inventario',
+		technologies: [{ name: 'Gestión de inventario', icon: 'inventory' }],
 		description: 'Control de productos en stock, reportes y alertas de escasez para una tienda de electrónicos.',
 		domain: 'stocktrack.com',
+		image: '/images/solutions/stocktrack-login.png',
+		imageAlt: 'Pantalla de inicio de sesión de StockTrack, sistema de control de inventarios',
 		repository: 'https://github.com/ISandBi/stocktrack-inventory',
 	},
 	{
@@ -127,6 +129,7 @@ const solutions: Solution[] = [
 		category: 'web',
 		categoryLabel: 'Sitio corporativo',
 		technology: 'Astro',
+		technologies: [{ name: 'Astro', icon: 'astro' }],
 		description: 'Nuestro espacio para presentar servicios, soluciones y proyectos digitales.',
 		domain: 'isandbi.com',
 		repository: 'https://github.com/ISandBi/web-isandbi',
@@ -136,6 +139,7 @@ const solutions: Solution[] = [
 		category: 'web',
 		categoryLabel: 'Educación · Cursos en línea',
 		technology: 'Propuesta · Laravel · Vue.js',
+		technologies: [{ name: 'Laravel', icon: 'laravel' }, { name: 'Vue.js', icon: 'vue' }],
 		description: 'Cursos de idiomas en línea, clases en vivo y seguimiento del progreso de estudiantes.',
 		domain: 'linguapro.com',
 	},
@@ -144,9 +148,20 @@ const solutions: Solution[] = [
 		category: 'ops',
 		categoryLabel: 'Hotelería · Monitoreo IoT',
 		technology: 'Propuesta · IoT',
+		technologies: [{ name: 'IoT', icon: 'iot' }],
 		description: 'Monitoreo de cajas fuertes con alertas y registro de actividad para hoteles.',
 		domain: 'safecloudhotels.com',
 	},
+];
+
+const locations = [
+	{ id: 'pachuca', name: 'Pachuca', detail: 'Hidalgo, México', lat: 20.1011, lng: -98.7591 },
+	{ id: 'santa-fe', name: 'Santa Fe', detail: 'Ciudad de México', lat: 19.3574, lng: -99.2622 },
+	{ id: 'puerto-veracruz', name: 'Puerto de Veracruz', detail: 'Veracruz, México', lat: 19.1738, lng: -96.1342 },
+	{ id: 'monterrey', name: 'Monterrey', detail: 'Nuevo León, México', lat: 25.6866, lng: -100.3161 },
+	{ id: 'ciudad-de-mexico', name: 'Ciudad de México', detail: 'México', lat: 19.4326, lng: -99.1332 },
+	{ id: 'guadalajara', name: 'Guadalajara', detail: 'Jalisco, México', lat: 20.6597, lng: -103.3496 },
+	{ id: 'houston', name: 'Houston', detail: 'Texas, Estados Unidos', lat: 29.7604, lng: -95.3698 },
 ];
 ---
 
@@ -230,7 +245,7 @@ const solutions: Solution[] = [
 					<div class="feature-orbit feature-orbit-one" aria-hidden="true"></div>
 					<div class="feature-orbit feature-orbit-two" aria-hidden="true"></div>
 					<div class="feature-copy">
-						<p class="feature-kicker"><span></span> PROYECTO ESTRELLA · CONSULTORÍA</p>
+						<p class="feature-kicker">PROYECTO ESTRELLA · CONSULTORÍA</p>
 						<h2>Groove<span>Space</span></h2>
 						<p>Encuentra estudios y reserva tu espacio para crear, sin cruces de horarios.</p>
 						<div class="feature-tags"><span>React</span><span>Reservas en línea</span></div>
@@ -311,20 +326,8 @@ const solutions: Solution[] = [
 						<button class="filter-chip" type="button" data-category-filter="ops" aria-pressed="false">Operaciones</button>
 					</div>
 				</div>
-				<div class="device-filters" data-reveal>
-					<div class="device-filter-group" role="group" aria-label="Modelo de laptop">
-						<span>Laptop</span>
-						<button class="device-filter is-active" type="button" data-device-filter="laptop" data-device-model="hp" aria-pressed="true">HP</button>
-						<button class="device-filter" type="button" data-device-filter="laptop" data-device-model="mac" aria-pressed="false">Mac</button>
-					</div>
-					<div class="device-filter-group" role="group" aria-label="Modelo de teléfono">
-						<span>Teléfono</span>
-						<button class="device-filter is-active" type="button" data-device-filter="phone" data-device-model="android" aria-pressed="true">Android</button>
-						<button class="device-filter" type="button" data-device-filter="phone" data-device-model="iphone" aria-pressed="false">iPhone</button>
-					</div>
-				</div>
 				<p class="result-count" aria-live="polite"><span data-solution-count>{solutions.length}</span> soluciones</p>
-				<div class="solution-grid" data-solution-grid data-laptop-model="hp" data-phone-model="android">
+				<div class="solution-grid" data-solution-grid>
 					{solutions.map((solution, index) => (
 						<article
 							class="solution-card"
@@ -332,9 +335,25 @@ const solutions: Solution[] = [
 							data-solution-card
 							data-category={solution.category}
 							data-search={`${solution.name} ${solution.description} ${solution.categoryLabel} ${solution.technology}`}
+							data-laptop-model="hp"
+							data-phone-model="android"
 							data-reveal
 						>
 							<div class:list={['device-stage', solution.category === 'apps' ? 'phone-stage' : 'laptop-stage']}>
+								<div class="device-filter-group" role="group" aria-label={solution.category === 'apps' ? `Cambiar dispositivo de ${solution.name}` : `Cambiar laptop de ${solution.name}`}>
+									<span>{solution.category === 'apps' ? 'Ver en' : 'Laptop'}</span>
+									{solution.category === 'apps' ? (
+										<>
+											<button class="device-filter is-active" type="button" data-device-filter="phone" data-device-model="android" aria-pressed="true">Android</button>
+											<button class="device-filter" type="button" data-device-filter="phone" data-device-model="iphone" aria-pressed="false">iPhone</button>
+										</>
+									) : (
+										<>
+											<button class="device-filter is-active" type="button" data-device-filter="laptop" data-device-model="hp" aria-pressed="true">HP</button>
+											<button class="device-filter" type="button" data-device-filter="laptop" data-device-model="mac" aria-pressed="false">Mac</button>
+										</>
+									)}
+								</div>
 								<div class:list={['device', solution.category === 'apps' ? 'device-phone' : 'device-laptop']}>
 									<div class="device-display">
 										{solution.category !== 'apps' && (
@@ -349,10 +368,6 @@ const solutions: Solution[] = [
 										)}
 										{solution.image ? (
 											<img src={solution.image} alt={solution.imageAlt} loading="lazy" />
-										) : solution.gallery ? (
-											<div class="device-gallery">
-												{solution.gallery.map((screenshot) => <img src={screenshot.image} alt={screenshot.alt} loading="lazy" />)}
-											</div>
 										) : (
 											<div class="device-placeholder" aria-hidden="true">
 												<span>{solution.name.split(' ').map((word) => word[0]).slice(0, 2).join('')}</span>
@@ -374,7 +389,14 @@ const solutions: Solution[] = [
 								<h3>{solution.name}</h3>
 								<p>{solution.description}</p>
 								<div class="project-footer">
-									<span class="tech-tag">{solution.technology}</span>
+									<div class="project-tech-stack" aria-label={`Tecnologías: ${solution.technology}`}>
+										{solution.technologies.map((technology) => (
+											<span class:list={['project-tech', `project-tech-${technology.icon}`]}>
+												<TechnologyIcon name={technology.name} icon={technology.icon} />
+												<span>{technology.name}</span>
+											</span>
+										))}
+									</div>
 									{solution.repository ? (
 										<a href={solution.repository} target="_blank" rel="noopener noreferrer" aria-label={`Explorar ${solution.name} en GitHub`}>
 											Explorar <span aria-hidden="true">↗</span>
@@ -405,6 +427,73 @@ const solutions: Solution[] = [
 						<div><span>01</span><p><strong>Escuchamos</strong><br />Tus objetivos guían cada decisión.</p></div>
 						<div><span>02</span><p><strong>Construimos juntos</strong><br />Avances visibles y comunicación clara.</p></div>
 						<div><span>03</span><p><strong>Seguimos contigo</strong><br />Tu solución evoluciona con el negocio.</p></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="presence-section" id="presencia">
+			<div class="section-wrap">
+				<div class="section-intro presence-intro" data-reveal>
+					<div>
+						<p class="eyebrow">CERCA DE TUS PROYECTOS</p>
+						<h2>Presencia y clientes<br /><span>en:</span></h2>
+					</div>
+					<p>Selecciona un pin para explorar nuestras ubicaciones en México y Estados Unidos.</p>
+				</div>
+				<div class="presence-map" data-presence-map data-reveal>
+					<div class="map-canvas">
+						<iframe
+							class="map-google-frame"
+							src="https://www.google.com/maps/embed?origin=mfe&pb=!1m10!1m8!1m3!1d14811149.542883562!2d-101.5!3d25!3m2!1i1024!2i768!4f13.1!6i5"
+							title="Mapa de Google Maps: México y Texas"
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+							allowfullscreen
+						></iframe>
+						<div class="map-pins" role="group" aria-label="Selecciona una ubicación">
+							{locations.map((location, index) => (
+								<button
+									class:list={['map-pin', index === 0 && 'is-active']}
+									type="button"
+									data-map-pin
+									data-location-name={location.name}
+									data-location-detail={location.detail}
+									data-location-lat={location.lat}
+									data-location-lng={location.lng}
+									aria-label={`${location.name}, ${location.detail}`}
+									aria-pressed={index === 0 ? 'true' : 'false'}
+								>
+									<span class="map-pin-dot" aria-hidden="true"></span>
+								</button>
+							))}
+						</div>
+						<div class="map-scale" aria-hidden="true"><span></span><i>MAPA DE UBICACIONES</i></div>
+					</div>
+					<div class="map-location-card" data-map-location-card aria-live="polite">
+						<iframe
+							class="map-location-image"
+							src={`https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1s${locations[0].lat}%2C${locations[0].lng}`}
+							title={`Google Maps: ${locations[0].name}, ${locations[0].detail}`}
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+							allowfullscreen
+							data-map-location-image
+						></iframe>
+						<div class="map-location-copy">
+							<p data-map-location-region>{locations[0].detail}</p>
+							<h3 data-map-location-name>{locations[0].name}</h3>
+							<a
+								class="map-open-link"
+								href={`https://www.google.com/maps/search/?api=1&query=${locations[0].lat}%2C${locations[0].lng}`}
+								target="_blank"
+								rel="noopener noreferrer"
+								data-map-open-link
+							>
+								Abrir en Google Maps <span aria-hidden="true">↗</span>
+							</a>
+						</div>
+						<span class="map-location-index" data-map-location-index>01 / 07</span>
 					</div>
 				</div>
 			</div>
@@ -719,16 +808,16 @@ const solutions: Solution[] = [
 		});
 	});
 
-	const solutionGrid = document.querySelector<HTMLElement>('[data-solution-grid]');
 	const deviceFilters = document.querySelectorAll<HTMLButtonElement>('[data-device-filter]');
 	deviceFilters.forEach((button) => {
 		button.addEventListener('click', () => {
 			const deviceType = button.dataset.deviceFilter;
 			const deviceModel = button.dataset.deviceModel;
-			if (!solutionGrid || !deviceType || !deviceModel) return;
+			const project = button.closest<HTMLElement>('[data-solution-card]');
+			if (!project || !deviceType || !deviceModel) return;
 
-			solutionGrid.dataset[deviceType === 'laptop' ? 'laptopModel' : 'phoneModel'] = deviceModel;
-			Array.from(deviceFilters)
+			project.dataset[deviceType === 'laptop' ? 'laptopModel' : 'phoneModel'] = deviceModel;
+			Array.from(project.querySelectorAll<HTMLButtonElement>('[data-device-filter]'))
 				.filter((filter) => filter.dataset.deviceFilter === deviceType)
 				.forEach((filter) => {
 					const isActive = filter === button;
@@ -737,6 +826,74 @@ const solutions: Solution[] = [
 				});
 		});
 	});
+
+	const map = document.querySelector<HTMLElement>('[data-presence-map]');
+	const mapPins = map ? Array.from(map.querySelectorAll<HTMLButtonElement>('[data-map-pin]')) : [];
+	const mapLocationName = map?.querySelector<HTMLElement>('[data-map-location-name]');
+	const mapLocationRegion = map?.querySelector<HTMLElement>('[data-map-location-region]');
+	const mapLocationIndex = map?.querySelector<HTMLElement>('[data-map-location-index]');
+	const mapLocationImage = map?.querySelector<HTMLIFrameElement>('[data-map-location-image]');
+	const mapOpenLink = map?.querySelector<HTMLAnchorElement>('[data-map-open-link]');
+	const mapCenter = { lat: 25, lng: -101.5 };
+
+	const mercatorPoint = (latitude: number, longitude: number, worldSize: number) => {
+		const clampedLatitude = Math.max(-85, Math.min(85, latitude));
+		const sinLatitude = Math.sin(clampedLatitude * Math.PI / 180);
+		return {
+			x: (longitude + 180) / 360 * worldSize,
+			y: (0.5 - Math.log((1 + sinLatitude) / (1 - sinLatitude)) / (4 * Math.PI)) * worldSize,
+		};
+	};
+
+	const positionMapPins = () => {
+		if (!map) return;
+		const canvas = map.querySelector<HTMLElement>('.map-canvas');
+		if (!canvas) return;
+
+		const zoom = 5;
+		const worldSize = 256 * 2 ** zoom;
+		const center = mercatorPoint(mapCenter.lat, mapCenter.lng, worldSize);
+		const width = canvas.clientWidth;
+		const height = canvas.clientHeight;
+		if (!width || !height) return;
+
+		mapPins.forEach((pin) => {
+			const latitude = Number(pin.dataset.locationLat);
+			const longitude = Number(pin.dataset.locationLng);
+			if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) return;
+			const point = mercatorPoint(latitude, longitude, worldSize);
+			const x = ((point.x - center.x) / width + 0.5) * 100;
+			const y = ((point.y - center.y) / height + 0.5) * 100;
+			pin.style.setProperty('--pin-x', `${x}%`);
+			pin.style.setProperty('--pin-y', `${y}%`);
+		});
+	};
+
+	mapPins.forEach((pin, index) => {
+		pin.addEventListener('click', () => {
+			const name = pin.dataset.locationName;
+			const detail = pin.dataset.locationDetail;
+			const latitude = Number(pin.dataset.locationLat);
+			const longitude = Number(pin.dataset.locationLng);
+			if (!name || !detail || !Number.isFinite(latitude) || !Number.isFinite(longitude)) return;
+
+			mapPins.forEach((locationPin) => {
+				const isSelected = locationPin === pin;
+				locationPin.classList.toggle('is-active', isSelected);
+				locationPin.setAttribute('aria-pressed', String(isSelected));
+			});
+			if (mapLocationName) mapLocationName.textContent = name;
+			if (mapLocationRegion) mapLocationRegion.textContent = detail;
+			if (mapLocationIndex) mapLocationIndex.textContent = `${String(index + 1).padStart(2, '0')} / ${String(mapPins.length).padStart(2, '0')}`;
+			if (mapLocationImage) {
+				mapLocationImage.src = `https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1s${latitude}%2C${longitude}`;
+				mapLocationImage.title = `Google Maps: ${name}, ${detail}`;
+			}
+			if (mapOpenLink) mapOpenLink.href = `https://www.google.com/maps/search/?api=1&query=${latitude}%2C${longitude}`;
+		});
+	});
+	positionMapPins();
+	window.addEventListener('resize', positionMapPins);
 
 	const revealElements = document.querySelectorAll<HTMLElement>('[data-reveal]');
 	if ('IntersectionObserver' in window) {

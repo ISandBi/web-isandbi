@@ -14,11 +14,8 @@
 	}
 
 	.solution-grid {
-		gap: 40px;
-	}
-
-	.device-laptop {
-		width: 100%;
+		column-gap: 48px;
+		row-gap: 68px;
 	}
 }
 
@@ -271,12 +268,11 @@
 	}
 
 	.feature-copy {
-		margin-bottom: -34px;
-		padding: 15px 18px 14px;
+		padding-left: 15px;
 	}
 
 	.feature-product {
-		padding-left: 4px;
+		padding: 15px 0 0 4px;
 	}
 
 	.feature-note {
@@ -291,6 +287,47 @@
 	.services,
 	.about-section {
 		padding-block: 78px;
+	}
+
+	.presence-section {
+		padding-block: 28px 78px;
+	}
+
+	.map-canvas {
+		min-height: 0;
+		aspect-ratio: 1.15;
+	}
+
+	.map-scale {
+		right: 10px;
+		bottom: 10px;
+	}
+
+	.map-scale i {
+		font-size: 7px;
+	}
+
+	.map-location-card {
+		min-height: 0;
+		flex-wrap: wrap;
+	}
+
+	.map-location-image {
+		width: 100%;
+		min-height: 210px;
+		aspect-ratio: 1.6;
+	}
+
+	.map-location-copy {
+		padding: 18px 14px;
+	}
+
+	.map-location-copy h3 {
+		font-size: 18px;
+	}
+
+	.map-location-index {
+		padding-inline: 14px;
 	}
 
 	.section-intro {
@@ -348,11 +385,7 @@
 
 	.solution-grid {
 		grid-template-columns: 1fr;
-		gap: 34px;
-	}
-
-	.device-filters {
-		gap: 8px;
+		row-gap: 52px;
 	}
 
 	.device-filter-group {
@@ -373,15 +406,15 @@
 	}
 
 	.device-stage {
-		padding: 24px 0 34px;
+		padding: 51px 0 22px;
 	}
 
 	.device-laptop {
-		width: 100%;
+		width: 92%;
 	}
 
 	.device-phone {
-		width: min(48%, 190px);
+		width: min(62%, 230px);
 	}
 
 	.feature-copy > p:not(.feature-kicker) {
@@ -468,10 +501,6 @@
 
 	.feature-kicker {
 		font-size: 7px;
-	}
-
-	.feature-copy {
-		padding: 13px 14px 12px;
 	}
 
 	.feature-copy h2 {

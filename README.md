@@ -43,12 +43,17 @@ Los estilos están separados por responsabilidad en `src/styles/`: `tokens.css` 
 explorador, y `responsive.css` y `motion.css` atienden adaptación y animaciones. La página principal
 importa estos módulos por separado para mantener cada hoja enfocada.
 
+La sección de presencia incluye un mapa de Google Maps centrado en México y Texas, con pines en
+Pachuca, Santa Fe, Puerto de Veracruz, Monterrey, Ciudad de México, Guadalajara y Houston. Al
+seleccionar un pin, se actualiza una vista de Google Maps centrada en esa ubicación.
+
 El portafolio representa los proyectos web y operativos en equipos portátiles y las aplicaciones
-móviles Android en teléfonos, sin tarjetas. Las laptops incluyen una barra de navegador con la
-dirección de marca del proyecto. GrooveSpace ocupa el escaparate principal. El explorador permite
-alternar las laptops entre HP y Mac, y los teléfonos entre Android y iPhone. En móvil, el menú
-flotante se puede arrastrar; sus opciones acompañan el movimiento con una onda y se compactan
-mientras se mueve, sin mostrar la barra de desplazamiento.
+móviles Android en teléfonos, sin tarjetas. GrooveSpace y DeskFlex muestran una sola captura. Las
+laptops incluyen una barra de navegador con la dirección de marca del proyecto y un selector de
+modelo por proyecto para alternar entre HP y Mac; los teléfonos permiten elegir Android o iPhone
+por proyecto. GrooveSpace ocupa el escaparate principal. En móvil, el menú flotante se puede
+arrastrar; sus opciones acompañan el movimiento con una onda y se compactan mientras se mueve, sin
+mostrar la barra de desplazamiento.
 
 El logotipo institucional está en `public/images/isbi-consultoria-logo.png`. Las capturas de
 proyectos del portafolio están en `public/images/solutions/`:

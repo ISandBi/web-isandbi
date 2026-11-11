@@ -4,6 +4,20 @@
 	background: var(--page-surface-soft);
 }
 
+html:not([data-theme='dark']) .work-section {
+	background:
+		radial-gradient(ellipse at 9% 9%, rgb(244 102 131 / 10%), transparent 33%),
+		radial-gradient(ellipse at 92% 38%, rgb(157 101 225 / 12%), transparent 38%),
+		linear-gradient(110deg, #f8f2fb, #f4effb 52%, #fff4f5);
+}
+
+html[data-theme='dark'] .work-section {
+	background:
+		radial-gradient(ellipse at 9% 9%, rgb(235 75 113 / 7%), transparent 34%),
+		radial-gradient(ellipse at 92% 38%, rgb(138 76 216 / 9%), transparent 38%),
+		var(--page-surface-soft);
+}
+
 .work-intro {
 	margin-bottom: 48px;
 }
@@ -82,8 +96,16 @@
 
 .filter-chip.is-active {
 	border-color: var(--page-ink);
-	background: var(--page-ink);
-	color: var(--page-bg);
+	background: var(--accent-gradient);
+	color: #fff;
+	box-shadow: 0 5px 16px rgb(153 68 167 / 20%);
+}
+
+html[data-theme='dark'] .filter-chip.is-active {
+	border-color: rgb(224 165 241 / 42%);
+	background: linear-gradient(110deg, rgb(218 86 122 / 19%), rgb(140 87 221 / 23%));
+	color: var(--page-ink);
+	box-shadow: inset 0 1px 0 rgb(255 255 255 / 5%);
 }
 
 .result-count {
@@ -93,18 +115,11 @@
 	font-weight: 600;
 }
 
-.device-filters {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 10px;
-	margin: -3px 0 21px;
-}
-
 .solution-grid {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	column-gap: clamp(24px, 4vw, 58px);
-	row-gap: 48px;
+	column-gap: clamp(42px, 6vw, 88px);
+	row-gap: clamp(58px, 7vw, 96px);
 }
 
 .solution-card {
@@ -120,13 +135,10 @@
 }
 
 .device-stage {
+	position: relative;
 	display: grid;
 	place-items: center;
-	padding: clamp(24px, 3vw, 42px) 0 clamp(32px, 4vw, 48px);
-	background:
-		radial-gradient(ellipse at 50% 80%, rgb(98 211 245 / 22%), transparent 44%),
-		radial-gradient(ellipse at 50% 76%, rgb(18 63 159 / 10%), transparent 70%);
-	transition: background 0.3s ease;
+	padding: 55px 0 25px;
 }
 
 .device-stage::after {
@@ -137,27 +149,29 @@
 	text-transform: uppercase;
 }
 
-.laptop-stage::after {
+.solution-card[data-laptop-model='hp'] .laptop-stage::after {
+	margin-top: 12px;
 	content: 'Laptop HP';
 }
 
-.phone-stage::after {
+.solution-card[data-phone-model='android'] .phone-stage::after {
+	margin-top: 12px;
 	content: 'Android';
 }
 
 .device {
 	position: relative;
-	filter: drop-shadow(0 18px 14px rgb(20 54 75 / 23%));
+	filter: drop-shadow(0 13px 10px rgb(10 20 26 / 24%));
 	transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.35s ease;
 }
 
 .solution-card:hover .device {
-	filter: drop-shadow(0 23px 17px rgb(20 54 75 / 27%));
-	transform: translateY(-4px) rotateX(1deg);
+	filter: drop-shadow(0 16px 13px rgb(10 20 26 / 27%));
+	transform: translateY(-3px);
 }
 
 .device-laptop {
-	width: 100%;
+	width: 91%;
 }
 
 .device-laptop .device-display {
@@ -168,11 +182,11 @@
 	padding: 8px 8px 0;
 	flex-direction: column;
 	overflow: hidden;
-	border: 1px solid #9aafba;
+	border: 1px solid #26333a;
 	border-bottom: 0;
-	border-radius: 12px 12px 3px 3px;
-	background: linear-gradient(145deg, #edf5f8, #78909c 18%, #263b49 34%, #172834);
-	box-shadow: inset 1px 1px 2px rgb(255 255 255 / 95%), inset -2px -2px 6px rgb(0 0 0 / 40%);
+	border-radius: 10px 10px 2px 2px;
+	background: #303b40;
+	box-shadow: 0 1px 1px rgb(255 255 255 / 18%);
 }
 
 .device-browser {
@@ -250,12 +264,12 @@
 	width: 3px;
 	height: 3px;
 	border-radius: 50%;
-	background: #19313e;
+	background: #0a1114;
+	box-shadow: 0 0 0 1px rgb(174 194 201 / 25%);
 	content: '';
 }
 
 .device-laptop .device-display > img,
-.device-gallery,
 .device-placeholder {
 	width: 100%;
 	min-height: 0;
@@ -276,13 +290,13 @@
 .device-base {
 	position: relative;
 	width: 110%;
-	height: 13px;
+	height: 14px;
 	margin-left: -5%;
-	border: 1px solid #91a5af;
-	border-top: 1px solid #f6fbfd;
-	border-radius: 2px 2px 52% 52%;
-	background: linear-gradient(180deg, #dce8ed 0%, #a9bac2 34%, #607783 76%, #3b505d 100%);
-	box-shadow: inset 0 2px 2px rgb(255 255 255 / 86%), inset 0 -2px 4px rgb(0 0 0 / 34%);
+	border: 1px solid #68767c;
+	border-top: 1px solid #d6dcde;
+	border-radius: 1px 1px 48% 48%;
+	background: linear-gradient(180deg, #e1e5e6 0%, #b4bdc0 25%, #7c898e 75%, #505d62 100%);
+	box-shadow: 0 3px 4px rgb(8 15 18 / 19%);
 }
 
 .device-base span {
@@ -292,27 +306,11 @@
 	width: 14%;
 	height: 3px;
 	border-radius: 0 0 5px 5px;
-	background: #90a6b0;
-}
-
-.device-gallery {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	height: auto;
-	gap: 2px;
-	background: #fff;
-}
-
-.device-gallery img {
-	width: 100%;
-	height: 100%;
-	min-width: 0;
-	object-fit: cover;
-	object-position: top center;
+	background: #9da8ab;
 }
 
 .device-phone {
-	width: min(52%, 250px);
+	width: min(58%, 270px);
 }
 
 .device-phone .device-display {
@@ -321,10 +319,10 @@
 	aspect-ratio: 0.49;
 	padding: 7px;
 	overflow: hidden;
-	border: 1px solid #899eaa;
+	border: 2px solid #39474d;
 	border-radius: 27px;
-	background: linear-gradient(145deg, #f4fbfe, #8398a4 18%, #293b47 35%, #10202b);
-	box-shadow: inset 1px 1px 2px rgb(255 255 255 / 95%), inset -2px -2px 7px rgb(0 0 0 / 55%), 0 0 0 1px rgb(255 255 255 / 50%);
+	background: #253138;
+	box-shadow: 0 0 0 1px rgb(17 28 34 / 35%);
 }
 
 .device-phone .device-display > img {
@@ -336,16 +334,6 @@
 	background: #fff;
 }
 
-.device-phone .device-gallery {
-	grid-template-columns: 1fr;
-	overflow: hidden;
-	border-radius: 19px;
-}
-
-.device-phone .device-gallery img + img {
-	display: none;
-}
-
 .device-sensor {
 	position: absolute;
 	z-index: 2;
@@ -353,57 +341,57 @@
 	left: 50%;
 	width: 5px;
 	height: 5px;
-	border: 1px solid rgb(255 255 255 / 30%);
+	border: 1px solid rgb(255 255 255 / 20%);
 	border-radius: 50%;
 	background: #172630;
 	transform: translateX(-50%);
 }
 
-.solution-grid[data-laptop-model='mac'] .device-laptop .device-display {
+.solution-card[data-laptop-model='mac'] .device-laptop .device-display {
 	padding: 7px 7px 0;
-	border-color: #b6c4ca;
-	border-radius: 17px 17px 3px 3px;
-	background: linear-gradient(145deg, #f8fcfd, #aebdc3 18%, #6f858e 30%, #2a3d45);
-	box-shadow: inset 1px 1px 2px rgb(255 255 255 / 98%), inset -2px -2px 6px rgb(0 0 0 / 30%);
+	border-color: #59676d;
+	border-radius: 14px 14px 2px 2px;
+	background: #657278;
+	box-shadow: 0 1px 1px rgb(255 255 255 / 20%);
 }
 
-.solution-grid[data-laptop-model='mac'] .device-laptop .device-display::before {
+.solution-card[data-laptop-model='mac'] .device-laptop .device-display::before {
 	top: 3px;
 	width: 4px;
 	height: 4px;
-	background: #293a40;
+	background: #10191d;
 }
 
-.solution-grid[data-laptop-model='mac'] .device-base {
+.solution-card[data-laptop-model='mac'] .device-base {
 	height: 17px;
-	border-color: #b7c5ca;
+	border-color: #9da9ad;
 	border-radius: 1px 1px 48% 48%;
-	background: linear-gradient(180deg, #f2f7f8 0%, #cbd6da 38%, #85969d 80%, #60737a 100%);
-	box-shadow: inset 0 2px 2px rgb(255 255 255 / 95%), inset 0 -2px 4px rgb(0 0 0 / 27%);
+	background: linear-gradient(180deg, #edf0f1 0%, #c8ced0 38%, #929da1 80%, #707d81 100%);
+	box-shadow: 0 3px 4px rgb(8 15 18 / 17%);
 }
 
-.solution-grid[data-laptop-model='mac'] .device-base span {
+.solution-card[data-laptop-model='mac'] .device-base span {
 	top: 2px;
 	height: 4px;
 	border-radius: 0 0 6px 6px;
-	background: #a4b2b7;
+	background: #b2babe;
 }
 
-.solution-grid[data-laptop-model='mac'] .laptop-stage::after {
+.solution-card[data-laptop-model='mac'] .laptop-stage::after {
 	content: 'MacBook';
 }
 
-.solution-grid[data-phone-model='iphone'] .device-phone .device-display {
+.solution-card[data-phone-model='iphone'] .device-phone .device-display {
 	border-radius: 34px;
-	background: linear-gradient(145deg, #f8fcfd, #b8c6cb 18%, #657b84 30%, #263a42);
+	border-color: #6d7b81;
+	background: #53636a;
 }
 
-.solution-grid[data-phone-model='iphone'] .device-phone .device-display > img,
-.solution-grid[data-phone-model='iphone'] .device-phone .device-gallery {
+.solution-card[data-phone-model='iphone'] .device-phone .device-display > img {
 	border-radius: 27px;
 }
 
-.solution-grid[data-phone-model='iphone'] .device-sensor {
+.solution-card[data-phone-model='iphone'] .device-sensor {
 	top: 8px;
 	width: 28%;
 	height: 12px;
@@ -412,20 +400,32 @@
 	background: #17262d;
 }
 
-.solution-grid[data-phone-model='iphone'] .phone-stage::after {
+.solution-card[data-phone-model='iphone'] .phone-stage::after {
 	content: 'iPhone';
 }
 
 .device-filter-group {
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	right: 0;
 	display: inline-flex;
 	min-height: 42px;
 	align-items: center;
 	gap: 4px;
 	padding: 4px;
-	border: 1px solid color-mix(in srgb, var(--brand-cyan) 23%, var(--page-line));
+	border: 1px solid rgb(255 255 255 / 40%);
 	border-radius: 14px;
-	background: color-mix(in srgb, var(--page-surface) 86%, var(--brand-cyan));
-	box-shadow: 3px 4px 12px rgb(21 63 92 / 7%), inset 1px 1px 2px rgb(255 255 255 / 80%);
+	background: rgb(231 243 248 / 54%);
+	box-shadow: 0 7px 18px rgb(25 53 68 / 10%), inset 0 1px 1px rgb(255 255 255 / 80%);
+	backdrop-filter: blur(14px) saturate(135%);
+	-webkit-backdrop-filter: blur(14px) saturate(135%);
+}
+
+html[data-theme='dark'] .device-filter-group {
+	border-color: rgb(224 185 239 / 27%);
+	background: rgb(30 22 39 / 72%);
+	box-shadow: 0 8px 24px rgb(0 0 0 / 25%), inset 0 1px 1px rgb(255 255 255 / 9%);
 }
 
 .device-filter-group > span {
@@ -442,7 +442,7 @@
 	padding: 0 11px;
 	border: 1px solid transparent;
 	border-radius: 10px;
-	background: transparent;
+	background: rgb(255 255 255 / 11%);
 	color: var(--page-body);
 	font-size: 11px;
 	font-weight: 650;
@@ -455,10 +455,17 @@
 }
 
 .device-filter.is-active {
-	border-color: color-mix(in srgb, var(--brand-cyan) 25%, var(--page-line));
-	background: linear-gradient(145deg, var(--page-surface), color-mix(in srgb, var(--page-surface) 85%, var(--brand-cyan)));
-	box-shadow: 2px 3px 7px rgb(20 55 80 / 12%), inset 1px 1px 1px rgb(255 255 255 / 92%);
-	color: var(--page-ink);
+	border-color: rgb(255 255 255 / 52%);
+	background: rgb(255 255 255 / 67%);
+	box-shadow: 0 3px 8px rgb(20 45 60 / 11%), inset 0 1px 1px rgb(255 255 255 / 88%);
+	color: #173243;
+}
+
+html[data-theme='dark'] .device-filter.is-active {
+	border-color: rgb(230 177 247 / 35%);
+	background: linear-gradient(110deg, rgb(222 91 131 / 22%), rgb(142 89 223 / 27%));
+	box-shadow: inset 0 1px 0 rgb(255 255 255 / 8%);
+	color: #f8ebff;
 }
 
 .device-placeholder {
@@ -531,38 +538,154 @@
 
 .project-footer {
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 	justify-content: space-between;
-	gap: 15px;
+	gap: 18px;
 	margin-top: auto;
 	padding-top: 16px;
 	border-top: 1px solid var(--page-line);
 }
 
-.tech-tag {
-	display: inline-flex;
-	max-width: 70%;
+.project-tech-stack {
+	display: flex;
+	min-width: 0;
 	align-items: center;
-	padding: 6px 9px;
-	background: var(--page-surface-soft);
-	color: var(--page-body);
-	font-size: 10px;
-	font-weight: 600;
-	line-height: 1.4;
+	flex-wrap: wrap;
+	gap: 9px 16px;
 }
 
-.project-footer a {
+.project-tech {
+	display: inline-flex;
+	min-height: 36px;
+	align-items: center;
+	gap: 8px;
+	color: var(--page-ink);
+	font-size: 13px;
+	font-weight: 650;
+	line-height: 1.25;
+}
+
+.technology-icon {
+	display: block;
+	width: 34px;
+	height: 34px;
+	flex: 0 0 auto;
+	padding: 5px;
+	overflow: visible;
+	border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+	border-radius: 10px;
+	background: color-mix(in srgb, currentColor 8%, var(--page-surface));
+	fill: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.8;
+}
+
+.technology-icon-python {
+	padding: 4px;
+	border: 0;
+	background: transparent;
+	fill: #3776ab;
+	stroke: none;
+}
+
+.technology-icon-python path:nth-child(2) {
+	fill: #ffd343;
+}
+
+.technology-icon-angular {
+	fill: #dd0031;
+	stroke: #dd0031;
+	stroke-width: 0.9;
+}
+
+.technology-icon-angular path:nth-child(2) {
+	fill: #fff;
+	stroke: #fff;
+}
+
+.technology-icon-android {
+	fill: #3ddc84;
+	stroke: #168c55;
+	stroke-width: 1.4;
+}
+
+.technology-icon-android circle {
+	fill: #173d2b;
+	stroke: none;
+}
+
+.technology-icon-react {
+	fill: none;
+	stroke: #149eca;
+	stroke-width: 1.8;
+}
+
+.technology-icon-react circle {
+	fill: #149eca;
+	stroke: none;
+}
+
+.technology-icon-astro {
+	fill: #ff5d01;
+	stroke: #a53d0c;
+	stroke-width: 1;
+}
+
+.technology-icon-vue {
+	fill: #42b883;
+	stroke: #34495e;
+	stroke-width: 1.4;
+}
+
+.technology-icon-laravel {
+	color: #f05340;
+	stroke: currentColor;
+}
+
+.technology-icon-flask {
+	color: #54616d;
+	stroke: currentColor;
+}
+
+.technology-icon-web {
+	color: #6d4bc3;
+	stroke: currentColor;
+}
+
+.technology-icon-inventory {
+	color: #348a74;
+	stroke: currentColor;
+}
+
+.technology-icon-iot {
+	color: #bf5b9c;
+	stroke: currentColor;
+}
+
+html[data-theme='dark'] .project-tech {
+	color: #eee5f4;
+}
+
+html[data-theme='dark'] .technology-icon-flask {
+	color: #b7c3d0;
+}
+
+.project-footer > a {
 	display: inline-flex;
 	flex: 0 0 auto;
 	align-items: center;
 	gap: 7px;
-	color: var(--page-ink);
+	padding-block: 9px;
+	color: var(--page-body);
 	font-size: 12px;
 	font-weight: 650;
 	text-decoration: none;
+	line-height: 1.4;
 }
 
-.project-footer a:hover {
+.project-footer > a:hover {
 	color: var(--page-accent);
 }
 

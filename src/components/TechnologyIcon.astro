@@ -1,0 +1,84 @@
+---
+interface Props {
+	name: string;
+	icon: 'python' | 'flask' | 'angular' | 'android' | 'react' | 'web' | 'inventory' | 'astro' | 'laravel' | 'vue' | 'iot';
+}
+
+const { icon, name } = Astro.props;
+---
+
+<svg class={`technology-icon technology-icon-${icon}`} viewBox="0 0 40 40" role="img" aria-label={name}>
+	{icon === 'python' && (
+		<>
+			<path d="M19.8 4.5c-8.1 0-7.6 3.5-7.6 3.5v4.1h7.8v1.3H9.1S4 12.8 4 20.2s4.5 7.1 4.5 7.1h2.7v-4s-.1-4.8 4.7-4.8h8.1s4.5.1 4.5-4.4V8.7s.7-4.2-8.7-4.2Zm-4.3 2.4a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8Z" />
+			<path d="M20.2 35.5c8.1 0 7.6-3.5 7.6-3.5v-4.1H20v-1.3h10.9s5.1.6 5.1-6.8-4.5-7.1-4.5-7.1h-2.7v4s.1 4.8-4.7 4.8H16s-4.5-.1-4.5 4.4v5.4s-.7 4.2 8.7 4.2Zm4.3-2.4a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8Z" />
+		</>
+	)}
+	{icon === 'flask' && (
+		<>
+			<path d="M15 5h10M18 5v10L9 30a3 3 0 0 0 2.6 4.5h16.8A3 3 0 0 0 31 30l-9-15V5" />
+			<path d="M13 26h14M16 21h8" />
+		</>
+	)}
+	{icon === 'angular' && (
+		<>
+			<path d="m20 3 15 5-2.3 20L20 37 7.3 28 5 8l15-5Z" />
+			<path d="m20 10-8 19h4l1.6-4h4.8l1.6 4h4l-8-19Zm0 7 1.2 4h-2.4l1.2-4Z" />
+		</>
+	)}
+	{icon === 'android' && (
+		<>
+			<path d="M11 14a9 9 0 0 1 18 0v9H11v-9ZM9 16v6m22-6v6M15 26v5m10-5v5M14 5l-2-3m14 3 2-3" />
+			<circle cx="16" cy="12" r="1" />
+			<circle cx="24" cy="12" r="1" />
+		</>
+	)}
+	{icon === 'react' && (
+		<>
+			<ellipse cx="20" cy="20" rx="16" ry="6.5" />
+			<ellipse cx="20" cy="20" rx="16" ry="6.5" transform="rotate(60 20 20)" />
+			<ellipse cx="20" cy="20" rx="16" ry="6.5" transform="rotate(120 20 20)" />
+			<circle cx="20" cy="20" r="2.5" />
+		</>
+	)}
+	{icon === 'web' && (
+		<>
+			<circle cx="20" cy="20" r="15" />
+			<path d="M5 20h30M20 5a23 23 0 0 1 0 30m0-30a23 23 0 0 0 0 30M8 11h24M8 29h24" />
+		</>
+	)}
+	{icon === 'inventory' && (
+		<>
+			<path d="m20 4 15 8v16l-15 8-15-8V12l15-8Z" />
+			<path d="m5 12 15 8 15-8M20 20v16M13 8l15 8" />
+		</>
+	)}
+	{icon === 'astro' && (
+		<>
+			<path d="m20 4 4.1 12.2L36 20l-11.9 3.8L20 36l-4.1-12.2L4 20l11.9-3.8L20 4Z" />
+			<path d="m30 5 1.2 3.8L35 10l-3.8 1.2L30 15l-1.2-3.8L25 10l3.8-1.2L30 5Z" />
+		</>
+	)}
+	{icon === 'laravel' && (
+		<>
+			<path d="m5 12 9-5 9 5v10l-9 5-9-5V12Zm9-5v10l9 5m-18-10 9 5 9-5m1 0 7-4 4 2v8l-11 6" />
+			<path d="m25 13 4 2 6-3" />
+		</>
+	)}
+	{icon === 'vue' && (
+		<>
+			<path d="m4 8 8 0 8 14 8-14h8L20 34 4 8Z" />
+			<path d="m12 8 8 14 8-14" />
+		</>
+	)}
+	{icon === 'iot' && (
+		<>
+			<circle cx="20" cy="20" r="5" />
+			<circle cx="7" cy="8" r="3" />
+			<circle cx="33" cy="8" r="3" />
+			<circle cx="7" cy="32" r="3" />
+			<circle cx="33" cy="32" r="3" />
+			<path d="m10 10 6 6m8 0 6-6m-20 20 6-6m8 0 6 6" />
+		</>
+	)}
+</svg>
