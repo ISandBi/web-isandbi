@@ -9,7 +9,7 @@ import '../styles/projects.css';
 import '../styles/responsive.css';
 import '../styles/motion.css';
 
-const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT?.trim();
+const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT?.trim() || 'https://formspree.io/f/xrpqzkqg';
 if (formspreeEndpoint && !/^https:\/\/formspree\.io\/f\/[A-Za-z0-9]+$/.test(formspreeEndpoint)) {
 	throw new Error('PUBLIC_FORMSPREE_ENDPOINT debe ser una URL válida de formulario de Formspree.');
 }
@@ -610,6 +610,7 @@ const locations = [
 					data-reveal
 				>
 					<h3>Cuéntanos tu idea</h3>
+					<input type="hidden" name="_subject" value="Nueva consulta desde IS&BI Solutions" />
 					<label>Nombre
 						<input type="text" name="name" autocomplete="name" placeholder="Tu nombre" required />
 					</label>

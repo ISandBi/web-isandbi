@@ -87,15 +87,24 @@ Los archivos de `public/` se sirven desde la raíz del sitio; por ejemplo,
 ## Formulario de contacto
 
 El formulario usa [Formspree](https://formspree.io/) para recibir consultas sin publicar la dirección
-receptora en el HTML. Copia `.env.example` como `.env` y configura el endpoint de tu formulario:
+receptora en el HTML. El endpoint público del formulario ya está configurado. Para reemplazarlo
+en desarrollo o en el entorno de despliegue, define `PUBLIC_FORMSPREE_ENDPOINT`:
 
 ```env
-PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/tu-id
+PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/xrpqzkqg
 ```
 
-El endpoint se obtiene al crear el formulario en Formspree. Debe estar configurado al compilar
-(`npm run build`); sin él, el botón de envío permanece desactivado. El campo de correo permite
-escribir el usuario y elegir `@gmail.com` o `@hotmail.com`.
+El destinatario del aviso del formulario está configurado como `mauricio.garro@ilb.edu.mx`.
+Formspree requiere verificar esa dirección desde el correo de confirmación antes de entregar avisos.
+El formulario envía el correo del visitante, el asunto y los detalles del proyecto. Para activar la
+respuesta automática al visitante, agrega la acción **Auto Response** en **Workflow → Actions**;
+Formspree la ofrece en los planes Professional y Business. Para aplicar los colores de IS&BI, crea y
+asigna una plantilla HTML de tipo **Autoresponse** desde **Project settings → Templates**, usando
+[formspree-autoresponse.html](./docs/emails/formspree-autoresponse.html) y
+[formspree-autoresponse.css](./docs/emails/formspree-autoresponse.css). Las plantillas HTML
+personalizadas requieren el plan Business. Sin ese plan, configura el mensaje de confirmación en
+la acción **Auto Response** cuando esté disponible. Estos cambios se realizan en el panel de
+Formspree y no requieren una nueva compilación del sitio.
 
 ## Lógica sencilla incluida
 
@@ -108,4 +117,6 @@ escribir el usuario y elegir `@gmail.com` o `@hotmail.com`.
   fue liberado, está próximo a lanzarse, sigue en preparación o es una propuesta.
 - **Animaciones:** transiciones y revelado al desplazarse, respetando la preferencia de movimiento
   reducido del sistema.
-- **Formulario:** valida los campos requeridos y envía consultas al endpoint de Formspree configurado.
+- **Formulario:** valida los campos requeridos y envía consultas a Formspree, con
+  `mauricio.garro@ilb.edu.mx` como destinatario del aviso; Formspree debe verificar ese correo.
+  La autorespuesta y su plantilla HTML se habilitan desde el plan y el panel de Formspree.
