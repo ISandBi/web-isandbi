@@ -45,6 +45,12 @@ están en `public/images/solutions/`. Las fotografías de portada se guardan en 
 - `public/images/equipo-consultoria.jpg`
 - `public/images/oficina.jpeg`
 - `public/images/solutions/davila-tours-web.png`
+- `public/images/solutions/davila-tours-reservas.png`
+- `public/images/solutions/ordersync-ecommerce.png`
+- `public/images/solutions/deskflex-reservas.png`
+- `public/images/solutions/deskflex-qr-acceso.png`
+- `public/images/solutions/groovespace-inicio.png`
+- `public/images/solutions/groovespace-estudio.png`
 - `public/images/solutions/kinder-nahla-mobile.png`
 - `public/images/solutions/gavaldoon-go-mobile.png`
 
@@ -68,8 +74,16 @@ escribir el usuario y elegir `@gmail.com` o `@hotmail.com`.
 
 - **Tema claro:** el sitio usa una sola paleta clara.
 - **Portafolio:** los proyectos destacados enlazan a sus repositorios públicos.
-- **Explorador de soluciones:** reúne los nueve repositorios públicos de IS&BI e incluye búsqueda
-  por nombre, descripción o tecnología y filtros por especialidad.
+- **Explorador de soluciones:** presenta los nueve repositorios públicos de IS&BI y dos propuestas
+  de proyecto descritas en el portafolio interno. Incluye búsqueda por nombre, descripción o
+  tecnología y filtros por especialidad; las propuestas sin repositorio enlazan al contacto.
+- **Descripciones del portafolio:** los alcances de Dávila Tours, OrderSync, Kinder Nahla,
+  Gavaldoon Go!, StockTrack, NovaTech, GrooveSpace, LinguaPro, DeskFlex y SafeCloud se basan en
+  los documentos de agosto, septiembre y octubre de 2026.
+- **OrderSync:** imagen de portada propia y tecnología Angular 20.
+- **GrooveSpace:** capturas de portada y catálogo; aplicación desarrollada con React.
+- **Kinder Nahla y Gavaldoon Go!:** incluyen sus imágenes en el explorador y muestran Android Studio
+  como entorno de desarrollo.
 - **Animaciones al desplazarse:** las secciones aparecen al entrar en pantalla y respetan la
   preferencia de movimiento reducido del navegador. Los degradados, tarjetas y navegación también
   cuentan con transiciones adaptadas a pantallas móviles.
