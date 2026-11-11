@@ -1,7 +1,7 @@
 ---
 interface Props {
 	name: string;
-	icon: 'python' | 'flask' | 'angular' | 'android' | 'react' | 'web' | 'inventory' | 'astro' | 'laravel' | 'vue' | 'iot'
+	icon: 'python' | 'flask' | 'angular' | 'android' | 'react' | 'web' | 'inventory' | 'astro' | 'laravel' | 'vue' | 'iot' | 'cloud' | 'security'
 		| 'html' | 'css' | 'javascript' | 'node' | 'sqlite' | 'postgresql' | 'mysql' | 'render' | 'django';
 }
 
@@ -46,6 +46,15 @@ const { icon, name } = Astro.props;
 		<>
 			<circle cx="20" cy="20" r="15" />
 			<path d="M5 20h30M20 5a23 23 0 0 1 0 30m0-30a23 23 0 0 0 0 30M8 11h24M8 29h24" />
+		</>
+	)}
+	{icon === 'cloud' && (
+		<path d="M11 30h18a7 7 0 0 0 .4-14 10 10 0 0 0-19.2 1.1A6.5 6.5 0 0 0 11 30Z" />
+	)}
+	{icon === 'security' && (
+		<>
+			<path d="M20 4 33 9v9c0 8-5.3 14.5-13 18-7.7-3.5-13-10-13-18V9l13-5Z" />
+			<path d="m14 20 4 4 8-9" />
 		</>
 	)}
 	{icon === 'inventory' && (

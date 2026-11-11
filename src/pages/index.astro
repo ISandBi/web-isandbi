@@ -184,7 +184,7 @@ const serviceCatalog = [
 	{
 		number: '01',
 		title: 'Plataformas web a medida',
-		description: 'Sitios, aplicaciones y sistemas web responsivos, desde la interfaz hasta las APIs y la conexión con tus datos.',
+		description: 'Damos a tu negocio una presencia digital innovadora con sitios y plataformas atractivas, rápidas y adaptables. Usamos frameworks actuales para crear experiencias que conecten con tus clientes y acompañen el crecimiento de tu empresa.',
 		technologies: ['React', 'Angular', 'Vue.js', 'Astro', 'Flask', 'Django', 'Laravel', 'Node.js', 'HTML · CSS · JavaScript'],
 		icon: 'web' as const,
 		examples: [{ label: 'OrderSync', href: '#project-ordersync' }, { label: 'NovaTech', href: '#project-novatech' }, { label: 'GrooveSpace', href: '#project-groovespace' }],
@@ -192,7 +192,7 @@ const serviceCatalog = [
 	{
 		number: '02',
 		title: 'Aplicaciones móviles',
-		description: 'Aplicaciones Android para ofrecer servicios, contenido y herramientas móviles con experiencias nativas.',
+		description: 'Acercamos tus servicios a tus clientes con aplicaciones Android intuitivas y funcionales. Creamos experiencias móviles nativas que facilitan tareas, consultas y comunicación desde cualquier lugar.',
 		technologies: ['Kotlin', 'Android nativo', 'Android Studio'],
 		icon: 'android' as const,
 		examples: [{ label: 'Gavaldoon Go!', href: '#project-gavaldoon-go' }, { label: 'Kinder Nahla', href: '#project-kinder-nahla' }],
@@ -200,7 +200,7 @@ const serviceCatalog = [
 	{
 		number: '03',
 		title: 'Operación e inventario',
-		description: 'Sistemas para controlar inventarios, centralizar pedidos, consultar reportes y automatizar tareas del día a día.',
+		description: 'Transformamos tareas manuales en procesos digitales claros: controla existencias, centraliza pedidos y consulta información útil para tomar decisiones y operar con mayor eficiencia.',
 		technologies: ['React', 'Angular', 'Django', 'PostgreSQL', 'SQLite'],
 		icon: 'inventory' as const,
 		examples: [{ label: 'StockTrack', href: '#project-stocktrack' }, { label: 'OrderSync', href: '#project-ordersync' }],
@@ -208,10 +208,26 @@ const serviceCatalog = [
 	{
 		number: '04',
 		title: 'Reservas y gestión de espacios',
-		description: 'Plataformas para administrar disponibilidad, reservar servicios y coordinar accesos en tiempo real.',
+		description: 'Simplificamos la gestión de citas, viajes y espacios con plataformas que muestran disponibilidad, organizan reservaciones y ayudan a coordinar accesos y horarios.',
 		technologies: ['Python', 'Flask', 'React', 'Node.js', 'SQLite'],
 		icon: 'web' as const,
 		examples: [{ label: 'Dávila Tours', href: '#project-davila-tours' }, { label: 'DeskFlex', href: '#project-deskflex-mexico' }, { label: 'GrooveSpace', href: '#project-groovespace' }],
+	},
+	{
+		number: '05',
+		title: 'Desarrollo en la nube',
+		description: 'Publicamos y conectamos aplicaciones en la nube para que tu equipo y tus clientes puedan acceder a ellas desde cualquier lugar. Configuramos despliegues y servicios de datos de acuerdo con las necesidades de cada proyecto.',
+		technologies: ['Render', 'Despliegue cloud', 'CI/CD', 'Bases de datos gestionadas'],
+		icon: 'cloud' as const,
+		examples: [{ label: 'OrderSync', href: '#project-ordersync' }],
+	},
+	{
+		number: '06',
+		title: 'Seguridad, cumplimiento y calidad',
+		description: 'Evaluamos código, arquitectura y pruebas para identificar riesgos, revisar la calidad del software y contrastar controles con estándares y normativas aplicables. Entregamos hallazgos priorizados y recomendaciones concretas de mejora.',
+		technologies: ['OWASP Top 10', 'ISO/IEC 27001', 'ISO/IEC 25010', 'Pruebas automatizadas'],
+		icon: 'security' as const,
+		examples: [],
 	},
 ];
 
@@ -360,12 +376,14 @@ const locations = [
 								{service.technologies.map((technology) => <li>{technology}</li>)}
 							</ul>
 						</div>
-						<div class="service-examples">
-							<span>En proyectos</span>
-							<div>
-								{service.examples.map((example) => <a href={example.href}>{example.label}</a>)}
+						{service.examples.length > 0 && (
+							<div class="service-examples">
+								<span>En proyectos</span>
+								<div>
+									{service.examples.map((example) => <a href={example.href}>{example.label}</a>)}
+								</div>
 							</div>
-						</div>
+						)}
 						<a class="service-cta" href="#contacto">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
 					</article>
 				))}
