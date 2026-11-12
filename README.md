@@ -1,7 +1,8 @@
 # ISANDBI Solutions
 
 Landing page corporativa de IS&BI hecha con Astro. Presenta servicios, proyectos digitales con
-capturas amplias, filtros, selector de tema y un formulario de contacto.
+capturas amplias, filtros, selector de tema, estándares de referencia y entregables del proceso de
+liberación, además de un formulario de contacto.
 
 ## Desarrollo local
 
@@ -39,9 +40,10 @@ con `Ctrl+C`.
 
 Los estilos están separados por responsabilidad en `src/styles/`: `tokens.css` define los temas,
 `base.css` contiene los estilos globales, `navigation.css` define navegación y portada,
-`sections.css` agrupa servicios, contacto y secciones informativas, `projects.css` contiene el
-explorador, y `responsive.css` y `motion.css` atienden adaptación y animaciones. La página principal
-importa estos módulos por separado para mantener cada hoja enfocada.
+`sections.css` agrupa servicios, proceso de consultoría, entregables, contacto y secciones
+informativas, `projects.css` contiene el explorador, y `responsive.css` y `motion.css` atienden
+adaptación y animaciones. La página principal importa estos módulos por separado para mantener cada
+hoja enfocada.
 
 La sección de presencia incluye un mapa de Google Maps centrado en México y Texas, con pines en
 Pachuca, Santa Fe, Puerto de Veracruz, Monterrey, Ciudad de México, Guadalajara y Houston. Al

@@ -17,6 +17,19 @@
 		column-gap: 48px;
 		row-gap: 68px;
 	}
+
+	.release-list {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.release-list li:nth-child(4) {
+		border-left: 0;
+		border-top: 1px solid var(--page-line);
+	}
+
+	.release-list li:nth-child(n + 5) {
+		border-top: 1px solid var(--page-line);
+	}
 }
 
 @media (max-width: 760px) {
@@ -285,8 +298,46 @@
 	}
 
 	.services,
+	.delivery-section,
 	.about-section {
 		padding-block: 78px;
+	}
+
+	.standards-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.standard-card {
+		padding: 21px 14px 23px;
+	}
+
+	.standard-card + .standard-card {
+		border-top: 1px solid var(--page-line);
+		border-left: 0;
+	}
+
+	.release-heading {
+		margin-top: 36px;
+	}
+
+	.release-list {
+		grid-template-columns: 1fr;
+	}
+
+	.release-list li,
+	.release-list li:nth-child(4),
+	.release-list li:nth-child(n + 5) {
+		padding: 17px 14px;
+		border-top: 1px solid var(--page-line);
+		border-left: 0;
+	}
+
+	.release-list li:first-child {
+		border-top: 0;
+	}
+
+	.release-list h4 {
+		margin: 9px 0 5px;
 	}
 
 	.presence-section {
