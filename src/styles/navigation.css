@@ -612,6 +612,175 @@ html[data-theme='dark'] .feature-copy h2 span {
 	padding: 22px 0 0 12px;
 }
 
+html[data-theme-palette='waka'] .hero-glow,
+html[data-theme-palette='waka'] .feature-orbit,
+html[data-theme-palette='waka'] .feature-sparkles {
+	display: none;
+}
+
+html[data-theme-palette='waka'] .feature-product {
+	isolation: isolate;
+}
+
+html[data-theme-palette='waka'] .feature-device {
+	z-index: 2;
+}
+
+html[data-theme-palette='waka'] .feature-note {
+	z-index: 3;
+}
+
+.arcane-effects {
+	display: none;
+}
+
+html[data-theme-palette='waka'] .arcane-effects {
+	position: absolute;
+	z-index: 1;
+	inset: -8px -7% 22px -7%;
+	display: block;
+	pointer-events: none;
+}
+
+html[data-theme-palette='waka'] .arcane-effects::before,
+html[data-theme-palette='waka'] .arcane-effects::after {
+	position: absolute;
+	border-radius: 48% 52% 43% 57%;
+	content: '';
+}
+
+html[data-theme-palette='waka'] .arcane-effects::before {
+	inset: 3% 3% 4%;
+	border: 1px solid rgb(94 255 155 / 38%);
+	box-shadow: 0 0 14px rgb(58 245 126 / 35%), inset 0 0 13px rgb(58 245 126 / 14%);
+	animation: waka-sigil-orbit 18s linear infinite;
+}
+
+html[data-theme-palette='waka'] .arcane-effects::after {
+	inset: 9% 12% 9%;
+	border: 1px dashed rgb(235 207 112 / 44%);
+	box-shadow: 0 0 11px rgb(235 207 112 / 23%);
+	animation: waka-sigil-orbit 24s linear infinite reverse;
+}
+
+html[data-theme-palette='waka'] .arcane-flame {
+	position: absolute;
+	width: 22px;
+	height: 50px;
+	background: radial-gradient(ellipse at 50% 70%, #fff1a8 0 8%, #9dff83 19%, #31dc73 47%, rgb(10 132 75 / 10%) 78%);
+	filter: drop-shadow(0 0 7px rgb(70 255 127 / 86%));
+	clip-path: polygon(50% 0, 61% 24%, 84% 38%, 75% 53%, 100% 72%, 78% 92%, 51% 100%, 22% 91%, 0 70%, 22% 51%, 17% 34%, 39% 42%);
+	transform-origin: 50% 90%;
+	animation: waka-laptop-flame 1.65s ease-in-out infinite alternate;
+}
+
+html[data-theme-palette='waka'] .arcane-flame-one {
+	top: 7%;
+	left: 14%;
+	--flame-angle: -12deg;
+}
+
+html[data-theme-palette='waka'] .arcane-flame-two {
+	top: 2%;
+	right: 15%;
+	--flame-angle: 11deg;
+	animation-delay: -0.75s;
+}
+
+html[data-theme-palette='waka'] .arcane-flame-three {
+	top: 29%;
+	left: -1%;
+	height: 43px;
+	--flame-angle: -18deg;
+	animation-delay: -0.4s;
+}
+
+html[data-theme-palette='waka'] .arcane-flame-four {
+	top: 26%;
+	right: -1%;
+	height: 46px;
+	--flame-angle: 16deg;
+	animation-delay: -1.05s;
+}
+
+html[data-theme-palette='waka'] .arcane-flame-five {
+	right: 30%;
+	bottom: 3%;
+	width: 18px;
+	height: 38px;
+	--flame-angle: 8deg;
+	animation-delay: -0.95s;
+}
+
+html[data-theme-palette='waka'] .arcane-sigil {
+	position: absolute;
+	color: #f0d47a;
+	font-family: Georgia, serif;
+	font-size: 19px;
+	line-height: 1;
+	text-shadow: 0 0 6px #9cff9d, 0 0 14px rgb(75 255 136 / 80%);
+	animation: waka-sigil-pulse 3.6s ease-in-out infinite;
+}
+
+html[data-theme-palette='waka'] .arcane-sigil-one {
+	top: 11%;
+	left: 3%;
+}
+
+html[data-theme-palette='waka'] .arcane-sigil-two {
+	top: 18%;
+	right: 3%;
+	color: #a7ffb6;
+	font-size: 22px;
+	animation-delay: -1.2s;
+}
+
+html[data-theme-palette='waka'] .arcane-sigil-three {
+	bottom: 13%;
+	left: 13%;
+	font-size: 17px;
+	animation-delay: -2.1s;
+}
+
+html[data-theme-palette='waka'] .arcane-sigil-four {
+	right: 13%;
+	bottom: 21%;
+	color: #a7ffb6;
+	font-size: 16px;
+	animation-delay: -0.6s;
+}
+
+@keyframes waka-sigil-orbit {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes waka-laptop-flame {
+	from {
+		filter: drop-shadow(0 0 4px rgb(70 255 127 / 62%));
+		opacity: 0.62;
+		transform: translateY(3px) scale(0.82, 0.9) rotate(var(--flame-angle));
+	}
+	to {
+		filter: drop-shadow(0 0 12px rgb(117 255 150 / 95%));
+		opacity: 1;
+		transform: translateY(-9px) scale(1.12, 1.08) rotate(calc(var(--flame-angle) + 5deg));
+	}
+}
+
+@keyframes waka-sigil-pulse {
+	0%,
+	100% {
+		opacity: 0.52;
+		transform: scale(0.86);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.12);
+	}
+}
+
 .feature-device {
 	position: relative;
 	width: 100%;
