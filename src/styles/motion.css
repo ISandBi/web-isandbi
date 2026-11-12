@@ -23,6 +23,63 @@
 	transition-delay: 200ms;
 }
 
+.cursor-bubble {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 28px;
+	aspect-ratio: 1;
+	border: 1px solid rgb(255 255 255 / 78%);
+	border-radius: 50%;
+	background:
+		radial-gradient(circle at 32% 26%, rgb(255 255 255 / 82%) 0 2%, transparent 18%),
+		radial-gradient(circle at 72% 72%, color-mix(in srgb, var(--page-accent) 22%, transparent), transparent 58%),
+		rgb(255 255 255 / 8%);
+	box-shadow:
+		inset 1px 1px 3px rgb(255 255 255 / 75%),
+		0 0 16px color-mix(in srgb, var(--page-accent) 28%, transparent);
+	backdrop-filter: blur(1px) saturate(145%);
+	opacity: 0;
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+	transition: opacity 0.18s ease, width 0.2s ease, box-shadow 0.2s ease;
+	will-change: transform;
+}
+
+.cursor-bubble::after {
+	position: absolute;
+	top: 19%;
+	left: 22%;
+	width: 6px;
+	height: 3px;
+	border-radius: 50%;
+	background: rgb(255 255 255 / 88%);
+	content: '';
+	transform: rotate(-35deg);
+}
+
+.cursor-bubble.is-visible {
+	opacity: 0.72;
+}
+
+.cursor-bubble.is-interactive {
+	width: 40px;
+	box-shadow:
+		inset 1px 1px 4px rgb(255 255 255 / 86%),
+		0 0 22px color-mix(in srgb, var(--page-accent) 40%, transparent);
+}
+
+.cursor-bubble.is-pressed {
+	width: 20px;
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+	.cursor-bubble {
+		display: none;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,

@@ -457,8 +457,7 @@
 	}
 
 	.device-filter-group > span {
-		padding-inline: 6px;
-		font-size: 9px;
+		display: none;
 	}
 
 	.device-filter {
@@ -477,6 +476,10 @@
 
 	.device-phone {
 		width: min(62%, 230px);
+	}
+
+	.solution-card[data-device-view='tablet'] .device {
+		width: min(88%, 330px);
 	}
 
 	.feature-copy > p:not(.feature-kicker) {

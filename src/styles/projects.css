@@ -159,6 +159,12 @@ html[data-theme='dark'] .filter-chip.is-active {
 	content: 'Android';
 }
 
+.solution-card[data-device-view='tablet'][data-category] .laptop-stage::after,
+.solution-card[data-device-view='tablet'][data-category] .phone-stage::after {
+	margin-top: 12px;
+	content: 'Tablet';
+}
+
 .device {
 	position: relative;
 	filter: drop-shadow(0 13px 10px rgb(10 20 26 / 24%));
@@ -280,11 +286,6 @@ html[data-theme='dark'] .filter-chip.is-active {
 .device-laptop .device-display > img {
 	object-fit: cover;
 	object-position: top center;
-	transition: transform 0.45s ease;
-}
-
-.solution-card:hover .device-laptop .device-display > img {
-	transform: scale(1.025);
 }
 
 .device-base {
@@ -347,6 +348,10 @@ html[data-theme='dark'] .filter-chip.is-active {
 	transform: translateX(-50%);
 }
 
+.device-laptop .device-sensor {
+	display: none;
+}
+
 .solution-card[data-laptop-model='mac'] .device-laptop .device-display {
 	padding: 7px 7px 0;
 	border-color: #59676d;
@@ -404,6 +409,44 @@ html[data-theme='dark'] .filter-chip.is-active {
 	content: 'iPhone';
 }
 
+.solution-card[data-device-view='tablet'] .device {
+	width: min(76%, 390px);
+}
+
+.solution-card[data-device-view='tablet'] .device-display {
+	aspect-ratio: 1.38;
+	padding: 12px;
+	border: 2px solid #53636a;
+	border-radius: 23px;
+	background: #34434a;
+	box-shadow: 0 0 0 1px rgb(17 28 34 / 35%);
+}
+
+.solution-card[data-device-view='tablet'] .device-display > img {
+	width: 100%;
+	height: 100%;
+	border-radius: 12px;
+	object-fit: contain;
+	background: #fff;
+}
+
+.solution-card[data-device-view='tablet'][data-category='apps'] .device-display > img {
+	object-fit: contain;
+}
+
+.solution-card[data-device-view='tablet'] .device-base {
+	display: none;
+}
+
+.solution-card[data-device-view='tablet'] .device-sensor {
+	top: 7px;
+	display: block;
+	width: 6px;
+	height: 6px;
+	border: 0;
+	background: #172630;
+}
+
 .device-filter-group {
 	position: absolute;
 	z-index: 3;
@@ -439,13 +482,14 @@ html[data-theme='dark'] .device-filter-group {
 
 .device-filter {
 	min-height: 31px;
-	padding: 0 11px;
+	padding: 0 9px;
 	border: 1px solid transparent;
 	border-radius: 10px;
 	background: rgb(255 255 255 / 11%);
 	color: var(--page-body);
-	font-size: 11px;
+	font-size: 10px;
 	font-weight: 650;
+	white-space: nowrap;
 	cursor: pointer;
 	transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }

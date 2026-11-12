@@ -495,20 +495,22 @@ const locations = [
 							data-search={`${solution.name} ${solution.description} ${solution.categoryLabel} ${solution.technology}`}
 							data-laptop-model="hp"
 							data-phone-model="android"
+							data-device-view={solution.category === 'apps' ? 'phone' : 'laptop'}
 							data-reveal
 						>
 							<div class:list={['device-stage', solution.category === 'apps' ? 'phone-stage' : 'laptop-stage']}>
-								<div class="device-filter-group" role="group" aria-label={solution.category === 'apps' ? `Cambiar dispositivo de ${solution.name}` : `Cambiar laptop de ${solution.name}`}>
-									<span>{solution.category === 'apps' ? 'Ver en' : 'Laptop'}</span>
+								<div class="device-filter-group" role="group" aria-label={`Cambiar dispositivo de ${solution.name}`}>
+									<span>{solution.category === 'apps' ? 'Ver en' : 'Dispositivo'}</span>
 									{solution.category === 'apps' ? (
 										<>
-											<button class="device-filter is-active" type="button" data-device-filter="phone" data-device-model="android" aria-pressed="true">Android</button>
-											<button class="device-filter" type="button" data-device-filter="phone" data-device-model="iphone" aria-pressed="false">iPhone</button>
+											<button class="device-filter is-active" type="button" data-device-filter="phone" data-device-model="android" data-device-view="phone" aria-pressed="true">Android</button>
+											<button class="device-filter" type="button" data-device-filter="phone" data-device-model="iphone" data-device-view="phone" aria-pressed="false">iPhone</button>
 										</>
 									) : (
 										<>
-											<button class="device-filter is-active" type="button" data-device-filter="laptop" data-device-model="hp" aria-pressed="true">HP</button>
-											<button class="device-filter" type="button" data-device-filter="laptop" data-device-model="mac" aria-pressed="false">Mac</button>
+											<button class="device-filter is-active" type="button" data-device-filter="laptop" data-device-model="hp" data-device-view="laptop" aria-pressed="true">Laptop HP</button>
+											<button class="device-filter" type="button" data-device-filter="laptop" data-device-model="mac" data-device-view="laptop" aria-pressed="false">Mac</button>
+											<button class="device-filter" type="button" data-device-filter="tablet" data-device-view="tablet" aria-pressed="false">Tablet</button>
 										</>
 									)}
 								</div>
@@ -535,7 +537,8 @@ const locations = [
 									</div>
 									{solution.category === 'web' || solution.category === 'ops'
 										? <div class="device-base" aria-hidden="true"><span /></div>
-										: <span class="device-sensor" aria-hidden="true" />}
+										: null}
+									<span class="device-sensor" aria-hidden="true" />
 								</div>
 							</div>
 							<div class="project-info">
@@ -753,6 +756,7 @@ const locations = [
 			<span>© {new Date().getFullYear()} IS&BI Solutions</span>
 		</div>
 	</footer>
+	<div class="cursor-bubble" aria-hidden="true" data-cursor-bubble></div>
 </Layout>
 
 <script>
@@ -1008,16 +1012,17 @@ const locations = [
 			const deviceType = button.dataset.deviceFilter;
 			const deviceModel = button.dataset.deviceModel;
 			const project = button.closest<HTMLElement>('[data-solution-card]');
-			if (!project || !deviceType || !deviceModel) return;
+			const deviceView = button.dataset.deviceView;
+			if (!project || !deviceType || !deviceView) return;
 
-			project.dataset[deviceType === 'laptop' ? 'laptopModel' : 'phoneModel'] = deviceModel;
-			Array.from(project.querySelectorAll<HTMLButtonElement>('[data-device-filter]'))
-				.filter((filter) => filter.dataset.deviceFilter === deviceType)
-				.forEach((filter) => {
-					const isActive = filter === button;
-					filter.classList.toggle('is-active', isActive);
-					filter.setAttribute('aria-pressed', String(isActive));
-				});
+			if (deviceType === 'laptop' && deviceModel) project.dataset.laptopModel = deviceModel;
+			if (deviceType === 'phone' && deviceModel) project.dataset.phoneModel = deviceModel;
+			project.dataset.deviceView = deviceView;
+			Array.from(project.querySelectorAll<HTMLButtonElement>('[data-device-filter]')).forEach((filter) => {
+				const isActive = filter === button;
+				filter.classList.toggle('is-active', isActive);
+				filter.setAttribute('aria-pressed', String(isActive));
+			});
 		});
 	});
 
@@ -1105,5 +1110,24 @@ const locations = [
 		});
 	} else {
 		revealElements.forEach((element) => element.classList.add('is-visible'));
+	}
+
+	const cursorBubble = document.querySelector<HTMLElement>('[data-cursor-bubble]');
+	const supportsBubbleCursor = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+	const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	if (cursorBubble && supportsBubbleCursor && !prefersReducedMotion) {
+		window.addEventListener('pointermove', (event) => {
+			cursorBubble.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`;
+			cursorBubble.classList.add('is-visible');
+			const target = event.target;
+			cursorBubble.classList.toggle(
+				'is-interactive',
+				target instanceof Element && Boolean(target.closest('a, button, input, select, textarea, [role="button"]')),
+			);
+		}, { passive: true });
+		window.addEventListener('pointerdown', () => cursorBubble.classList.add('is-pressed'));
+		window.addEventListener('pointerup', () => cursorBubble.classList.remove('is-pressed'));
+		window.addEventListener('pointercancel', () => cursorBubble.classList.remove('is-pressed'));
+		window.addEventListener('pointerleave', () => cursorBubble.classList.remove('is-visible', 'is-interactive', 'is-pressed'));
 	}
 </script>
