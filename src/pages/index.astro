@@ -294,15 +294,17 @@ const locations = [
 						<svg class="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>
 						<span>Contacto</span>
 					</a>
-					<button class="theme-toggle" type="button" role="switch" aria-label="Modo oscuro" aria-checked="false" data-theme-toggle>
-						<span class="theme-switch-label">Tema</span>
-						<span class="theme-switch-track" aria-hidden="true">
-							<span class="theme-switch-thumb">
-								<svg class="theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
-								<svg class="theme-icon-moon" viewBox="0 0 24 24"><path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.6 8.6 0 1 0 20.2 15.1Z" /></svg>
-							</span>
-						</span>
-					</button>
+					<label class="theme-picker">
+						<span class="sr-only">Tema visual</span>
+						<span class="theme-picker-dot" aria-hidden="true"></span>
+						<select aria-label="Tema visual" data-theme-select>
+							<option value="pink">Rosa brillante</option>
+							<option value="space">Espacial</option>
+							<option value="green">Verde</option>
+							<option value="dark">Oscuro</option>
+						</select>
+						<svg class="theme-picker-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+					</label>
 				</nav>
 			</div>
 			<div class="header-actions">
@@ -760,27 +762,35 @@ const locations = [
 </Layout>
 
 <script>
-	const themeButtons = document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]');
-	const themeStorageKey = 'isandbi-theme';
-	const applyTheme = (theme: 'light' | 'dark') => {
-		document.documentElement.dataset.theme = theme;
-		themeButtons.forEach((button) => {
-			button.setAttribute('aria-checked', String(theme === 'dark'));
-			button.setAttribute('aria-label', theme === 'dark' ? 'Modo oscuro activado' : 'Modo oscuro desactivado');
-		});
+	const themePalettes = ['pink', 'space', 'green', 'dark'] as const;
+	type ThemePalette = typeof themePalettes[number];
+	const isThemePalette = (value: string | null): value is ThemePalette =>
+		themePalettes.some((palette) => palette === value);
+	const themeSelect = document.querySelector<HTMLSelectElement>('[data-theme-select]');
+	const themePaletteStorageKey = 'isandbi-theme-palette';
+	const applyThemePalette = (palette: ThemePalette) => {
+		document.documentElement.dataset.themePalette = palette;
+		document.documentElement.dataset.theme = palette === 'space' || palette === 'dark' ? 'dark' : 'light';
+		if (themeSelect) themeSelect.value = palette;
 	};
 
-	const storedTheme = localStorage.getItem(themeStorageKey);
-	const initialTheme = storedTheme === 'light' || storedTheme === 'dark'
-		? storedTheme
-		: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	applyTheme(initialTheme);
+	const storedPalette = localStorage.getItem(themePaletteStorageKey);
+	const legacyTheme = localStorage.getItem('isandbi-theme');
+	const initialPalette = isThemePalette(storedPalette)
+		? storedPalette
+		: legacyTheme === 'dark'
+			? 'dark'
+			: legacyTheme === 'light'
+				? 'pink'
+				: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'pink';
+	applyThemePalette(initialPalette);
 
-	themeButtons.forEach((button) => button.addEventListener('click', () => {
-		const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-		applyTheme(nextTheme);
-		localStorage.setItem(themeStorageKey, nextTheme);
-	}));
+	themeSelect?.addEventListener('change', () => {
+		const selectedPalette = themeSelect.value;
+		if (!isThemePalette(selectedPalette)) return;
+		applyThemePalette(selectedPalette);
+		localStorage.setItem(themePaletteStorageKey, selectedPalette);
+	});
 
 	const mobileMenu = document.querySelector<HTMLElement>('[data-mobile-menu]');
 	const menuToggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');

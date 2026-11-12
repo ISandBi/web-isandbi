@@ -18,6 +18,27 @@ html[data-theme='dark'] .work-section {
 		var(--page-surface-soft);
 }
 
+html[data-theme-palette='pink'] .work-section {
+	background:
+		radial-gradient(ellipse at 9% 9%, rgb(244 96 163 / 12%), transparent 34%),
+		radial-gradient(ellipse at 92% 38%, rgb(172 113 223 / 11%), transparent 38%),
+		linear-gradient(110deg, #fff5fa, #fff0f8 52%, #fff8fc);
+}
+
+html[data-theme-palette='green'] .work-section {
+	background:
+		radial-gradient(ellipse at 9% 9%, rgb(58 163 99 / 11%), transparent 34%),
+		radial-gradient(ellipse at 92% 38%, rgb(63 162 145 / 10%), transparent 38%),
+		linear-gradient(110deg, #f3faf4, #eff7f0 52%, #f5fbf8);
+}
+
+html[data-theme-palette='space'] .work-section {
+	background:
+		radial-gradient(ellipse at 9% 9%, rgb(85 107 220 / 10%), transparent 34%),
+		radial-gradient(ellipse at 92% 38%, rgb(59 176 210 / 8%), transparent 38%),
+		var(--page-surface-soft);
+}
+
 .work-intro {
 	margin-bottom: 48px;
 }

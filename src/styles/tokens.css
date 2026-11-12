@@ -44,3 +44,72 @@ html[data-theme='dark'] {
 	--hero-muted: #beb5c9;
 	--hero-accent: #dc92f3;
 }
+
+html[data-theme-palette='pink'] {
+	color-scheme: light;
+	--page-bg: #fff7fb;
+	--page-surface: #fffdfd;
+	--page-surface-soft: #ffedf5;
+	--page-ink: #3c1b31;
+	--page-body: #68495f;
+	--page-muted: #90758a;
+	--page-line: #f0d2e2;
+	--page-accent: #c33f80;
+	--page-accent-soft: #ffe2ef;
+	--accent-gradient: linear-gradient(110deg, #ff739e 0%, #e956a5 52%, #ad71ed 100%);
+	--accent-glow: rgb(223 82 156 / 19%);
+	--brand-cyan: #e85c9f;
+	--brand-blue: #a25ad5;
+	--page-header: rgb(255 250 253 / 92%);
+	--page-shadow: 0 22px 65px rgb(129 47 97 / 12%);
+	--hero-bg: #fff6fb;
+	--hero-ink: #3c1b31;
+	--hero-muted: #704e65;
+	--hero-accent: #c33f80;
+}
+
+html[data-theme-palette='green'] {
+	color-scheme: light;
+	--page-bg: #f6fbf7;
+	--page-surface: #fff;
+	--page-surface-soft: #edf6ef;
+	--page-ink: #172a1e;
+	--page-body: #496450;
+	--page-muted: #718779;
+	--page-line: #d7e7db;
+	--page-accent: #21834f;
+	--page-accent-soft: #def2e5;
+	--accent-gradient: linear-gradient(110deg, #36ad70 0%, #168e83 55%, #3b76bd 100%);
+	--accent-glow: rgb(37 150 98 / 16%);
+	--brand-cyan: #28a98e;
+	--brand-blue: #287c5b;
+	--page-header: rgb(250 255 251 / 92%);
+	--page-shadow: 0 22px 65px rgb(25 79 48 / 11%);
+	--hero-bg: #f2fbf4;
+	--hero-ink: #172a1e;
+	--hero-muted: #4a6654;
+	--hero-accent: #21834f;
+}
+
+html[data-theme-palette='space'] {
+	color-scheme: dark;
+	--page-bg: #080d1a;
+	--page-surface: #111a2b;
+	--page-surface-soft: #0c1424;
+	--page-ink: #edf2ff;
+	--page-body: #b6c1dc;
+	--page-muted: #8290b0;
+	--page-line: #26334b;
+	--page-accent: #91b5ff;
+	--page-accent-soft: #1b2944;
+	--accent-gradient: linear-gradient(110deg, #54d6ee 0%, #8d86ff 54%, #e080f0 100%);
+	--accent-glow: rgb(113 139 255 / 20%);
+	--brand-cyan: #78e2f1;
+	--brand-blue: #8774ef;
+	--page-header: rgb(8 13 26 / 92%);
+	--page-shadow: 0 24px 70px rgb(0 0 0 / 42%);
+	--hero-bg: #080d1a;
+	--hero-ink: #edf2ff;
+	--hero-muted: #bdc8e2;
+	--hero-accent: #98baff;
+}

@@ -7,21 +7,26 @@ const { title = 'IS&BI Solutions | Innovation Software' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="light" data-theme-palette="pink">
 	<head>
 		<script is:inline>
 			try {
-				const savedTheme = localStorage.getItem('isandbi-theme');
-				document.documentElement.dataset.theme =
-					savedTheme === 'light' || savedTheme === 'dark'
-						? savedTheme
-						: window.matchMedia('(prefers-color-scheme: dark)').matches
-							? 'dark'
-							: 'light';
+				const palettes = ['pink', 'space', 'green', 'dark'];
+				const savedPalette = localStorage.getItem('isandbi-theme-palette');
+				const legacyTheme = localStorage.getItem('isandbi-theme');
+				const palette = palettes.includes(savedPalette ?? '')
+					? savedPalette
+					: legacyTheme === 'dark'
+						? 'dark'
+						: legacyTheme === 'light'
+							? 'pink'
+							: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'pink';
+				document.documentElement.dataset.themePalette = palette;
+				document.documentElement.dataset.theme = palette === 'space' || palette === 'dark' ? 'dark' : 'light';
 			} catch {
-				document.documentElement.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches
-					? 'dark'
-					: 'light';
+				const palette = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'pink';
+				document.documentElement.dataset.themePalette = palette;
+				document.documentElement.dataset.theme = palette === 'dark' ? 'dark' : 'light';
 			}
 		</script>
 		<meta charset="utf-8" />
