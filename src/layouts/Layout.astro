@@ -7,24 +7,28 @@ const { title = 'IS&BI Solutions | Innovation Software' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" data-theme="light" data-theme-palette="pink">
+<html lang="es" data-theme="light" data-theme-palette="pinky-qa">
 	<head>
 		<script is:inline>
 			try {
-				const palettes = ['pink', 'space', 'green', 'dark'];
+				const palettes = [
+					'space', 'waka', 'dark', 'cielito', 'navidad', 'reyes', 'empresarial', 'corazon-roto',
+					'sin-quincena', 'modo-avion', 'error-500', 'pinky-qa', 'react', 'javascript', 'python',
+					'dockerizado', 'typescript-wakala', 'java',
+				];
 				const savedPalette = localStorage.getItem('isandbi-theme-palette');
 				const legacyTheme = localStorage.getItem('isandbi-theme');
-				const palette = palettes.includes(savedPalette ?? '')
-					? savedPalette
-					: legacyTheme === 'dark'
-						? 'dark'
-						: legacyTheme === 'light'
-							? 'pink'
-							: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'pink';
+				const migratedPalette = savedPalette === 'pink' ? 'pinky-qa' : savedPalette === 'green' ? 'python' : null;
+				let palette = 'pinky-qa';
+				if (palettes.includes(savedPalette ?? '')) palette = savedPalette;
+				else if (migratedPalette) palette = migratedPalette;
+				else if (legacyTheme === 'dark') palette = 'dark';
+				else if (legacyTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches) palette = 'dark';
+				const darkPalettes = ['space', 'waka', 'dark', 'navidad', 'reyes', 'sin-quincena', 'error-500', 'dockerizado', 'typescript-wakala'];
 				document.documentElement.dataset.themePalette = palette;
-				document.documentElement.dataset.theme = palette === 'space' || palette === 'dark' ? 'dark' : 'light';
+				document.documentElement.dataset.theme = darkPalettes.includes(palette ?? '') ? 'dark' : 'light';
 			} catch {
-				const palette = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'pink';
+				const palette = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'pinky-qa';
 				document.documentElement.dataset.themePalette = palette;
 				document.documentElement.dataset.theme = palette === 'dark' ? 'dark' : 'light';
 			}

@@ -298,10 +298,28 @@ const locations = [
 						<span class="sr-only">Tema visual</span>
 						<span class="theme-picker-dot" aria-hidden="true"></span>
 						<select aria-label="Tema visual" data-theme-select>
-							<option value="pink">Rosa brillante</option>
-							<option value="space">Espacial</option>
-							<option value="green">Verde</option>
-							<option value="dark">Oscuro</option>
+							<optgroup label="Ambientes">
+								<option value="space">Espacio inconmensurable</option>
+								<option value="waka">Waka</option>
+								<option value="dark">El oscuro</option>
+								<option value="cielito">Cielito lindo</option>
+								<option value="navidad">Navidad en la ciudad</option>
+								<option value="reyes">Reyes magos</option>
+								<option value="empresarial">Empresarial</option>
+								<option value="corazon-roto">Rosa corazón roto</option>
+								<option value="sin-quincena">Negro sin quincena</option>
+								<option value="modo-avion">Gris modo avión</option>
+								<option value="error-500">Rojo error 500</option>
+								<option value="pinky-qa">Rosa Pinky Promise del QA</option>
+							</optgroup>
+							<optgroup label="Desarrollo">
+								<option value="react">Azul react</option>
+								<option value="javascript">Amarillo javascript</option>
+								<option value="python">Verde python</option>
+								<option value="dockerizado">Naranja dockerizado</option>
+								<option value="typescript-wakala">Typescript wakala</option>
+								<option value="java">Gris java</option>
+							</optgroup>
 						</select>
 						<svg class="theme-picker-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
 					</label>
@@ -762,27 +780,32 @@ const locations = [
 </Layout>
 
 <script>
-	const themePalettes = ['pink', 'space', 'green', 'dark'] as const;
+	const themePalettes = [
+		'space', 'waka', 'dark', 'cielito', 'navidad', 'reyes', 'empresarial', 'corazon-roto',
+		'sin-quincena', 'modo-avion', 'error-500', 'pinky-qa', 'react', 'javascript', 'python',
+		'dockerizado', 'typescript-wakala', 'java',
+	] as const;
 	type ThemePalette = typeof themePalettes[number];
 	const isThemePalette = (value: string | null): value is ThemePalette =>
 		themePalettes.some((palette) => palette === value);
+	const darkPalettes = ['space', 'waka', 'dark', 'navidad', 'reyes', 'sin-quincena', 'error-500', 'dockerizado', 'typescript-wakala'];
 	const themeSelect = document.querySelector<HTMLSelectElement>('[data-theme-select]');
 	const themePaletteStorageKey = 'isandbi-theme-palette';
 	const applyThemePalette = (palette: ThemePalette) => {
 		document.documentElement.dataset.themePalette = palette;
-		document.documentElement.dataset.theme = palette === 'space' || palette === 'dark' ? 'dark' : 'light';
+		document.documentElement.dataset.theme = darkPalettes.some((darkPalette) => darkPalette === palette) ? 'dark' : 'light';
 		if (themeSelect) themeSelect.value = palette;
 	};
 
 	const storedPalette = localStorage.getItem(themePaletteStorageKey);
 	const legacyTheme = localStorage.getItem('isandbi-theme');
-	const initialPalette = isThemePalette(storedPalette)
-		? storedPalette
-		: legacyTheme === 'dark'
-			? 'dark'
-			: legacyTheme === 'light'
-				? 'pink'
-				: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'pink';
+	const migratedPalette = storedPalette === 'pink' ? 'pinky-qa' : storedPalette === 'green' ? 'python' : null;
+	let initialPalette: ThemePalette;
+	if (isThemePalette(storedPalette)) initialPalette = storedPalette;
+	else if (migratedPalette) initialPalette = migratedPalette;
+	else if (legacyTheme === 'dark') initialPalette = 'dark';
+	else if (legacyTheme === 'light') initialPalette = 'pinky-qa';
+	else initialPalette = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'pinky-qa';
 	applyThemePalette(initialPalette);
 
 	themeSelect?.addEventListener('change', () => {

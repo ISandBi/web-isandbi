@@ -6,40 +6,16 @@ html:not([data-theme='dark']) .services,
 html:not([data-theme='dark']) .about-section,
 html:not([data-theme='dark']) .presence-section {
 	background-image:
-		radial-gradient(ellipse at 5% 10%, rgb(240 104 135 / 10%), transparent 31%),
-		radial-gradient(ellipse at 94% 48%, rgb(155 100 222 / 11%), transparent 35%);
+		radial-gradient(ellipse at 5% 10%, var(--palette-glow), transparent 31%),
+		radial-gradient(ellipse at 94% 48%, var(--palette-glow-secondary), transparent 35%);
 }
 
 html[data-theme='dark'] .services,
 html[data-theme='dark'] .about-section,
 html[data-theme='dark'] .presence-section {
 	background-image:
-		radial-gradient(ellipse at 7% 3%, rgb(222 78 119 / 5%), transparent 34%),
-		radial-gradient(ellipse at 94% 52%, rgb(133 75 211 / 6%), transparent 37%);
-}
-
-html[data-theme-palette='pink'] .services,
-html[data-theme-palette='pink'] .about-section,
-html[data-theme-palette='pink'] .presence-section {
-	background-image:
-		radial-gradient(ellipse at 5% 10%, rgb(244 96 163 / 13%), transparent 31%),
-		radial-gradient(ellipse at 94% 48%, rgb(196 126 237 / 10%), transparent 35%);
-}
-
-html[data-theme-palette='green'] .services,
-html[data-theme-palette='green'] .about-section,
-html[data-theme-palette='green'] .presence-section {
-	background-image:
-		radial-gradient(ellipse at 5% 10%, rgb(58 163 99 / 12%), transparent 31%),
-		radial-gradient(ellipse at 94% 48%, rgb(77 177 157 / 10%), transparent 35%);
-}
-
-html[data-theme-palette='space'] .services,
-html[data-theme-palette='space'] .about-section,
-html[data-theme-palette='space'] .presence-section {
-	background-image:
-		radial-gradient(ellipse at 7% 3%, rgb(85 107 220 / 10%), transparent 34%),
-		radial-gradient(ellipse at 94% 52%, rgb(59 176 210 / 7%), transparent 37%);
+		radial-gradient(ellipse at 7% 3%, var(--palette-glow), transparent 34%),
+		radial-gradient(ellipse at 94% 52%, var(--palette-glow-secondary), transparent 37%);
 }
 
 .section-intro {
@@ -401,8 +377,8 @@ html:not([data-theme='dark']) .service-card::before {
 	gap: 18px;
 	margin-top: 42px;
 	padding: 16px;
-	border-left: 2px solid #c24da9;
-	background: linear-gradient(100deg, rgb(206 111 203 / 9%), transparent 88%);
+	border-left: 2px solid var(--page-accent);
+	background: linear-gradient(100deg, color-mix(in srgb, var(--page-accent) 9%, transparent), transparent 88%);
 }
 
 .history-founder-portrait {
@@ -491,11 +467,6 @@ html:not([data-theme='dark']) .service-card::before {
 	font-weight: 800;
 }
 
-html[data-theme='dark'] .history-founder {
-	border-left-color: #db91ed;
-	background: linear-gradient(100deg, rgb(160 69 192 / 12%), transparent 88%);
-}
-
 .presence-section {
 	padding-block: 36px 116px;
 }
@@ -568,17 +539,15 @@ html[data-theme='dark'] .presence-map {
 .map-pin::before {
 	position: absolute;
 	inset: 5px;
-	border: 1px solid rgb(18 63 159 / 38%);
+	border: 1px solid color-mix(in srgb, var(--page-accent) 38%, transparent);
 	border-radius: 50%;
-	background: rgb(255 255 255 / 54%);
+	background: color-mix(in srgb, var(--page-surface) 64%, transparent);
 	content: '';
 	transition: inset 0.2s ease, background-color 0.2s ease;
 }
 
 html[data-theme='dark'] .map-pin::before {
-	border-color: rgb(238 181 250 / 56%);
-	background: rgb(36 20 44 / 64%);
-	box-shadow: 0 0 16px rgb(184 88 224 / 30%);
+	box-shadow: 0 0 16px var(--accent-glow);
 }
 
 .map-pin-dot {
@@ -587,20 +556,9 @@ html[data-theme='dark'] .map-pin::before {
 	height: 11px;
 	border: 2px solid #fff;
 	border-radius: 50%;
-	background: var(--brand-blue);
-	box-shadow: 0 1px 5px rgb(6 23 43 / 45%);
+	background: var(--accent-gradient);
+	box-shadow: 0 1px 7px var(--accent-glow);
 	transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-html:not([data-theme='dark']) .map-pin-dot {
-	background: linear-gradient(135deg, #f06472, #8b4ed1);
-	box-shadow: 0 1px 7px rgb(100 47 128 / 45%);
-}
-
-html[data-theme='dark'] .map-pin-dot {
-	border-color: #fff3ff;
-	background: linear-gradient(135deg, #ff788b, #b27aff);
-	box-shadow: 0 0 14px rgb(220 112 231 / 72%);
 }
 
 .map-pin:hover::before,
@@ -613,20 +571,8 @@ html[data-theme='dark'] .map-pin-dot {
 .map-pin:hover .map-pin-dot,
 .map-pin:focus-visible .map-pin-dot,
 .map-pin.is-active .map-pin-dot {
-	background: var(--brand-cyan);
+	background: var(--accent-gradient);
 	transform: scale(1.2);
-}
-
-html:not([data-theme='dark']) .map-pin:hover .map-pin-dot,
-html:not([data-theme='dark']) .map-pin:focus-visible .map-pin-dot,
-html:not([data-theme='dark']) .map-pin.is-active .map-pin-dot {
-	background: linear-gradient(135deg, #ff6878, #a46bf0);
-}
-
-html[data-theme='dark'] .map-pin:hover .map-pin-dot,
-html[data-theme='dark'] .map-pin:focus-visible .map-pin-dot,
-html[data-theme='dark'] .map-pin.is-active .map-pin-dot {
-	background: linear-gradient(135deg, #ff8c9a, #d29aff);
 }
 
 .map-pin:focus-visible {
@@ -735,36 +681,15 @@ html[data-theme='dark'] .map-pin.is-active .map-pin-dot {
 
 html:not([data-theme='dark']) .contact-section {
 	background:
-		radial-gradient(ellipse at 11% 18%, rgb(240 104 135 / 12%), transparent 34%),
-		radial-gradient(ellipse at 91% 76%, rgb(151 96 220 / 13%), transparent 38%),
+		radial-gradient(ellipse at 11% 18%, var(--palette-glow), transparent 34%),
+		radial-gradient(ellipse at 91% 76%, var(--palette-glow-secondary), transparent 38%),
 		var(--page-surface-soft);
 }
 
 html[data-theme='dark'] .contact-section {
 	background:
-		radial-gradient(ellipse at 12% 18%, rgb(227 70 111 / 9%), transparent 33%),
-		radial-gradient(ellipse at 91% 76%, rgb(137 74 220 / 12%), transparent 38%),
-		var(--page-surface-soft);
-}
-
-html[data-theme-palette='pink'] .contact-section {
-	background:
-		radial-gradient(ellipse at 11% 18%, rgb(244 96 163 / 14%), transparent 34%),
-		radial-gradient(ellipse at 91% 76%, rgb(182 107 223 / 12%), transparent 38%),
-		var(--page-surface-soft);
-}
-
-html[data-theme-palette='green'] .contact-section {
-	background:
-		radial-gradient(ellipse at 11% 18%, rgb(58 163 99 / 13%), transparent 34%),
-		radial-gradient(ellipse at 91% 76%, rgb(64 170 150 / 11%), transparent 38%),
-		var(--page-surface-soft);
-}
-
-html[data-theme-palette='space'] .contact-section {
-	background:
-		radial-gradient(ellipse at 12% 18%, rgb(76 95 205 / 13%), transparent 33%),
-		radial-gradient(ellipse at 91% 76%, rgb(40 157 194 / 10%), transparent 38%),
+		radial-gradient(ellipse at 12% 18%, var(--palette-glow), transparent 33%),
+		radial-gradient(ellipse at 91% 76%, var(--palette-glow-secondary), transparent 38%),
 		var(--page-surface-soft);
 }
 
