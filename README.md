@@ -45,6 +45,10 @@ informativas, `projects.css` contiene el explorador, y `responsive.css` y `motio
 adaptación y animaciones. La página principal importa estos módulos por separado para mantener cada
 hoja enfocada.
 
+Las imágenes rasterizadas que muestra el sitio se sirven en WebP para reducir su descarga; se
+conservan también los archivos PNG y JPEG originales. Las ilustraciones SVG permanecen en formato
+vectorial.
+
 La sección de presencia incluye un mapa de Google Maps centrado en México y Texas, con pines en
 Pachuca, Santa Fe, Puerto de Veracruz, Monterrey, Ciudad de México, Guadalajara y Houston. Al
 seleccionar un pin, se actualiza una vista de Google Maps centrada en esa ubicación.

@@ -45,7 +45,7 @@ const solutions: Solution[] = [
 		description: 'Reservaciones y apartados de viajes, con control de flota y asignación de choferes.',
 		status: 'released',
 		domain: 'davilatours.com',
-		image: '/images/solutions/davila-tours-reservas.png',
+		image: '/images/solutions/davila-tours-reservas.webp',
 		imageAlt: 'Calendario de reservaciones de Dávila Tours',
 		repository: 'https://github.com/ISandBi/davila-tours',
 	},
@@ -58,7 +58,7 @@ const solutions: Solution[] = [
 		description: 'Centraliza los pedidos online y sincroniza canales de venta como Shopify y Amazon.',
 		status: 'coming-soon',
 		domain: 'ordersync.com',
-		image: '/images/solutions/ordersync-ecommerce.png',
+		image: '/images/solutions/ordersync-ecommerce.webp',
 		imageAlt: 'Pantalla de inicio de OrderSync y centro de distribución',
 		repository: 'https://github.com/ISandBi/ordersync-ecommerce',
 	},
@@ -71,7 +71,7 @@ const solutions: Solution[] = [
 		description: 'Reserva escritorios y salas por hora o día, y gestiona el acceso con códigos QR.',
 		status: 'coming-soon',
 		domain: 'deskflex.com.mx',
-		image: '/images/solutions/deskflex-reservas.png',
+		image: '/images/solutions/deskflex-reservas.webp',
 		imageAlt: 'Mapa interactivo para reservar espacios de coworking',
 		repository: 'https://github.com/ISandBi/deskflex-web',
 	},
@@ -83,7 +83,7 @@ const solutions: Solution[] = [
 		technologies: [{ name: 'Android Studio', icon: 'android' }],
 		description: 'Consulta estaciones y precios, compra combustible y recibe promociones desde el móvil.',
 		status: 'released',
-		image: '/images/solutions/gavaldoon-go-mobile.png',
+		image: '/images/solutions/gavaldoon-go-mobile.webp',
 		imageAlt: 'Aplicación móvil Gavaldoon Go! con mapa y estaciones',
 		repository: 'https://github.com/ISandBi/gavaldon-app',
 	},
@@ -95,7 +95,7 @@ const solutions: Solution[] = [
 		technologies: [{ name: 'Android Studio', icon: 'android' }],
 		description: 'Actividades interactivas, seguimiento del aprendizaje y comunicación con las familias.',
 		status: 'released',
-		image: '/images/solutions/kinder-nahla-mobile.png',
+		image: '/images/solutions/kinder-nahla-mobile.webp',
 		imageAlt: 'Aplicación educativa móvil de Kinder Nahla',
 		repository: 'https://github.com/ISandBi/Aplicaci-n-Educativa-para-Kinder',
 	},
@@ -110,7 +110,7 @@ const solutions: Solution[] = [
 		statusNote: 'Escalamiento móvil planeado',
 		domain: 'groovespace.com',
 		featured: true,
-		image: '/images/solutions/groovespace-inicio.png',
+		image: '/images/solutions/groovespace-inicio.webp',
 		imageAlt: 'Portada de GrooveSpace',
 		repository: 'https://github.com/ISandBi/groovespace',
 	},
@@ -123,7 +123,7 @@ const solutions: Solution[] = [
 		description: 'Presencia web para una startup tecnológica, diseñada para presentar sus servicios y atraer clientes.',
 		status: 'not-released',
 		domain: 'novatech.com',
-		image: '/images/solutions/novatech-landing.png',
+		image: '/images/solutions/novatech-landing.webp',
 		imageAlt: 'Sitio web de NovaTech: soluciones de infraestructura y tecnología',
 		repository: 'https://github.com/ISandBi/novatech-landing',
 	},
@@ -136,7 +136,7 @@ const solutions: Solution[] = [
 		description: 'Control de productos en stock, reportes y alertas de escasez para una tienda de electrónicos.',
 		status: 'to-confirm',
 		domain: 'stocktrack.com',
-		image: '/images/solutions/stocktrack-login.png',
+		image: '/images/solutions/stocktrack-login.webp',
 		imageAlt: 'Pantalla de inicio de sesión de StockTrack, sistema de control de inventarios',
 		repository: 'https://github.com/ISandBi/stocktrack-inventory',
 	},
@@ -148,7 +148,7 @@ const solutions: Solution[] = [
 		technologies: [{ name: 'Astro', icon: 'astro' }],
 		description: 'Nuestro espacio para presentar servicios, soluciones y proyectos digitales.',
 		domain: 'isandbi.com',
-		image: '/images/solutions/isandbi-homepage-preview.png',
+		image: '/images/solutions/isandbi-homepage-preview.webp',
 		imageAlt: 'Página de inicio de IS&BI Solutions con la propuesta destacada de GrooveSpace',
 		repository: 'https://github.com/ISandBi/web-isandbi',
 	},
@@ -254,7 +254,7 @@ const locations = [
 	<header class="site-header">
 		<div class="header-inner">
 			<a class="brand" href="#inicio" aria-label="IS&BI Solutions, inicio">
-				<img class="brand-logo" src="/images/isbi-consultoria-logo.png" alt="IS & BI S.A. — Inspiration Software" />
+				<img class="brand-logo" src="/images/isbi-consultoria-logo.webp" alt="IS & BI S.A. — Inspiration Software" decoding="async" />
 			</a>
 			<div class="mobile-menu-shell" data-mobile-menu>
 				<button
@@ -381,9 +381,10 @@ const locations = [
 									<b>GS</b>
 								</div>
 								<img
-									src="/images/solutions/groovespace-inicio.png"
+									src="/images/solutions/groovespace-inicio.webp"
 									alt="Pantalla principal de GrooveSpace para descubrir y reservar estudios de ensayo"
 									fetchpriority="high"
+									decoding="async"
 								/>
 							</div>
 							<div class="feature-base"><span></span></div>
@@ -558,7 +559,7 @@ const locations = [
 											</div>
 										)}
 										{solution.image ? (
-											<img src={solution.image} alt={solution.imageAlt} loading="lazy" />
+											<img src={solution.image} alt={solution.imageAlt} loading="lazy" decoding="async" />
 										) : (
 											<div class="device-placeholder" aria-hidden="true">
 												<span>{solution.name.split(' ').map((word) => word[0]).slice(0, 2).join('')}</span>
@@ -623,7 +624,7 @@ const locations = [
 					<p>IS&BI nació con una convicción sencilla: la tecnología debe resolver problemas reales y ayudar a las empresas a crecer.</p>
 					<div class="history-founder">
 						<figure class="history-founder-portrait">
-							<img src="/images/dr-ls-buggs.png" alt="Dr. L.S. Buggs" width="195" height="295" loading="lazy" decoding="async" />
+							<img src="/images/dr-ls-buggs.webp" alt="Dr. L.S. Buggs" width="195" height="295" loading="lazy" decoding="async" />
 							<figcaption>Dr. L.S. Buggs</figcaption>
 						</figure>
 						<div class="history-founder-copy">
@@ -780,7 +781,7 @@ const locations = [
 	<footer class="site-footer">
 		<div class="section-wrap footer-inner">
 			<a class="brand footer-brand" href="#inicio" aria-label="IS&BI Solutions, volver al inicio">
-				<img class="brand-logo" src="/images/isbi-consultoria-logo.png" alt="IS & BI S.A. — Inspiration Software" />
+				<img class="brand-logo" src="/images/isbi-consultoria-logo.webp" alt="IS & BI S.A. — Inspiration Software" decoding="async" />
 			</a>
 			<p>Tecnología hecha contigo.</p>
 			<a href="https://github.com/ISandBi" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
